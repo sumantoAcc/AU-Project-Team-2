@@ -16,5 +16,5 @@ import { User } from './model/user';
 export class LoginService {
   constructor(private http:HttpClient) { }
 
-    login = (user : User) : Observable<any> => this.http.post<any>('/login', user)
+    login = (user : User) : Observable<any> => this.http.post<any>('/api/login', user)
 }
