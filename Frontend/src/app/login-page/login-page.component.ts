@@ -1,3 +1,4 @@
+/* eslint-disable import/extensions */
 /* eslint-disable import/no-unresolved */
 /* eslint-disable no-console */
 /* eslint-disable class-methods-use-this */
@@ -5,6 +6,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginService } from '../login.service';
+import { User } from '../model/user';
 
 @Component({
   selector: 'app-login-page',
@@ -17,18 +19,24 @@ export class LoginPageComponent implements OnInit {
 
   password : String;
 
+  user : User;
+
+  err: String;
+
   // eslint-disable-next-line no-useless-constructor
   constructor(private router: Router, private loginservice : LoginService) {
     this.username = '';
     this.password = '';
+    this.err = '';
   }
 
   loggedIn() {
-    this.loginservice.login(this.username, this.password).subscribe((response) => {
+    this.user = { username: this.username, password: this.password };
+    this.loginservice.login(this.user).subscribe((response) => {
       console.log(response);
-      if(!response){
-        alert("Wrong username or password");
-      }else{
+      if (!response) {
+        this.err = 'Inavalid Username or Password';
+      } else {
         this.router.navigate(['/search']);
       }
     });

@@ -1,21 +1,20 @@
-/* eslint-disable */
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LoginPageComponent } from './login-page.component';
+import { QuestionlistComponent } from './questionlist.component';
 
-describe('LoginPageComponent', () => {
-  let component: LoginPageComponent;
-  let fixture: ComponentFixture<LoginPageComponent>;
+describe('QuestionlistComponent', () => {
+  let component: QuestionlistComponent;
+  let fixture: ComponentFixture<QuestionlistComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LoginPageComponent ]
+      declarations: [ QuestionlistComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LoginPageComponent);
+    fixture = TestBed.createComponent(QuestionlistComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

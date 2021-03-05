@@ -1,4 +1,6 @@
-
+.error{
+    color: white;
+}
 
     .login-box {
     position: absolute;
@@ -157,3 +159,4 @@
       bottom: 100%;
     }
   }
+

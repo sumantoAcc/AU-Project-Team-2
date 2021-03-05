@@ -1,3 +1,5 @@
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/extensions */
 /* eslint-disable no-unused-vars */
 /* eslint-disable import/prefer-default-export */
 /* eslint-disable no-useless-constructor */
@@ -14,5 +16,5 @@ import { User } from './model/user';
 export class LoginService {
   constructor(private http:HttpClient) { }
 
-    login = (username : String, password : String) : Observable<any> => this.http.post<any>('/login', { 'username':username, 'password':password })
+    login = (user : User) : Observable<any> => this.http.post<any>('/api/login', user)
 }

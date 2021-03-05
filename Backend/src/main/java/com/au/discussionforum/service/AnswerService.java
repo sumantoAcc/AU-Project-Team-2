@@ -1,5 +1,9 @@
 package com.au.discussionforum.service;
 
-public interface AnswerService {
+import java.util.List;
 
+import com.au.discussionforum.model.Answer;
+
+public interface AnswerService {
+	List<Answer> getAnswerByQuesId(int ques_id);
 }
