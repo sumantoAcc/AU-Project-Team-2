@@ -16,7 +16,7 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 	
-	@PostMapping(path = "/login")
+	@PostMapping(path = "/api/login")
     public User checkUser(@RequestBody User user1) {
 			
         	User user = userService.getUserbyUsername(user1.getUsername());
