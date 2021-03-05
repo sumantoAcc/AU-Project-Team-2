@@ -23,4 +23,8 @@ public class UserServiceImpl implements UserService {
 		return userRepository.findAll();
 	}
 	
+	public User getUserByUserId(int id) {
+		return userRepository.findByUserId(id);
+	}
+	
 }

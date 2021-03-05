@@ -7,5 +7,7 @@ import com.au.discussionforum.model.User;
 
 @Repository
 public interface UserRepository extends JpaRepository<User,Long>{
-	User findByUsername(String username); 
+	User findByUsername(String username);
+
+	User findByUserId(int id); 
 }
