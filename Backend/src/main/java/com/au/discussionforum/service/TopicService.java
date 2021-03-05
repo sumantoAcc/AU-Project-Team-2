@@ -1,5 +1,5 @@
 package com.au.discussionforum.service;
 
-public class TopicService {
+public interface TopicService {
 
 }

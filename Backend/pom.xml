@@ -15,7 +15,7 @@
 	<name>discussionforum</name>
 	<description>Find answers for Queries</description>
 	<properties>
-		<java.version>11</java.version>
+		<java.version>8</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -44,6 +44,18 @@
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 		</dependency>
+		
+			<dependency>
+		<groupId>com.fasterxml.jackson.core</groupId>
+		<artifactId>jackson-databind</artifactId>
+		</dependency>
+	
+	<dependency>
+		<groupId>com.fasterxml.jackson.core</groupId>
+		<artifactId>jackson-core</artifactId>
+		</dependency>
+	
+
 	</dependencies>
 
 	<build>
@@ -54,5 +66,7 @@
 			</plugin>
 		</plugins>
 	</build>
+	
+	
 
 </project>
