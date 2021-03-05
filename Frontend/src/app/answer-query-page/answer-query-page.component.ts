@@ -1,3 +1,8 @@
+/* eslint-disable import/prefer-default-export */
+/* eslint-disable class-methods-use-this */
+/* eslint-disable no-empty-function */
+/* eslint-disable no-useless-constructor */
+/* eslint-disable no-unused-vars */
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -6,21 +11,17 @@ import { Router } from '@angular/router';
   templateUrl: './answer-query-page.component.html',
   styleUrls: ['./answer-query-page.component.css'],
 })
-// eslint-disable-next-line import/prefer-default-export
 export class AnswerQueryPageComponent implements OnInit {
-  // eslint-disable-next-line no-useless-constructor
-  // eslint-disable-next-line no-empty-function
   constructor(private router : Router) { }
 
-  searchTab(){
+  searchTab() {
     this.router.navigate(['/search']);
   }
 
-  logout(){
-    this.router.navigate([""]);
+  logout() {
+    this.router.navigate(['']);
   }
 
   ngOnInit(): void {
   }
-
 }

@@ -1,25 +1,27 @@
+/* eslint-disable class-methods-use-this */
+/* eslint-disable no-useless-constructor */
+/* eslint-disable import/prefer-default-export */
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-empty-function */
 import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-search-query-page',
   templateUrl: './search-query-page.component.html',
-  styleUrls: ['./search-query-page.component.css']
+  styleUrls: ['./search-query-page.component.css'],
 })
 export class SearchQueryPageComponent implements OnInit {
-
   constructor(private router: Router) { }
 
-  answerTab(){
+  answerTab() {
     this.router.navigate(['/answer']);
   }
 
-  logout(){
+  logout() {
     this.router.navigate(['']);
   }
 
   ngOnInit(): void {
   }
-
 }

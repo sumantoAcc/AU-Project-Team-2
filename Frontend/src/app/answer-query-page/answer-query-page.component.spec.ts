@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AnswerQueryPageComponent } from './answer-query-page.component';
@@ -8,7 +9,7 @@ describe('AnswerQueryPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AnswerQueryPageComponent ]
+      declarations: [ AnswerQueryPageComponent]
     })
     .compileComponents();
   });
