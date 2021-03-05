@@ -1,8 +1,11 @@
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/prefer-default-export */
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginPageComponent } from "./login-page/login-page.component";
+import { LoginPageComponent } from './login-page/login-page.component';
 import { SearchQueryPageComponent } from './search-query-page/search-query-page.component';
 import { AnswerQueryPageComponent } from './answer-query-page/answer-query-page.component';
+
 const routes: Routes = [
   {
     path: '',
@@ -15,11 +18,11 @@ const routes: Routes = [
   {
     path: 'answer',
     component: AnswerQueryPageComponent,
-  }
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule { }
