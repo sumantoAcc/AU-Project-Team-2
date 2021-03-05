@@ -5,6 +5,8 @@
 /* eslint-disable no-empty-function */
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { from } from 'rxjs';
+import { QuestionlistComponent } from  '../questionlist/questionlist.component';
 
 @Component({
   selector: 'app-search-query-page',
