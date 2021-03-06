@@ -5,6 +5,4 @@ export class Question {
     body:String;
 
     qid: number;
-
-    showVar: boolean;
 }
