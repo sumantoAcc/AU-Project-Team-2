@@ -16,4 +16,12 @@ public class AnswerServiceImpl implements AnswerService{
 	public List<Answer> getAnswerByQuesId(int quesId){
 		return answerRepository.findByQuestionQuesId(quesId);
 	}
+
+	public Answer getAnswerByAnswerId(int ansId) {
+		return answerRepository.findByAnsId(ansId);
+	}
+
+	public void setCorrectAnswer(Answer answer) {
+		answerRepository.save(answer);
+	}
 }

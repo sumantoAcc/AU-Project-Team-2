@@ -11,4 +11,5 @@ import com.au.discussionforum.model.Answer;
 public interface AnswerRepository extends JpaRepository<Answer,Long>{
 
 	List<Answer> findByQuestionQuesId(int keyword);
+	Answer findByAnsId(int ansId);
 }
