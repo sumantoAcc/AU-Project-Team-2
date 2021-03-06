@@ -8,6 +8,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Question } from './model/question';
+import { QuestionlistComponent } from './questionlist/questionlist.component';
 
 @Injectable({
   providedIn: 'root',
@@ -16,10 +17,14 @@ import { Question } from './model/question';
 export class QuestionService {
     uid : number;
 
+    Squestions=[];
+
     constructor(private http:HttpClient) { }
 
-    getQuestions(userId) {
+    getQuestions() {
       console.log(this.uid);
-      return this.http.get<any>('/api/userquestions/'+ this.uid);
+      return this.http.get<any>(`/api/userquestions/${this.uid}`);
     }
+
+    Searching = (keywords : String) : Observable<any> => this.http.post<any>('/api/question/keywords', {"keyword":keywords});
 }

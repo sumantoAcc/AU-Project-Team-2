@@ -9,5 +9,5 @@ import com.au.discussionforum.model.QuesKeywords;
 
 @Repository
 public interface QuesKeywordsRepository extends JpaRepository<QuesKeywords,Long>{
-	List<QuesKeywords> findByKeyword(String keyword);
+	List<QuesKeywords> findByKeywordIn(List<String> keyword);
 }

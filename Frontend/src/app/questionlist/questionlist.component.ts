@@ -6,6 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Question } from '../model/question';
 import { QuestionService } from '../question.service';
 import { AnswerlistComponent } from '../answerlist/answerlist.component';
+import { SearchQueryPageComponent } from '../search-query-page/search-query-page.component';
 @Component({
   selector: 'app-questionlist',
   templateUrl: './questionlist.component.html',
@@ -14,16 +15,21 @@ import { AnswerlistComponent } from '../answerlist/answerlist.component';
 export class QuestionlistComponent implements OnInit {
   questionlist= [];
 
+  seachQueList=[];
+
+  toogleques: boolean;
+
   queId: number;
 
   showVar: boolean[] = [];
 
-  @Input() userId: number;
+  @Input('temp') temp:any;
 
-  constructor(private questionService: QuestionService) { }
+  constructor(private questionService: QuestionService, private squery : SearchQueryPageComponent) { }
 
   ngOnInit(): void {
-    this.questionService.getQuestions(this.userId).subscribe((data) => {
+    this.toogleques = true;
+    this.questionService.getQuestions().subscribe((data) => {
       for (let i = 0; i < data.length; i += 1) {
         this.showVar.push(false);
         this.questionlist.push({
@@ -37,5 +43,11 @@ export class QuestionlistComponent implements OnInit {
 
   showans= (i) => {
     this.showVar[i] = !this.showVar[i];
+  }
+
+  showsearchQues() {
+    this.seachQueList=this.squery.temp;
+    console.log(this.temp);
+    this.toogleques = !this.toogleques;
   }
 }

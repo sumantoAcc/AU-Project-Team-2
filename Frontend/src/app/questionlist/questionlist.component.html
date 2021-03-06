@@ -1,3 +1,5 @@
+<button (click)="showsearchQues()">Home</button>
+<div *ngIf="toogleques">
 <h1>Questions</h1>
 <div *ngFor="let question of questionlist; index as i">
     <div class="quesid">
@@ -7,8 +9,21 @@
         <app-answerlist></app-answerlist>
     </div>
 </div>
-
     <button (click)="showans(i)">ShowAns</button>
+</div>
 
+</div>
 
+<div *ngIf="!toogleques">
+    <h1>SQuestions</h1>
+<div *ngFor="let question of seachQueList; index as i">
+    <div class="quesid">
+    <h1>{{question.title}}</h1>
+    <p>{{question.body}}</p>
+    <div *ngIf="showVar[i]">
+        <app-answerlist></app-answerlist>
+    </div>
+</div>
+    <button (click)="showans(i)">ShowAns</button>
+</div>
 </div>
