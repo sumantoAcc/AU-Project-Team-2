@@ -37,7 +37,7 @@ public class QuestionController {
 	@PostMapping(path = "/api/question/keywords")
     public List<Question> getQuestionsByKeyword(@RequestBody QuesKeywords quesKeywords) {
 			
-		List<String> keywords = Arrays.asList(quesKeywords.getKeyword().split(";"));
+		List<String> keywords = Arrays.asList(quesKeywords.getKeyword().split(","));
 		List<Question> questionList = quesKeywordsService.getQuestionByKeyword(keywords);
 		questionList = questionService.getSortedQuestionList(questionList);
 		

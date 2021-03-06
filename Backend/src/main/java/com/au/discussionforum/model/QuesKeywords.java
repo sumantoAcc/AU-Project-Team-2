@@ -10,7 +10,7 @@ import javax.persistence.ManyToOne;
 @Entity
 public class QuesKeywords {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int quesKeywordsId;
 	
 	@ManyToOne
