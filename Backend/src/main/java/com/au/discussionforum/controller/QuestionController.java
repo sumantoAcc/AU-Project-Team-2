@@ -28,9 +28,8 @@ public class QuestionController {
     public List<Question> getQuestionsByKeyword(@RequestBody QuesKeywords quesKeywords) {
 			
 			List<String> keywords = Arrays.asList(quesKeywords.getKeyword().split(";"));
-			List<Question> questionList = new ArrayList<>(); 
-			questionList = quesKeywordsService.getQuestionByKeyword(keywords);
-			//questionList = questionService.getSortedQuestionList(questionList);
+			List<Question> questionList = quesKeywordsService.getQuestionByKeyword(keywords);
+			questionList = questionService.getSortedQuestionList(questionList);
 			
         	return questionList;
     }

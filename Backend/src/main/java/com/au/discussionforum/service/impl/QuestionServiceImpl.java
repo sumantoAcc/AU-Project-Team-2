@@ -11,6 +11,7 @@ import java.util.TreeMap;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import org.hibernate.mapping.Set;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,15 +25,37 @@ public class QuestionServiceImpl implements QuestionService{
 	@Autowired
     QuestionRepository questionRepository;
 	
-	public static Map<Question, Integer> sortByValue(Map<Question, Integer> wordCounts) {
-
-        return wordCounts.entrySet()
-                .stream()
-                .sorted((Map.Entry.<Question, Integer>comparingByValue().reversed()))
-                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new));
-    }
-
+//	 public static <Question, Integer extends Comparable<Integer> > Map<Question, Integer> valueSort(final Map<Question, Integer> map){ 
+//        // Static Method with return type Map and 
+//        // extending comparator class which compares values 
+//        // associated with two keys 
+//        Comparator<Question> valueComparator = new Comparator<Question>() { 
+//            
+//                  // return comparison results of values of 
+//                  // two keys 
+//                  public int compare(Question k1, Question k2) 
+//                  { 
+//                      int comp = map.get(k1).compareTo( 
+//                          map.get(k2)); 
+//                      if (comp == 0) 
+//                          return 1; 
+//                      else
+//                          return comp; 
+//                  } 
+//            
+//              }; 
+//        
+//        // SortedMap created using the comparator 
+//        Map<Question, Integer> sorted = new TreeMap<Question, Integer>(valueComparator); 
+//        
+//        sorted.putAll(map); 
+//        
+//        return sorted; 
+//    } 
+	 
+	 
 	public List<Question> getSortedQuestionList(List<Question> questionList){		
+		List<Question> sortedQuestionList = new ArrayList<Question>();
 		Map<Question,Integer> questionCount = new HashMap<Question, Integer>();
 		for(Question q : questionList) {
             if(questionCount.containsKey(q)) {
@@ -43,12 +66,15 @@ public class QuestionServiceImpl implements QuestionService{
             }
         }
 		
-		for(Question x: questionList)
-			System.out.println(questionCount.get(x) + " " + x.getQuesId());
+		Map<Question,Integer> sortedQuestionMap = questionCount.entrySet().stream()
+                								  .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
+                								  .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
+                								   (oldValue, newValue) -> oldValue, LinkedHashMap::new));
 		
-		Map<Question,Integer> sortedQuestionMap = sortByValue(questionCount);
-		System.out.println(sortedQuestionMap);
-		return null;
+		for(Question question : sortedQuestionMap.keySet()) {
+			sortedQuestionList.add(question);
+		}
+		return sortedQuestionList;
 		
 	}
 
