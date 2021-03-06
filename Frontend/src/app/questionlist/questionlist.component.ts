@@ -16,7 +16,7 @@ export class QuestionlistComponent implements OnInit {
 
   queId: number;
 
-  showVar: boolean = false;
+  showVar: boolean[] = [];
 
   @Input() userId: number;
 
@@ -25,6 +25,7 @@ export class QuestionlistComponent implements OnInit {
   ngOnInit(): void {
     this.questionService.getQuestions(this.userId).subscribe((data) => {
       for (let i = 0; i < data.length; i += 1) {
+        this.showVar.push(false);
         this.questionlist.push({
           title: data[i].title,
           body: data[i].body,
@@ -34,7 +35,7 @@ export class QuestionlistComponent implements OnInit {
     });
   }
 
-  showans= () => {
-    this.showVar = !this.showVar;
+  showans= (i) => {
+    this.showVar[i] = !this.showVar[i];
   }
 }
