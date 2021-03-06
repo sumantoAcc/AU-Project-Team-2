@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { from } from 'rxjs';
 import { QuestionlistComponent } from  '../questionlist/questionlist.component';
+import { QuestionService } from '../question.service';
 
 @Component({
   selector: 'app-search-query-page',
@@ -14,7 +15,7 @@ import { QuestionlistComponent } from  '../questionlist/questionlist.component';
   styleUrls: ['./search-query-page.component.css'],
 })
 export class SearchQueryPageComponent implements OnInit {
-  constructor(private router: Router) { }
+  constructor(private router: Router, private questionService : QuestionService) { }
 
   answerTab() {
     this.router.navigate(['/answer']);

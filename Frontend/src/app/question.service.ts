@@ -14,9 +14,12 @@ import { Question } from './model/question';
 })
 
 export class QuestionService {
-    qlist: Question[]= [{"title": "csdncsdjkvdskjv", "body":"jdkjdkvkc"}, {"title": "csdfdncsdjkvdskjv", "body":"jdkffjdkvkc"}]
+    uid : number;
 
-    getQuestions(){
-        return this.qlist;
+    constructor(private http:HttpClient) { }
+
+    getQuestions(userId) {
+      console.log(this.uid);
+      return this.http.get<any>('/api/userquestions/1'+ this.uid);
     }
 }
