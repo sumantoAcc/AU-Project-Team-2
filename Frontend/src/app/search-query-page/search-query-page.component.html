@@ -5,8 +5,8 @@
 <br>
 
   
-<input name="search" placeholder="tagsForSearch">
-<button>Submit</button>
+<input name="search" placeholder="tagsForSearch" [(ngModel)]="Qkeywords" [ngModelOptions]="{standalone: true}">
+<button (click)="quesSearch()">Submit</button>
 
-<app-questionlist></app-questionlist>
+<app-questionlist [temp]='temp' [ftest]='ftest'></app-questionlist>
 

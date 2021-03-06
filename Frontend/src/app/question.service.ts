@@ -15,10 +15,12 @@ import { Question } from './model/question';
 
 export class QuestionService {
     uid : number;
-
+    Squestions=[];
     constructor(private http:HttpClient) { }
 
     getQuestions() {
       return this.http.get<any>(`/api/userquestions/${this.uid}`);
     }
+    Searching = (keywords : String) : Observable<any> => this.http.post<any>('/api/question/keywords', {"keyword":keywords});
+
 }
