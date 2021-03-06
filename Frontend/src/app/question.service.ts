@@ -18,9 +18,7 @@ export class QuestionService {
 
     constructor(private http:HttpClient) { }
 
-    getQuestions(userId) {
-      console.log(this.uid);
-      return this.http.get<any>('/api/userquestions/'+ this.uid);
+    getQuestions() {
+      return this.http.get<any>(`/api/userquestions/${this.uid}`);
     }
-
 }

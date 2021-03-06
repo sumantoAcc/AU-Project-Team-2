@@ -1,4 +1,4 @@
-
+/* eslint-disable import/prefer-default-export */
 export class Question {
     title:String;
 
@@ -7,5 +7,4 @@ export class Question {
     qid: number;
 
     showVar: boolean;
-    
 }

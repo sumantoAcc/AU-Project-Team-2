@@ -1,3 +1,4 @@
+/* eslint-disable padded-blocks */
 
 /* eslint-disable import/extensions */
 /* eslint-disable import/no-unresolved */
@@ -29,6 +30,7 @@ export class LoginPageComponent implements OnInit {
   id : number;
 
   // eslint-disable-next-line no-useless-constructor
+  // eslint-disable-next-line max-len
   constructor(private router: Router, private loginservice : LoginService, private questionService : QuestionService) {
     this.username = '';
     this.password = '';
@@ -40,7 +42,6 @@ export class LoginPageComponent implements OnInit {
   loggedIn() {
     this.user = { username: this.username, password: this.password };
     this.loginservice.login(this.user).subscribe((response) => {
-      console.log(response);
       if (!response) {
         this.err = 'Inavalid Username or Password';
       } else {
