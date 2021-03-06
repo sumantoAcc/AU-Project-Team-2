@@ -4,5 +4,8 @@ export class Question {
 
     body:String;
 
-    id: number;
+    qid: number;
+
+    showVar: boolean;
+    
 }

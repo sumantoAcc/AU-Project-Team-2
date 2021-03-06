@@ -7,16 +7,21 @@ import org.springframework.stereotype.Service;
 
 import com.au.discussionforum.dao.QuestionRepository;
 import com.au.discussionforum.model.Question;
-import com.au.discussionforum.service.QuestionService;;
+import com.au.discussionforum.model.User;
+import com.au.discussionforum.service.QuestionService;
 
 @Service
-public class QuestionServiceImpl implements QuestionService {
-	
+public class QuestionServiceImpl implements QuestionService{
 	@Autowired
-	QuestionRepository questionRepository;
+    QuestionRepository questionRepository;
 	
-	public Question getQuestionById(String quesId){
-		return questionRepository.findByQuesId(quesId);
+	public List<Question> getQuestionbyUser(int userId){
+		return questionRepository.findByUserUserId(userId);
 	}
-	
+
+	public List<Question> getAllQuestion(){
+		return questionRepository.findAll();
+	}
+
+
 }

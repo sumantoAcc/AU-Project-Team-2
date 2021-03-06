@@ -1,5 +1,5 @@
 
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Question } from '../model/question';
 import { QuestionService } from '../question.service';
 import { AnswerlistComponent } from '../answerlist/answerlist.component';
@@ -10,22 +10,35 @@ import { AnswerlistComponent } from '../answerlist/answerlist.component';
   styleUrls: ['./questionlist.component.css'],
 })
 export class QuestionlistComponent implements OnInit {
-  questionlist: Question[] = [];
+  
+
+  queId: number;
+
+    questionlist: Question[] = [];
   showVar: boolean[] = [];
 
-  constructor(private questionService: QuestionService) {
-    this.questionlist = this.questionService.getQuestions();
-  }
+  @Input() userId: number;
+
+  constructor(private questionService: QuestionService) { }
 
   ngOnInit(): void {
-    this.questionlist = this.questionService.getQuestions();
-    for (var i = 0; i < this.questionlist.length; i++) {
-      this.showVar.push(false);
-    }
-    console.log(this.showVar);
+    this.questionService.getQuestions(this.userId).subscribe((data) => {
+      for (let i = 0; i < data.length; i += 1) {
+        this.showVar.push(false);
+        this.questionlist.push({
+          title: data[i].title,
+          body: data[i].body,
+          qid: data[i].quesId,
+        });
+      }
+    });
   }
+;
 
+
+ 
   showans= (i) => {
     this.showVar[i] = (this.showVar[i]==true)?false:true;
+
   }
 }

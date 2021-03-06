@@ -1,3 +1,4 @@
+
 import { Component, OnInit, Input } from '@angular/core';
 import {Answer} from '../model/answer';
 import {AnswerService} from '../answer.service';
@@ -8,6 +9,7 @@ import {AnswerService} from '../answer.service';
   styleUrls: ['./answerlist.component.css']
 })
 export class AnswerlistComponent implements OnInit {
+
   ansList: Answer[] = [];
   @Input() quesId : number;
   constructor(private answerService: AnswerService) { }
