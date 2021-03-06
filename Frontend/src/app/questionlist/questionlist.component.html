@@ -1,14 +1,11 @@
-<h1>Questions</h1>
-<div *ngFor="let question of questionlist; index as i">
-    <div class="quesid">
+
+<div *ngFor="let question of questionlist;let i = index">
     <h1>{{question.title}}</h1>
     <p>{{question.body}}</p>
-    <div *ngIf="showVar[i]">
-        <app-answerlist></app-answerlist>
-    </div>
-</div>
 
     <button (click)="showans(i)">ShowAns</button>
-
+    <div *ngIf="showVar[i]">
+        <app-answerlist quesId={{question.id}}></app-answerlist>
+    </div>
 
 </div>

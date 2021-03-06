@@ -1,4 +1,4 @@
-/* eslint-disable max-len */
+
 /* eslint-disable import/extensions */
 /* eslint-disable import/no-unresolved */
 /* eslint-disable no-console */
@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 import { LoginService } from '../login.service';
 import { User } from '../model/user';
 import { QuestionService } from '../question.service';
+
 
 @Component({
   selector: 'app-login-page',
@@ -33,6 +34,7 @@ export class LoginPageComponent implements OnInit {
     this.password = '';
     this.err = '';
     this.id = -1;
+
   }
 
   loggedIn() {

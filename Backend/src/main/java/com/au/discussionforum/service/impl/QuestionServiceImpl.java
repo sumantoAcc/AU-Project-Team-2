@@ -1,4 +1,5 @@
 package com.au.discussionforum.service.impl;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,5 +22,6 @@ public class QuestionServiceImpl implements QuestionService{
 	public List<Question> getAllQuestion(){
 		return questionRepository.findAll();
 	}
+
 
 }

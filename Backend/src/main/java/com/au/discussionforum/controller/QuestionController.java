@@ -18,14 +18,15 @@ import com.au.discussionforum.service.QuesKeywordsService;
 import com.au.discussionforum.service.QuestionService;
 
 
+
+
 @RestController
 public class QuestionController {
-	@Autowired
-	QuesKeywordsService quesKeywordsService;
 	
 	@Autowired
 	QuestionService questionService;
 	
+
 	@PostMapping(path = "/api/question")
     public List<Question> getQuestions(@RequestBody QuesKeywords quesKeywords) {
 			
@@ -47,5 +48,5 @@ public class QuestionController {
     	List<Question> questions = questionService.getQuestionbyUser(userId);
     	return questions;
 	}
-	
+
 }

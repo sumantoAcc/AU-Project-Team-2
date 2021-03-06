@@ -9,6 +9,7 @@ import { from } from 'rxjs';
 import { QuestionlistComponent } from  '../questionlist/questionlist.component';
 import { QuestionService } from '../question.service';
 
+
 @Component({
   selector: 'app-search-query-page',
   templateUrl: './search-query-page.component.html',
@@ -16,6 +17,7 @@ import { QuestionService } from '../question.service';
 })
 export class SearchQueryPageComponent implements OnInit {
   constructor(private router: Router, private questionService : QuestionService) { }
+
 
   answerTab() {
     this.router.navigate(['/answer']);

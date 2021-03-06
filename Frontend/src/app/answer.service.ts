@@ -14,11 +14,11 @@ import { Answer } from './model/answer';
 })
 
 export class AnswerService {
-    alist: Answer[]= [{"body":"jdkjdkvkc"}, {"body":"jdkjdkvkc"}]
 
-
-    getAnswer(){
-        return this.alist;
+    //alist: Answer[]= [{"body":"AlbertoCrespo, by the way that second code example you gave was UnityScript rather than JavaScript. They're similar in some ways but that code would never have worked outside of a Unity environment. ", correctAnswer: false}, {"body":"Wouldn't it be more efficient to use an integer and bitwise operations?", correctAnswer: true}]
+    constructor(private http:HttpClient) { }
+    
+    getAnswer(quesId){
+        return this.http.get<any>('/api/answer/'+quesId);
     }
 }
-

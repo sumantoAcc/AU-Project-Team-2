@@ -22,4 +22,5 @@ export class QuestionService {
       console.log(this.uid);
       return this.http.get<any>('/api/userquestions/'+ this.uid);
     }
+
 }
