@@ -17,7 +17,9 @@ import { QuestionService } from '../question.service';
 export class SearchQueryPageComponent implements OnInit {
   Qkeywords: String;
 
-  temp=[]
+  temp=[];
+
+  ftest: boolean;
 
   keywordpass = { keyword: String };
 
@@ -34,6 +36,7 @@ export class SearchQueryPageComponent implements OnInit {
   }
 
   quesSearch() {
+    this.temp=[];
     console.log(this.Qkeywords);
     this.questionService.Searching(this.Qkeywords).subscribe((data) => {
       for (let i = 0; i < data.length; i += 1) {

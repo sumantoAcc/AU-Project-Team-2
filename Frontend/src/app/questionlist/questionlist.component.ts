@@ -1,8 +1,10 @@
+/* eslint-disable max-len */
 /* eslint-disable import/prefer-default-export */
 /* eslint-disable no-useless-constructor */
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-empty-function */
 import { Component, Input, OnInit } from '@angular/core';
+import { SimpleChanges } from '@angular/core';
 import { Question } from '../model/question';
 import { QuestionService } from '../question.service';
 import { AnswerlistComponent } from '../answerlist/answerlist.component';
@@ -25,6 +27,8 @@ export class QuestionlistComponent implements OnInit {
 
   @Input('temp') temp:any;
 
+  @Input('ftest') ftest:any;
+
   constructor(private questionService: QuestionService, private squery : SearchQueryPageComponent) { }
 
   ngOnInit(): void {
@@ -41,12 +45,16 @@ export class QuestionlistComponent implements OnInit {
     });
   }
 
+  ngOnChanges(changes: SimpleChanges) {
+    this.seachQueList = this.squery.temp;
+    this.toogleques = !this.toogleques;
+  }
+
   showans= (i) => {
     this.showVar[i] = !this.showVar[i];
   }
 
   showsearchQues() {
-    this.seachQueList=this.squery.temp;
     console.log(this.temp);
     this.toogleques = !this.toogleques;
   }
