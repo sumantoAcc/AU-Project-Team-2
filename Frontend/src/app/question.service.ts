@@ -20,6 +20,6 @@ export class QuestionService {
 
     getQuestions(userId) {
       console.log(this.uid);
-      return this.http.get<any>('/api/userquestions/1'+ this.uid);
+      return this.http.get<any>('/api/userquestions/'+ this.uid);
     }
 }

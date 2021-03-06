@@ -14,6 +14,8 @@ import { AnswerlistComponent } from '../answerlist/answerlist.component';
 export class QuestionlistComponent implements OnInit {
   questionlist= [];
 
+  queId: number;
+
   showVar: boolean = false;
 
   @Input() userId: number;
@@ -26,6 +28,7 @@ export class QuestionlistComponent implements OnInit {
         this.questionlist.push({
           title: data[i].title,
           body: data[i].body,
+          qid: data[i].quesId,
         });
       }
     });
