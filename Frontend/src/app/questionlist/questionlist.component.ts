@@ -47,7 +47,7 @@ export class QuestionlistComponent implements OnInit {
 
   ngOnChanges(changes: SimpleChanges) {
     this.seachQueList = this.squery.temp;
-    this.toogleques = !this.toogleques;
+    this.toogleques = false;
   }
 
   showans= (i) => {
@@ -56,6 +56,6 @@ export class QuestionlistComponent implements OnInit {
 
   showsearchQues() {
     console.log(this.temp);
-    this.toogleques = !this.toogleques;
+    this.toogleques = true;
   }
 }
