@@ -1,5 +1,7 @@
 package com.au.discussionforum.model;
 
+import java.util.Comparator;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,9 +11,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class Question {
+public class Question implements Comparator<Question>{
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int quesId;
 	
 	@ManyToOne
@@ -28,6 +30,7 @@ public class Question {
 	@Column(columnDefinition="TEXT")
 	private String body;
 	private boolean marked;
+	
 	public int getQuesId() {
 		return quesId;
 	}
@@ -69,6 +72,15 @@ public class Question {
 	public String toString() {
 		return "Question [quesId=" + quesId + ", user=" + user + ", topic=" + topic + ", title=" + title + ", body="
 				+ body + ", marked=" + marked + "]";
+	}
+	@Override
+	public int compare(Question o1, Question o2) {
+		Integer q1 = o1.getQuesId();
+		Integer q2 = o2.getQuesId();
+		if(q1.compareTo(q2)>0)
+			return 1;
+		else
+			return 0;
 	}
 	
 	

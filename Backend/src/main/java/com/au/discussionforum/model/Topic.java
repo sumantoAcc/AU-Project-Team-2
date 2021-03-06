@@ -8,7 +8,7 @@ import javax.persistence.Id;
 @Entity
 public class Topic {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int topicId;
 	
 	private String topicName;

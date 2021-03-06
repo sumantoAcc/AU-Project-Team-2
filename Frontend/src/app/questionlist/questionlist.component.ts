@@ -3,7 +3,7 @@
 /* eslint-disable no-useless-constructor */
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-empty-function */
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit,OnChanges } from '@angular/core';
 import { QuestionService } from '../question.service';
 @Component({
   selector: 'app-questionlist',
@@ -11,7 +11,7 @@ import { QuestionService } from '../question.service';
   styleUrls: ['./questionlist.component.css'],
 })
 export class QuestionlistComponent implements OnInit {
-  questionlist= [];
+  questionlist = [];
 
   queId: number;
 
@@ -21,8 +21,8 @@ export class QuestionlistComponent implements OnInit {
 
   constructor(private questionService: QuestionService) { }
 
-  ngOnInit(): void {
-    this.questionService.getQuestions().subscribe((data) => {
+  async ngOnInit() {
+    await this.questionService.getQuestions().subscribe((data) => {
       for (let i = 0; i < data.length; i += 1) {
         this.showVar.push(false);
         this.questionlist.push({
@@ -34,7 +34,9 @@ export class QuestionlistComponent implements OnInit {
     });
   }
 
-  showans= (i) => {
+
+
+  showans = (i) => {
     // eslint-disable-next-line eqeqeq
     this.showVar[i] = this.showVar[i] != true;
   }

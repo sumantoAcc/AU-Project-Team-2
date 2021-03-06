@@ -13,10 +13,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.au.discussionforum.model.QuesKeywords;
 import com.au.discussionforum.model.Question;
+import com.au.discussionforum.model.Topic;
 import com.au.discussionforum.model.User;
 import com.au.discussionforum.service.QuesKeywordsService;
 import com.au.discussionforum.service.QuestionService;
-
+import com.au.discussionforum.service.TopicService;
+import com.au.discussionforum.service.UserService;
 
 @RestController
 public class QuestionController {
@@ -26,26 +28,51 @@ public class QuestionController {
 	@Autowired
 	QuestionService questionService;
 	
-	@PostMapping(path = "/api/question")
-    public List<Question> getQuestions(@RequestBody QuesKeywords quesKeywords) {
+	@Autowired
+	UserService userService;
+	
+	@Autowired
+	TopicService topicService;
+	
+	@PostMapping(path = "/api/question/keywords")
+    public List<Question> getQuestionsByKeyword(@RequestBody QuesKeywords quesKeywords) {
 			
-			List<String> keywords = Arrays.asList(quesKeywords.getKeyword().split(";"));
-			List<Question> questionList = new ArrayList<>(); 
-			for(String keyword : keywords) {
-				System.out.println(keyword);
-				questionList.addAll(quesKeywordsService.getQuestionByKeyword(keyword));
-			}
-			for(Question question : questionList) {
-        		System.out.println(question);
-        	}
-        	return questionList;
+		List<String> keywords = Arrays.asList(quesKeywords.getKeyword().split(","));
+		List<Question> questionList = quesKeywordsService.getQuestionByKeyword(keywords);
+		questionList = questionService.getSortedQuestionList(questionList);
+		
+    	return questionList;
     }
 	
 	@GetMapping(path = "/api/userquestions/{uid}")
-	public List<Question> findQuestions(@PathVariable("uid") int userId) {
+	public List<Question> getQuestionsByUser(@PathVariable("uid") int userId) {
 		
-    	List<Question> questions = questionService.getQuestionbyUser(userId);
-    	return questions;
+		return questionService.getQuestionByUser(userId);
 	}
 	
+	@PostMapping(path = "/api/addquestion/{keyword}")
+	public void addQuestion(@RequestBody Question q,@PathVariable String keyword) {
+		Question question = new Question();
+		User user = userService.getUserByUserId(q.getUser().getUserId());
+		Topic topic = topicService.getTopicById(q.getTopic().getTopicId());
+		
+		question.setTitle(q.getTitle());
+		question.setBody(q.getBody());
+		question.setMarked(false);
+		question.setUser(user);
+		question.setTopic(topic);
+		
+		question = questionService.addQuestion(question);
+		System.out.println(keyword);
+		List<String> keywords = Arrays.asList(keyword.split(","));
+		
+		for(String key : keywords) {
+			System.out.println(key);
+			QuesKeywords quesKeywords = new QuesKeywords();
+			quesKeywords.setQuestion(question);
+			quesKeywords.setKeyword(key);
+			quesKeywordsService.addQuesKeywords(quesKeywords);
+		}
+		
+	} 
 }
