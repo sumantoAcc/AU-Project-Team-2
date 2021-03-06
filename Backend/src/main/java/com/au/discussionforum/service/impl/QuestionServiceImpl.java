@@ -24,37 +24,9 @@ public class QuestionServiceImpl implements QuestionService{
 	
 	@Autowired
     QuestionRepository questionRepository;
-	
-//	 public static <Question, Integer extends Comparable<Integer> > Map<Question, Integer> valueSort(final Map<Question, Integer> map){ 
-//        // Static Method with return type Map and 
-//        // extending comparator class which compares values 
-//        // associated with two keys 
-//        Comparator<Question> valueComparator = new Comparator<Question>() { 
-//            
-//                  // return comparison results of values of 
-//                  // two keys 
-//                  public int compare(Question k1, Question k2) 
-//                  { 
-//                      int comp = map.get(k1).compareTo( 
-//                          map.get(k2)); 
-//                      if (comp == 0) 
-//                          return 1; 
-//                      else
-//                          return comp; 
-//                  } 
-//            
-//              }; 
-//        
-//        // SortedMap created using the comparator 
-//        Map<Question, Integer> sorted = new TreeMap<Question, Integer>(valueComparator); 
-//        
-//        sorted.putAll(map); 
-//        
-//        return sorted; 
-//    } 
 	 
-	 
-	public List<Question> getSortedQuestionList(List<Question> questionList){		
+	public List<Question> getSortedQuestionList(List<Question> questionList){	
+		
 		List<Question> sortedQuestionList = new ArrayList<Question>();
 		Map<Question,Integer> questionCount = new HashMap<Question, Integer>();
 		for(Question q : questionList) {
@@ -80,6 +52,10 @@ public class QuestionServiceImpl implements QuestionService{
 
 	public List<Question> getQuestionByUser(int userId) {
 		return questionRepository.findByUserUserId(userId);
+	}
+	
+	public Question addQuestion(Question q) {
+		return questionRepository.save(q);
 	}
 	
 }

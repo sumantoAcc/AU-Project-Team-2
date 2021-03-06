@@ -27,4 +27,8 @@ public class QuesKeywordsServiceImpl implements QuesKeywordsService{
 			
 		return questions;
 	}
+
+	public void addQuesKeywords(QuesKeywords quesKeywords) {
+		quesKeywordsRepository.save(quesKeywords);		
+	}
 }

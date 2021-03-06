@@ -30,6 +30,7 @@ public class Question implements Comparator<Question>{
 	@Column(columnDefinition="TEXT")
 	private String body;
 	private boolean marked;
+	
 	public int getQuesId() {
 		return quesId;
 	}
