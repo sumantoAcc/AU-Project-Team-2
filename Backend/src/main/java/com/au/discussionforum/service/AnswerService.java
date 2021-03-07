@@ -8,4 +8,6 @@ public interface AnswerService {
 	List<Answer> getAnswerByQuesId(int quesId);
 	Answer getAnswerByAnswerId(int ansId);
 	void setCorrectAnswer(Answer answer);
+	Boolean addAnswer(Answer answer);
+	
 }

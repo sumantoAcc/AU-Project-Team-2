@@ -19,6 +19,16 @@ public class QuesKeywords {
 	
 	private String keyword;
 
+	public QuesKeywords(int quesKeywordsId, Question question, String keyword) {
+		super();
+		this.quesKeywordsId = quesKeywordsId;
+		this.question = question;
+		this.keyword = keyword;
+	}
+
+	public QuesKeywords() {
+	}
+
 	public int getQuesKeywordsId() {
 		return quesKeywordsId;
 	}

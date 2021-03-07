@@ -15,10 +15,13 @@ import com.au.discussionforum.model.QuesKeywords;
 import com.au.discussionforum.model.Question;
 import com.au.discussionforum.model.Topic;
 import com.au.discussionforum.model.User;
+import com.au.discussionforum.model.UserTopic;
+import com.au.discussionforum.service.EmailService;
 import com.au.discussionforum.service.QuesKeywordsService;
 import com.au.discussionforum.service.QuestionService;
 import com.au.discussionforum.service.TopicService;
 import com.au.discussionforum.service.UserService;
+import com.au.discussionforum.service.UserTopicService;
 
 @RestController
 public class QuestionController {
@@ -32,7 +35,14 @@ public class QuestionController {
 	UserService userService;
 	
 	@Autowired
+	UserTopicService userTopicService;
+	
+	@Autowired
 	TopicService topicService;
+
+	
+	@Autowired
+	EmailService emailService;
 	
 	@PostMapping(path = "/api/question/keywords")
     public List<Question> getQuestionsByKeyword(@RequestBody QuesKeywords quesKeywords) {
@@ -63,6 +73,7 @@ public class QuestionController {
 		question.setTopic(topic);
 		
 		question = questionService.addQuestion(question);
+		
 		System.out.println(keyword);
 		List<String> keywords = Arrays.asList(keyword.split(","));
 		
@@ -73,6 +84,24 @@ public class QuestionController {
 			quesKeywords.setKeyword(key);
 			quesKeywordsService.addQuesKeywords(quesKeywords);
 		}
-		
+		try {
+			List<User> users = userTopicService.getUsersByTopic(topic.getTopicId());
+			for(User u : users) {
+				emailService.sendSimpleMessage(u.getEmail(), "New Question Added", "Someone asked Question related to " + topic.getTopicName()+" visit your profile for answering the question");
+			}
+		}catch(Exception e) {
+			
+		}
 	} 
+	
+	@GetMapping(path = "/api/questions/{uid}")
+	public List<Question> getQuestionsByTopic(@PathVariable("uid") int userId) {
+		List <UserTopic> topics=userTopicService.getTopicByUser(userId);
+		List <Question> res=new ArrayList<>();
+		for(UserTopic topic: topics) {
+			res.addAll(questionService.getQuestionByTopic(topic.getTopic().getTopicId()));
+		}
+		
+		return res;
+	}
 }
