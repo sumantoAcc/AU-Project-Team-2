@@ -5,10 +5,9 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.au.discussionforum.model.Answer;
+import com.au.discussionforum.model.UserTopic;
 
 @Repository
-public interface AnswerRepository extends JpaRepository<Answer,Long>{
-
-	List<Answer> findByQuestionQuesId(int keyword);
+public interface UserTopicRepository extends JpaRepository<UserTopic, Long>{
+	List <UserTopic> findByUserUserId(int userId);
 }

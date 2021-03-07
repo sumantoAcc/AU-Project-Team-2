@@ -1,69 +1,88 @@
 package com.au.discussionforum.model;
 
-public class Question {
+import java.util.Comparator;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+@Entity
+public class Question implements Comparator<Question>{
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int quesId;
-	private int userId;
-	private int topicId;
+	
+	@ManyToOne
+	@JoinColumn(name="user_id")
+	private User user;
+	
+	@ManyToOne
+	@JoinColumn(name="topic_id")
+	private Topic topic;
+	
+	@Column(columnDefinition="TEXT")
 	private String title;
+	
+	@Column(columnDefinition="TEXT")
 	private String body;
 	private boolean marked;
 	
-	public Question(int quesId, int userId, int topicId, String title, String body, boolean marked) {
-		this.quesId = quesId;
-		this.userId = userId;
-		this.topicId = topicId;
-		this.title = title;
-		this.body = body;
-		this.marked = marked;
-	}
-
 	public int getQuesId() {
 		return quesId;
 	}
-
 	public void setQuesId(int quesId) {
 		this.quesId = quesId;
 	}
-
-	public int getUserId() {
-		return userId;
+	public User getUser() {
+		return user;
 	}
-
-	public void setUserId(int userId) {
-		this.userId = userId;
+	public void setUser(User user) {
+		this.user = user;
 	}
-
-	public int getTopicId() {
-		return topicId;
+	public Topic getTopic() {
+		return topic;
 	}
-
-	public void setTopicId(int topicId) {
-		this.topicId = topicId;
+	public void setTopic(Topic topic) {
+		this.topic = topic;
 	}
-
 	public String getTitle() {
 		return title;
 	}
-
 	public void setTitle(String title) {
 		this.title = title;
 	}
-
 	public String getBody() {
 		return body;
 	}
-
 	public void setBody(String body) {
 		this.body = body;
 	}
-
 	public boolean isMarked() {
 		return marked;
 	}
-
 	public void setMarked(boolean marked) {
 		this.marked = marked;
 	}
 	
+	@Override
+	public String toString() {
+		return "Question [quesId=" + quesId + ", user=" + user + ", topic=" + topic + ", title=" + title + ", body="
+				+ body + ", marked=" + marked + "]";
+	}
+	@Override
+	public int compare(Question o1, Question o2) {
+		Integer q1 = o1.getQuesId();
+		Integer q2 = o2.getQuesId();
+		if(q1.compareTo(q2)>0)
+			return 1;
+		else
+			return 0;
+	}
+	
 	
 }
+

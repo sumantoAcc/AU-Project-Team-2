@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable import/extensions */
 /* eslint-disable import/no-unresolved */
 /* eslint-disable no-console */
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginService } from '../login.service';
 import { User } from '../model/user';
+import { QuestionService } from '../question.service';
 
 @Component({
   selector: 'app-login-page',
@@ -23,11 +25,17 @@ export class LoginPageComponent implements OnInit {
 
   err: String;
 
+  id : number;
+
+  profile: String;
+
   // eslint-disable-next-line no-useless-constructor
-  constructor(private router: Router, private loginservice : LoginService) {
+  constructor(private router: Router, private loginservice : LoginService, private questionService : QuestionService) {
     this.username = '';
     this.password = '';
     this.err = '';
+    this.id = -1;
+    this.profile='';
   }
 
   loggedIn() {
@@ -37,6 +45,9 @@ export class LoginPageComponent implements OnInit {
       if (!response) {
         this.err = 'Inavalid Username or Password';
       } else {
+        this.id = response.userId;
+        this.profile=response.photo;
+        this.questionService.uid = this.id;
         this.router.navigate(['/search']);
       }
     });

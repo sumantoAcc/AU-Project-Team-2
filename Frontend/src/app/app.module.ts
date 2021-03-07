@@ -9,19 +9,30 @@ import { AppComponent } from './app.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { SearchQueryPageComponent } from './search-query-page/search-query-page.component';
 import { AnswerQueryPageComponent } from './answer-query-page/answer-query-page.component';
-
+import {MatTreeModule} from '@angular/material/tree';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { QuestionlistComponent } from './questionlist/questionlist.component';
+import { AnswerlistComponent } from './answerlist/answerlist.component';
+import { QuestiontopiclistComponent } from './questiontopiclist/questiontopiclist.component'; 
+import {MatCardModule} from '@angular/material/card'
 @NgModule({
   declarations: [
     AppComponent,
     LoginPageComponent,
     SearchQueryPageComponent,
     AnswerQueryPageComponent,
+    QuestionlistComponent,
+    AnswerlistComponent,
+    QuestiontopiclistComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    MatTreeModule,
+    BrowserAnimationsModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent],
