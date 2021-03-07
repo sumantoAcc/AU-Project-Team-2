@@ -12,7 +12,7 @@ import javax.persistence.Table;
 @Entity
 public class UserTopic {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int userTopicId;
 	
 	@ManyToOne
@@ -53,3 +53,4 @@ public class UserTopic {
 	}
 	
 }
+

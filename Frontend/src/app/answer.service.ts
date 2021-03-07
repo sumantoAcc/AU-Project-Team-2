@@ -14,11 +14,11 @@ import { Answer } from './model/answer';
 })
 
 export class AnswerService {
-    alist: Answer[]= [{"body":"jdkjdkvkc"}, {"body":"jdkjdkvkc"}]
+  constructor(private http:HttpClient) { }
 
+  quid : number;
 
-    getAnswer(){
-        return this.alist;
-    }
+  getAnswer(quid) {
+    return this.http.get<any>(`/api/answer/${quid}`);
+  }
 }
-

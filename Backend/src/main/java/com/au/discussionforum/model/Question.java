@@ -13,7 +13,7 @@ import javax.persistence.ManyToOne;
 @Entity
 public class Question implements Comparator<Question>{
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int quesId;
 	
 	@ManyToOne
@@ -85,3 +85,4 @@ public class Question implements Comparator<Question>{
 	
 	
 }
+

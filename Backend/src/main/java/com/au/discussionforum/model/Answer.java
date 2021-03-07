@@ -11,7 +11,7 @@ import javax.persistence.ManyToOne;
 @Entity
 public class Answer {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int ansId;
 	@ManyToOne
 	@JoinColumn(name="user_id")
@@ -64,3 +64,4 @@ public class Answer {
 	
 	
 }
+

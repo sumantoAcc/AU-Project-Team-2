@@ -16,4 +16,16 @@ public class AnswerServiceImpl implements AnswerService{
 	public List<Answer> getAnswerByQuesId(int quesId){
 		return answerRepository.findByQuestionQuesId(quesId);
 	}
+	@Override
+	public Boolean addAnswer(Answer answer) {
+		try {
+			answerRepository.save(answer);
+			return true;	
+		}
+		catch (Exception e)
+		{
+			return false;
+		}
+	}
 }
+
