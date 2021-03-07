@@ -23,6 +23,10 @@ export class QuestionlistComponent implements OnInit {
 
   queId: number;
 
+  qlen1: number;
+
+  qlen2: number;
+
   showVar: boolean[] = [];
 
   @Input('temp') temp:any;
@@ -40,13 +44,16 @@ export class QuestionlistComponent implements OnInit {
           title: data[i].title,
           body: data[i].body,
           qid: data[i].quesId,
+          quphoto: data[i].user.photo,
         });
+        this.qlen2=this.questionlist.length;
       }
     });
   }
 
   ngOnChanges(changes: SimpleChanges) {
     this.seachQueList = this.squery.temp;
+    this.qlen1=this.seachQueList.length;
     this.toogleques = false;
   }
 

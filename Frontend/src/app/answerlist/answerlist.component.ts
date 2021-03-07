@@ -14,7 +14,8 @@ import { AnswerService } from '../answer.service';
   styleUrls: ['./answerlist.component.css'],
 })
 export class AnswerlistComponent implements OnInit {
-  ansList: Answer[] = [];
+  ansList=  [];
+  len: number;
 
   @Input() quesId : any;
 
@@ -27,11 +28,13 @@ export class AnswerlistComponent implements OnInit {
     this.answerService.getAnswer(this.quesId).subscribe((data) => {
       for (let i = 0; i < data.length; i += 1) {
         this.ansList.push({
-          user: data[i].user.userId,
+          user: data[i].user.username,
           body: data[i].answerBody,
           correctAnswer: data[i].question.marked,
+          aphoto: data[i].user.photo,
         });
       }
+      this.len=this.ansList.length;
     });
   }
 }

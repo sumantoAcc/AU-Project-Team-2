@@ -2,26 +2,20 @@
 <div *ngIf="toogleques">
 <h1>Questions</h1>
 <div *ngFor="let question of questionlist; index as i">
-    <div class="quesid">
-    <h1>{{question.title}}</h1>
-    <p>{{question.body}}</p>
-    <div *ngIf="showVar[i]">
-        <app-answerlist quesId={{question.qid}}></app-answerlist>
-        <button>Mark</button>
-    </div>
-</div>
-    <button (click)="showans(i)">ShowAns</button>
-</div>
-
-<!-- <div *ngFor="let question of questionlist; index as i">
     <mat-card class="example-card">
         <mat-card-header>
-            <div mat-card-avatar class="example-header-image"></div>
-            <mat-card-title><i>{{question.userId}}</i> <br>{{question.title}}</mat-card-title>
+            <div mat-card-avatar style="background-image: url({{question.quphoto}});
+            background-size: cover;"></div>
+            <mat-card-title>{{question.title}}</mat-card-title>
             <mat-card-subtitle>{{question.body}} </mat-card-subtitle>
         </mat-card-header>
-    
-        <button (click)="showans(i)">ShowAns</button>
+        
+        <!-- <div *ngIf="showVar[i]">
+            <app-answerlist quesId={{question.qid}}></app-answerlist>
+            <button>Mark</button>
+        </div> -->
+
+        <button class="button" (click)="showans(i)"><span>View answers</span></button>
         <mat-card-content>
             <div *ngIf="showVar[i]">
                 <p>
@@ -32,8 +26,9 @@
     </mat-card>
       
     </div>
+    
 
-</div> -->
+
 
 <div *ngIf="!toogleques">
     <h1>SQuestions</h1>
