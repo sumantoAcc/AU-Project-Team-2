@@ -12,7 +12,8 @@ import { AnswerQueryPageComponent } from './answer-query-page/answer-query-page.
 import {MatTreeModule} from '@angular/material/tree';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { QuestionlistComponent } from './questionlist/questionlist.component';
-import { AnswerlistComponent } from './answerlist/answerlist.component'; 
+import { AnswerlistComponent } from './answerlist/answerlist.component';
+import { QuestiontopiclistComponent } from './questiontopiclist/questiontopiclist.component'; 
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { AnswerlistComponent } from './answerlist/answerlist.component';
     AnswerQueryPageComponent,
     QuestionlistComponent,
     AnswerlistComponent,
+    QuestiontopiclistComponent,
   ],
   imports: [
     BrowserModule,

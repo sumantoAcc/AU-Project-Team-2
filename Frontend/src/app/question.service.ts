@@ -27,4 +27,8 @@ export class QuestionService {
     }
 
     Searching = (keywords : String) : Observable<any> => this.http.post<any>('/api/question/keywords', {"keyword":keywords});
+
+    getQuestionsbytopic(){
+      return this.http.get<any>(`/api/questions/${this.uid}`);
+    }
 }

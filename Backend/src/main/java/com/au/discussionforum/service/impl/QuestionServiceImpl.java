@@ -57,5 +57,14 @@ public class QuestionServiceImpl implements QuestionService{
 	public Question addQuestion(Question q) {
 		return questionRepository.save(q);
 	}
+	public List<Question> getQuestionByTopic(int topicId) {
+		List <Question> temp=questionRepository.findByTopicTopicId(topicId);
+		List <Question> res=new ArrayList<>();
+		for(Question t: temp) {
+			if(!t.isMarked())
+				res.add(t);
+		}
+		return res;
+	}
 	
 }

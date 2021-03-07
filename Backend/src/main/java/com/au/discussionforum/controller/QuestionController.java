@@ -15,6 +15,8 @@ import com.au.discussionforum.model.QuesKeywords;
 import com.au.discussionforum.model.Question;
 import com.au.discussionforum.model.Topic;
 import com.au.discussionforum.model.User;
+import com.au.discussionforum.model.UserTopic;
+import com.au.discussionforum.service.UserTopicService;
 import com.au.discussionforum.service.QuesKeywordsService;
 import com.au.discussionforum.service.QuestionService;
 import com.au.discussionforum.service.TopicService;
@@ -33,6 +35,9 @@ public class QuestionController {
 	
 	@Autowired
 	TopicService topicService;
+	
+	@Autowired
+	UserTopicService userTopicService;
 	
 	@PostMapping(path = "/api/question/keywords")
     public List<Question> getQuestionsByKeyword(@RequestBody QuesKeywords quesKeywords) {
@@ -74,5 +79,15 @@ public class QuestionController {
 			quesKeywordsService.addQuesKeywords(quesKeywords);
 		}
 		
-	} 
+	}
+	@GetMapping(path = "/api/questions/{uid}")
+	public List<Question> getQuestionsByTopic(@PathVariable("uid") int userId) {
+		List <UserTopic> topics=userTopicService.getTopicByUser(userId);
+		List <Question> res=new ArrayList<>();
+		for(UserTopic topic: topics) {
+			res.addAll(questionService.getQuestionByTopic(topic.getTopic().getTopicId()));
+		}
+		
+		return res;
+	}
 }
