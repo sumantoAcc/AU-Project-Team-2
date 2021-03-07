@@ -17,7 +17,7 @@
 
 <div *ngIf="!toogleques">
     <h1>SQuestions</h1>
-    <button>Add New Question</button>
+    <button (click)="addQues()">Add New Question</button>
 <div *ngFor="let question of seachQueList; index as i">
     <div class="quesid">
     <h1>{{question.title}}</h1>

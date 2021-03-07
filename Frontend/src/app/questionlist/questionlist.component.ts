@@ -5,10 +5,13 @@
 /* eslint-disable no-empty-function */
 import { Component, Input, OnInit } from '@angular/core';
 import { SimpleChanges } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Question } from '../model/question';
 import { QuestionService } from '../question.service';
 import { AnswerlistComponent } from '../answerlist/answerlist.component';
 import { SearchQueryPageComponent } from '../search-query-page/search-query-page.component';
+import { AddquestionsComponent } from '../addquestions/addquestions.component';
+
 @Component({
   selector: 'app-questionlist',
   templateUrl: './questionlist.component.html',
@@ -29,7 +32,7 @@ export class QuestionlistComponent implements OnInit {
 
   @Input('ftest') ftest:any;
 
-  constructor(private questionService: QuestionService, private squery : SearchQueryPageComponent) { }
+  constructor(private questionService: QuestionService, private squery : SearchQueryPageComponent, private box: MatDialog) { }
 
   ngOnInit(): void {
     this.toogleques = true;
@@ -48,6 +51,10 @@ export class QuestionlistComponent implements OnInit {
   ngOnChanges(changes: SimpleChanges) {
     this.seachQueList = this.squery.temp;
     this.toogleques = false;
+  }
+
+  addQues() {
+    this.box.open(AddquestionsComponent);
   }
 
   showans= (i) => {
