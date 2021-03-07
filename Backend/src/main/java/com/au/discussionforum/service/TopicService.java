@@ -1,5 +1,7 @@
 package com.au.discussionforum.service;
 
-public class TopicService {
+import com.au.discussionforum.model.Topic;
 
+public interface TopicService {
+	Topic getTopicById(int topicId);
 }
