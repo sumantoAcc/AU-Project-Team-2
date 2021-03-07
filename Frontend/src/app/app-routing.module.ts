@@ -14,8 +14,6 @@ const routes: Routes = [
   {
     path: 'search',
     component: SearchQueryPageComponent,
-
-    pathMatch: 'full',
   },
   {
     path: 'answer',

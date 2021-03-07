@@ -36,7 +36,7 @@ export class SearchQueryPageComponent implements OnInit {
   }
 
   quesSearch() {
-    this.temp = [];
+    this.temp=[];
     console.log(this.Qkeywords);
     this.questionService.Searching(this.Qkeywords).subscribe((data) => {
       for (let i = 0; i < data.length; i += 1) {

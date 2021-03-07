@@ -15,22 +15,25 @@ import { SearchQueryPageComponent } from '../search-query-page/search-query-page
   styleUrls: ['./questionlist.component.css'],
 })
 export class QuestionlistComponent implements OnInit {
-  questionlist = [];
+  questionlist= [];
+
   seachQueList=[];
+
   toogleques: boolean;
 
   queId: number;
 
   showVar: boolean[] = [];
 
-  @Input() userId: number;
   @Input('temp') temp:any;
 
   @Input('ftest') ftest:any;
-  constructor(private questionService: QuestionService) { }
 
-  async ngOnInit() {
-    await this.questionService.getQuestions().subscribe((data) => {
+  constructor(private questionService: QuestionService, private squery : SearchQueryPageComponent) { }
+
+  ngOnInit(): void {
+    this.toogleques = true;
+    this.questionService.getQuestions().subscribe((data) => {
       for (let i = 0; i < data.length; i += 1) {
         this.showVar.push(false);
         this.questionlist.push({
@@ -42,18 +45,17 @@ export class QuestionlistComponent implements OnInit {
     });
   }
 
-
-
-  showans = (i) => {
-    // eslint-disable-next-line eqeqeq
-    this.showVar[i] = this.showVar[i] != true;
-  }
-  showsearchQues() {
-    console.log(this.temp);
-    this.toogleques = !this.toogleques;
-  }
   ngOnChanges(changes: SimpleChanges) {
     this.seachQueList = this.squery.temp;
-    this.toogleques = !this.toogleques;
+    this.toogleques = false;
+  }
+
+  showans= (i) => {
+    this.showVar[i] = !this.showVar[i];
+  }
+
+  showsearchQues() {
+    console.log(this.temp);
+    this.toogleques = true;
   }
 }

@@ -8,4 +8,5 @@ public interface QuestionService {
 	List<Question> getSortedQuestionList(List<Question> questionList);
 	List<Question> getQuestionByUser(int userId);
 	Question addQuestion(Question q);
+	List<Question> getQuestionByTopic(int topicId);
 }

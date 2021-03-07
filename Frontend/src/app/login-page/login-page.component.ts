@@ -1,5 +1,4 @@
-/* eslint-disable padded-blocks */
-
+/* eslint-disable max-len */
 /* eslint-disable import/extensions */
 /* eslint-disable import/no-unresolved */
 /* eslint-disable no-console */
@@ -10,7 +9,6 @@ import { Router } from '@angular/router';
 import { LoginService } from '../login.service';
 import { User } from '../model/user';
 import { QuestionService } from '../question.service';
-
 
 @Component({
   selector: 'app-login-page',
@@ -30,18 +28,17 @@ export class LoginPageComponent implements OnInit {
   id : number;
 
   // eslint-disable-next-line no-useless-constructor
-  // eslint-disable-next-line max-len
   constructor(private router: Router, private loginservice : LoginService, private questionService : QuestionService) {
     this.username = '';
     this.password = '';
     this.err = '';
     this.id = -1;
-
   }
 
   loggedIn() {
     this.user = { username: this.username, password: this.password };
     this.loginservice.login(this.user).subscribe((response) => {
+      console.log(response);
       if (!response) {
         this.err = 'Inavalid Username or Password';
       } else {

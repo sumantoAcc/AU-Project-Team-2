@@ -9,3 +9,4 @@ public interface AnswerService {
 	List<Answer> getAnswerByQuesId(int quesId);
 	Boolean addAnswer(Answer answer);
 }
+

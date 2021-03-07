@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-console */
 /* eslint-disable import/no-unresolved */
 /* eslint-disable import/extensions */
 /* eslint-disable no-unused-vars */
@@ -11,11 +13,11 @@ import { AnswerService } from '../answer.service';
   templateUrl: './answerlist.component.html',
   styleUrls: ['./answerlist.component.css'],
 })
-// eslint-disable-next-line import/prefer-default-export
 export class AnswerlistComponent implements OnInit {
   ansList: Answer[] = [];
 
   @Input() quesId : any;
+
 
   // eslint-disable-next-line no-useless-constructor
   constructor(private answerService: AnswerService) { }
