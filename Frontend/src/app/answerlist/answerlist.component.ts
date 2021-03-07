@@ -14,10 +14,11 @@ import { AnswerService } from '../answer.service';
   styleUrls: ['./answerlist.component.css'],
 })
 export class AnswerlistComponent implements OnInit {
-  ansList: Answer[] = [];
+  ansList = [];
+
+  len: number;
 
   @Input() quesId : any;
-
 
   // eslint-disable-next-line no-useless-constructor
   constructor(private answerService: AnswerService) { }
@@ -27,11 +28,14 @@ export class AnswerlistComponent implements OnInit {
     this.answerService.getAnswer(this.quesId).subscribe((data) => {
       for (let i = 0; i < data.length; i += 1) {
         this.ansList.push({
-          user: data[i].user.userId,
+          user: data[i].user.username,
+          uidd: data[i].user.userId,
           body: data[i].answerBody,
           correctAnswer: data[i].question.marked,
+          aphoto: data[i].user.photo,
         });
       }
+      this.len=this.ansList.length;
     });
   }
 }

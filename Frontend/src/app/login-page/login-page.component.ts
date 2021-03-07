@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 /* eslint-disable import/extensions */
 /* eslint-disable import/no-unresolved */
 /* eslint-disable no-console */
@@ -28,7 +27,9 @@ export class LoginPageComponent implements OnInit {
   id : number;
 
   // eslint-disable-next-line no-useless-constructor
-  constructor(private router: Router, private loginservice : LoginService, private questionService : QuestionService) {
+  constructor(private router: Router,
+    private loginservice : LoginService,
+    private questionService : QuestionService) {
     this.username = '';
     this.password = '';
     this.err = '';

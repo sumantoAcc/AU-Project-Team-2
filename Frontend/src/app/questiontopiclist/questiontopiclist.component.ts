@@ -23,6 +23,8 @@ export class QuestiontopiclistComponent implements OnInit {
           title: data[i].title,
           body: data[i].body,
           qid: data[i].quesId,
+          quser: data[i].user.username,
+          qphoto: data[i].user.photo,
         });
       }
     });

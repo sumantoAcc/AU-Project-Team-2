@@ -7,6 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatTreeModule } from '@angular/material/tree';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatCardModule } from '@angular/material/card';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginPageComponent } from './login-page/login-page.component';
@@ -16,6 +17,7 @@ import { QuestionlistComponent } from './questionlist/questionlist.component';
 import { AnswerlistComponent } from './answerlist/answerlist.component';
 import { QuestiontopiclistComponent } from './questiontopiclist/questiontopiclist.component';
 import { AddquestionsComponent } from './addquestions/addquestions.component';
+import { AddanswersComponent } from './addanswers/addanswers.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,7 @@ import { AddquestionsComponent } from './addquestions/addquestions.component';
     AnswerlistComponent,
     QuestiontopiclistComponent,
     AddquestionsComponent,
+    AddanswersComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,6 +40,7 @@ import { AddquestionsComponent } from './addquestions/addquestions.component';
     BrowserAnimationsModule,
     MatDialogModule,
     ReactiveFormsModule,
+    MatCardModule,
 
   ],
   providers: [],
