@@ -3,17 +3,20 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatTreeModule } from '@angular/material/tree';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule } from '@angular/material/dialog';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { SearchQueryPageComponent } from './search-query-page/search-query-page.component';
 import { AnswerQueryPageComponent } from './answer-query-page/answer-query-page.component';
-import {MatTreeModule} from '@angular/material/tree';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { QuestionlistComponent } from './questionlist/questionlist.component';
 import { AnswerlistComponent } from './answerlist/answerlist.component';
-import { QuestiontopiclistComponent } from './questiontopiclist/questiontopiclist.component'; 
+import { QuestiontopiclistComponent } from './questiontopiclist/questiontopiclist.component';
+import { AddquestionsComponent } from './addquestions/addquestions.component';
+import { AddanswersComponent } from './addanswers/addanswers.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +27,8 @@ import { QuestiontopiclistComponent } from './questiontopiclist/questiontopiclis
     QuestionlistComponent,
     AnswerlistComponent,
     QuestiontopiclistComponent,
+    AddquestionsComponent,
+    AddanswersComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,6 +37,9 @@ import { QuestiontopiclistComponent } from './questiontopiclist/questiontopiclis
     FormsModule,
     MatTreeModule,
     BrowserAnimationsModule,
+    MatDialogModule,
+    ReactiveFormsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent],

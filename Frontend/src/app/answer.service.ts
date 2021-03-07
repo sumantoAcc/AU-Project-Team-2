@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 /* eslint-disable import/no-unresolved */
 /* eslint-disable import/extensions */
 /* eslint-disable no-unused-vars */
@@ -18,7 +19,11 @@ export class AnswerService {
 
   quid : number;
 
+  quesId_AddAns : number;
+
   getAnswer(quid) {
     return this.http.get<any>(`/api/answer/${quid}`);
   }
+
+    postAnswer = (answer : any) : Observable<any> => this.http.post<any>('/api/addanswers', answer);
 }

@@ -4,14 +4,16 @@ import { QuestionService } from '../question.service';
 @Component({
   selector: 'app-questiontopiclist',
   templateUrl: './questiontopiclist.component.html',
-  styleUrls: ['./questiontopiclist.component.css']
+  styleUrls: ['./questiontopiclist.component.css'],
 })
 export class QuestiontopiclistComponent implements OnInit {
-
   questiontopiclist=[];
+
   queId: number;
+
   showVar:boolean[]=[];
-  @Input() userId: number;     
+
+  @Input() userId: number;
 
   constructor(private questionService: QuestionService) { }
 
