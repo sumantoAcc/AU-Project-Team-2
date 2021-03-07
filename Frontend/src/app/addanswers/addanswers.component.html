@@ -1,0 +1,10 @@
+<div class="login-box">
+    <h2>Add Answer</h2>
+    <form [formGroup]='lecform'>
+      <div class="user-box">
+        <input formControlName="ansBody">
+        <label>Answer Body Here</label>
+      </div>
+      <button (click)="addAns()" class="button">Add</button>
+    </form>
+  </div>
