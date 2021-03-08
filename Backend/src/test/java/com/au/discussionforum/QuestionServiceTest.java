@@ -60,4 +60,38 @@ class QuestionServiceTest {
 		
 	}
 	
+	@Test
+	void getSortedQuestionListTest() {
+		
+		List<Question> q_List= new ArrayList<Question>();
+		
+		
+		User user1= new User(1,"abc@gmail.com","1234","Rupali","img.jpg");
+		User user2= new User(2,"mnp@gmail.com","900","Sakshi","img.jpg");
+		User user3= new User(3,"abc@gmail.com","1234","Aman","img.jpg");
+		Topic topic1= new Topic(1,"country");
+		Question ques1= new Question(1,user1,topic1,"national bird","Which is our national bird?",false);
+		
+		Topic topic2= new Topic(2,"art");
+		Question ques2= new Question(2,user2,topic2,"colr","Which is color of peace?",false);
+		
+		Topic topic3= new Topic(3,"games");
+		Question ques3= new Question(3,user3,topic3,"football","When was first match of football held? ",false);
+		
+		q_List.add(ques1);
+		q_List.add(ques1);
+		q_List.add(ques1);
+		q_List.add(ques2);
+		q_List.add(ques2);
+		q_List.add(ques3);
+		
+		List<Question> q_sorted_List= new ArrayList<Question>();
+		q_sorted_List.add(ques1);
+		q_sorted_List.add(ques2);
+		q_sorted_List.add(ques3);
+
+		System.out.println(questionService.getSortedQuestionList(q_List));
+		assertEquals(q_sorted_List,questionService.getSortedQuestionList(q_List));
+		
+	}
 }
