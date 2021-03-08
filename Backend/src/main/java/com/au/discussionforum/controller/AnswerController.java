@@ -1,6 +1,5 @@
 package com.au.discussionforum.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,32 +13,36 @@ import com.au.discussionforum.model.Answer;
 import com.au.discussionforum.model.Question;
 import com.au.discussionforum.model.User;
 import com.au.discussionforum.service.AnswerService;
-import com.au.discussionforum.service.QuesKeywordsService;
 import com.au.discussionforum.service.QuestionService;
-import com.au.discussionforum.service.TopicService;
 import com.au.discussionforum.service.UserService;
 
 @RestController
 public class AnswerController {
-	@Autowired
-	QuesKeywordsService quesKeywordsService;
 	
 	@Autowired
-	QuestionService questionService;
+	private AnswerService answerService;
 	
 	@Autowired
-	UserService userService;
-	
-	
-	
+	private QuestionService questionService;
+
 	@Autowired
-	AnswerService answerService;
+	private UserService userService;
 	
 	@GetMapping(path = "/api/answer/{id}")
     public List<Answer> getAnswers(@PathVariable("id") int quesId) {
 		
 		return answerService.getAnswerByQuesId(quesId);
     }
+	
+	@PostMapping(path = "/api/answer/markcorrect/{id}")
+	public void setCorrectAnswer(@PathVariable("id") int ansId) {
+		Answer answer = answerService.getAnswerByAnswerId(ansId);
+		answer.setCorrect(true);
+		Question question = answer.getQuestion();
+		question.setMarked(true);
+		questionService.addQuestion(question);
+		answerService.setCorrectAnswer(answer);
+	}
 	
 	@PostMapping(path = "/api/addanswers")
 	public Boolean addAnswers(@RequestBody Answer ans) {
@@ -53,22 +56,3 @@ public class AnswerController {
 		return answerService.addAnswer(answer);
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

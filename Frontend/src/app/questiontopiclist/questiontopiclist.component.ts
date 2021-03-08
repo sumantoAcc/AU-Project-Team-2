@@ -1,19 +1,24 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { AddanswersComponent } from '../addanswers/addanswers.component';
 import { QuestionService } from '../question.service';
-
+import { MatDialog } from '@angular/material/dialog';
+import { AnswerService } from '../answer.service';
 
 @Component({
   selector: 'app-questiontopiclist',
   templateUrl: './questiontopiclist.component.html',
-  styleUrls: ['./questiontopiclist.component.css']
+  styleUrls: ['./questiontopiclist.component.css'],
 })
 export class QuestiontopiclistComponent implements OnInit {
-
   questiontopiclist=[];
-  showVar:boolean[]=[];
-  @Input() userId: number;     
 
-  constructor(private questionService: QuestionService) { }
+  queId: number;
+
+  showVar:boolean[]=[];
+
+  @Input() userId: number;
+
+  constructor(private answerService: AnswerService,private box: MatDialog, private questionService: QuestionService) { }
 
   ngOnInit(): void {
     this.questionService.getQuestionsbytopic().subscribe((data) => {
@@ -32,5 +37,10 @@ export class QuestiontopiclistComponent implements OnInit {
 
   showans= (i) => {
     this.showVar[i] = this.showVar[i] != true;
+  }
+
+  addAns(qID) {
+    this.answerService.quesId_AddAns = qID;
+    this.box.open(AddanswersComponent);
   }
 }
