@@ -23,7 +23,7 @@ class TopicServiceTest {
 	
 	@Test
 	
-	public void getTopicByIdTest() {
+	void getTopicByIdTest() {
 		
 		int topic_id=2;
 		Topic topic= new Topic(2,"games");

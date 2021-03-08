@@ -32,7 +32,7 @@ class AnswerServiceTest {
 	
 	
 	@Test
-	public void getAnswerByQuesIdTest() {
+	void getAnswerByQuesIdTest() {
 		
 		int ques_id=2;
 		
@@ -55,7 +55,7 @@ class AnswerServiceTest {
 	}
 
 	@Test
-	public void getAnswerByAnswerIdTest() {
+	void getAnswerByAnswerIdTest() {
 		
 		int ans_id=1;
 		User user= new User(1,"abc@gmail.com","1234","Aman","img.jpg");
@@ -69,7 +69,7 @@ class AnswerServiceTest {
 	}
 	
 	@Test
-	public void setCorrectAnswerTest() {
+	void setCorrectAnswerTest() {
 		
 		User user= new User(1,"abc@gmail.com","1234","Aman","img.jpg");
 		Topic topic= new Topic(3,"games");
