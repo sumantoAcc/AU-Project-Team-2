@@ -1,6 +1,6 @@
 <div *ngIf="len">
     <div *ngFor="let answer of ansList">
-    <mat-card class="example-card">
+    <mat-card class="example-card" style="padding: 3%; background-color: var(--dark); color:var(--ligt);">
         <mat-card-header>
             <div mat-card-avatar style="background-image: url({{answer.aphoto}});
             background-size: cover;"></div>
@@ -11,8 +11,8 @@
         </mat-card-header><br>
         <mat-card-content>
             {{answer.body}}
-        </mat-card-content><br>
-    </mat-card>
+        </mat-card-content>
+    </mat-card><br>
     </div>
     </div>
     

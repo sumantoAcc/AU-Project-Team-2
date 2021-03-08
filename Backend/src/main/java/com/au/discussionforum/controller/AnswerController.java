@@ -34,8 +34,8 @@ public class AnswerController {
 		return answerService.getAnswerByQuesId(quesId);
     }
 	
-	@PostMapping(path = "/api/answer/markcorrect/{id}")
-	public void setCorrectAnswer(@PathVariable("id") int ansId) {
+	@PostMapping(path = "/api/answer/markcorrect/")
+	public void setCorrectAnswer(@RequestBody int ansId) {
 		Answer answer = answerService.getAnswerByAnswerId(ansId);
 		answer.setCorrect(true);
 		Question question = answer.getQuestion();

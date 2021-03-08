@@ -1,12 +1,13 @@
-<h1>Its Search query</h1>
-<button (click)="answerTab()">Answer Query</button>
-<button (click)="logout()">LogOut</button>
-
+<div class="navbar">
+    <button class="ba">Search</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <button class="b" (click)="answerTab()">Answer</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <button class="b" (click)="logout()">LogOut</button>
+</div>
 <br>
 
-  
-<input name="search" placeholder="tagsForSearch" [(ngModel)]="Qkeywords" [ngModelOptions]="{standalone: true}">
-<button (click)="quesSearch()">Submit</button>
-
+<div class="searc"> 
+<input class="s" name="search" placeholder="Enter comma separated keywords here" [(ngModel)]="Qkeywords" [ngModelOptions]="{standalone: true}"><br>
+<button class="b" style="margin-left: 11%;" (click)="quesSearch()">Submit</button>
+</div>
 <app-questionlist [temp]='temp' [ftest]='ftest'></app-questionlist>
-
+<br><br><br>

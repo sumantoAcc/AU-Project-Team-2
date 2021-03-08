@@ -18,6 +18,7 @@ import { AnswerlistComponent } from './answerlist/answerlist.component';
 import { QuestiontopiclistComponent } from './questiontopiclist/questiontopiclist.component';
 import { AddquestionsComponent } from './addquestions/addquestions.component';
 import { AddanswersComponent } from './addanswers/addanswers.component';
+import { NavbarModule, WavesModule, ButtonsModule } from 'angular-bootstrap-md';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,9 @@ import { AddanswersComponent } from './addanswers/addanswers.component';
     MatDialogModule,
     ReactiveFormsModule,
     MatCardModule,
-
+    NavbarModule, 
+    WavesModule, 
+    ButtonsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

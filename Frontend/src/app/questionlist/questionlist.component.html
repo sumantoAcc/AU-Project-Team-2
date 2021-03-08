@@ -1,6 +1,5 @@
-<button (click)="showsearchQues()">Home</button>
+<button class="b" style="margin-left: 47.3%;" (click)="showsearchQues()">Home</button>
 <div *ngIf="toogleques">
-<h1>Questions</h1>
 <div *ngIf='qlen2'>
 <div *ngFor="let question of questionlist; index as i">
     <mat-card class="example-card">
@@ -10,13 +9,8 @@
             <mat-card-title>{{question.title}}</mat-card-title>
             <mat-card-subtitle>{{question.body}} </mat-card-subtitle>
         </mat-card-header>
-        
-        <!-- <div *ngIf="showVar[i]">
-            <app-answerlist quesId={{question.qid}}></app-answerlist>
-            <button>Mark</button>
-        </div> -->
 
-        <button class="button" (click)="showans(i)"><span>View answers</span></button>
+        <button class="button" (click)="showans(i)">View answers</button>
         <mat-card-content>
             <div *ngIf="showVar[i]">
                 <p>
@@ -29,8 +23,8 @@
     </div>
 </div>
 
-<div *ngIf='!qlen2'>
-    <span>No Questions Found</span>
+<div style="color:var(--ligt);  font-size: 17px; margin-top: 8%; margin-left: 43%;" *ngIf='toogleques && !qlen2'>
+    <span>You have not asked any questions!</span>
 </div>
 
 </div>
@@ -39,14 +33,14 @@
 
 
 <div *ngIf="!toogleques">
-    <h1>SQuestions</h1>
-    <button (click)="addQues()">Add New Question</button>
+    <button class="b" style="margin-left: 43%;" (click)="addQues()">Ask a question</button>
 <div *ngFor="let squestion of seachQueList; index as i">
     <mat-card class="example-card">
         <mat-card-header>
             <div mat-card-avatar style="background-image: url({{squestion.quphoto}});
             background-size: cover;"></div>
-            <mat-card-title>{{squestion.title}}</mat-card-title>
+            <mat-card-title>{{squestion.quser}}</mat-card-title> 
+            <mat-card-subtitle>{{squestion.title}}</mat-card-subtitle>
             <mat-card-subtitle>{{squestion.body}} </mat-card-subtitle>
         </mat-card-header>
         <button class="button" (click)="showans(i)"><span>View answers</span></button>
@@ -59,9 +53,9 @@
         </mat-card-content>
     </mat-card>
 </div>
-<div *ngIf='!qlen1'>
+<div *ngIf='!toogleques && !qlen1'>
     <br>
     <br>
-    <span>No Questions Found</span>
+    <span>No Questions Found{{toogleques}}</span>
 </div>
 </div>

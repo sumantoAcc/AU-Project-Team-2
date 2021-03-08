@@ -32,6 +32,10 @@ export class QuestionlistComponent implements OnInit {
 
   showVar: boolean[] = [];
 
+  quphoto: String;
+
+  quser: String;
+
   @Input('temp') temp:any;
 
   @Input('ftest') ftest:any;
@@ -48,6 +52,7 @@ export class QuestionlistComponent implements OnInit {
           body: data[i].body,
           qid: data[i].quesId,
           quphoto: data[i].user.photo,
+          quser:"jbj",
         });
         this.qlen2 = this.questionlist.length;
       }

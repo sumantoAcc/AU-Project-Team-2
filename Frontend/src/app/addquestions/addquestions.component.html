@@ -1,8 +1,8 @@
 <div class="login-box">
-    <h2>Add Question</h2>
+    <h3><i>ASK QUESTION</i></h3>
     <form [formGroup]='quesObj'>
-        <label for="input">Choose your topic:</label> 
-<select name="Topic">
+        <label style="color: var(--dark);" for="input">Choose your topic:   </label> 
+<select id="demo" name="Topic" class="c">
 <option value="1">Badminton</option>
 <option value="2">Algorithm</option>
 <option value="3">Technology</option>
@@ -10,18 +10,21 @@
 <option value="5">Psychiatry</option>
 <option value="6">Chess</option>
 </select>
+<br><br><br>
       <div class="user-box">
         <input formControlName="Keywords">
-        <label>Keywords</label>
+        <label>Keywords (comma separated)</label>
       </div>
       <div class="user-box">
-        <input formControlName="quesTitle">
-        <label>Tile</label>
+        <label>Title:</label>
+        <br><br>
+        <textarea rows="3" cols="50" formControlName="quesTitle" class="tx"></textarea>
       </div>
       <div class="user-box">
-        <input formControlName="quesDesc">
-        <label>Description</label>
-      </div>
+        <label>Description:</label>
+        <br><br>
+        <textarea rows="5" cols="50" formControlName="quesDesc" class="tx"></textarea>
+      </div> <br>
       <button class="button">Add</button>
     </form>
   </div>

@@ -44,6 +44,8 @@ export class SearchQueryPageComponent implements OnInit {
           title: data[i].title,
           body: data[i].body,
           qid: data[i].quesId,
+          quphoto: data[i].user.photo,
+          quser: data[i].user.username,
         });
       }
     });
