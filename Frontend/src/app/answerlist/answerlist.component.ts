@@ -1,3 +1,4 @@
+/* eslint-disable import/prefer-default-export */
 /* eslint-disable no-undef */
 /* eslint-disable no-console */
 /* eslint-disable import/no-unresolved */
@@ -35,7 +36,7 @@ export class AnswerlistComponent implements OnInit {
           aphoto: data[i].user.photo,
         });
       }
-      this.len=this.ansList.length;
+      this.len = this.ansList.length;
     });
   }
 }

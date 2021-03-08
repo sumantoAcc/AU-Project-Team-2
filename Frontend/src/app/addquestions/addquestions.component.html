@@ -1,15 +1,18 @@
 <div class="login-box">
     <h2>Add Question</h2>
     <form [formGroup]='quesObj'>
-        <label for="input">Choose your topic:</label> 
-<select name="Topic">
-<option value="1">Badminton</option>
-<option value="2">Algorithm</option>
-<option value="3">Technology</option>
-<option value="4">Framework</option>
-<option value="5">Psychiatry</option>
-<option value="6">Chess</option>
-</select>
+      <select formControlName="topic">
+        <option value="badminton">badminton</option>
+        <option value="algorithm">algorithm</option>
+        <option value="technology">technology</option>
+        <option value="framework">framework</option>
+        <option value="psychiatry">psychiatry</option>
+        <option value="chess">chess</option>
+      </select>
+      <label>Topic</label>
+      <br>
+      <br>
+      <br>
       <div class="user-box">
         <input formControlName="Keywords">
         <label>Keywords</label>
@@ -22,6 +25,6 @@
         <input formControlName="quesDesc">
         <label>Description</label>
       </div>
-      <button class="button">Add</button>
+      <button class="button" (click)='addQues()'>Add</button>
     </form>
   </div>

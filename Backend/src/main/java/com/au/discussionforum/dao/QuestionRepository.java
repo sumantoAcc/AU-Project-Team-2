@@ -11,4 +11,5 @@ import com.au.discussionforum.model.Question;
 public interface QuestionRepository extends JpaRepository<Question,Long>{
 	List<Question> findByUserUserId(int userId);
 	List<Question> findByTopicTopicId(int topicId);
+	Question findByQuesId(int quesId);
 }

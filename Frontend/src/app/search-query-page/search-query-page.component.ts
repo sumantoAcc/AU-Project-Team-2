@@ -35,12 +35,14 @@ export class SearchQueryPageComponent implements OnInit {
   }
 
   logout() {
+    localStorage.removeItem('token');
     this.router.navigate(['']);
   }
 
   quesSearch() {
     this.temp=[];
     console.log(this.Qkeywords);
+    this.questionService.oldkey=this.Qkeywords;
     this.questionService.Searching(this.Qkeywords).subscribe((data) => {
       for (let i = 0; i < data.length; i += 1) {
         this.temp.push({

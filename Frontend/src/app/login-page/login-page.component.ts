@@ -44,9 +44,9 @@ export class LoginPageComponent implements OnInit {
         this.err = 'Inavalid Username or Password';
       } else {
         this.id = response.userId;
-        this.questionService.uid = this.id;
+        localStorage.setItem('token', JSON.stringify(this.id));
+        this.questionService.uid=this.id;
         this.router.navigate(['/search']);
-        //localStorage.setItem('token', this.username);
       }
     });
   }
