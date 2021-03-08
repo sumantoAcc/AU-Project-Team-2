@@ -1,9 +1,11 @@
+/* eslint-disable max-classes-per-file */
 /* eslint-disable no-useless-constructor */
 /* eslint-disable import/prefer-default-export */
 /* eslint-disable no-empty-function */
 import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { FormControl, FormGroup } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { QuestionlistComponent } from '../questionlist/questionlist.component';
 import { QuestionService } from '../question.service';
 
@@ -16,12 +18,13 @@ export class AddquestionsComponent implements OnInit {
   quesObj: FormGroup;
 
   constructor(private dialogRef: MatDialogRef<QuestionlistComponent>,
-    private questionService: QuestionService) { }
+    private questionService: QuestionService,
+    private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.quesObj = new FormGroup({
       topic: new FormControl(''),
-      Keywords: new FormControl(''),
+      Keywords: new FormControl(this.questionService.oldkey),
       quesTitle: new FormControl(''),
       quesDesc: new FormControl(''),
     });
@@ -55,6 +58,10 @@ export class AddquestionsComponent implements OnInit {
 
       keyword: `${this.Keywords.value},${this.questionService.oldkey}`,
     };
+
+    this.snackBar.open('Adding Question', 'wait', {
+      duration: 5000,
+   });
     console.log(quesObject);
     this.questionService.postQuestion(quesObject).subscribe(() => {
       this.dialogRef.close();

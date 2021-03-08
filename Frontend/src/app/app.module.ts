@@ -8,6 +8,7 @@ import { MatTreeModule } from '@angular/material/tree';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatCardModule } from '@angular/material/card';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginPageComponent } from './login-page/login-page.component';
@@ -41,7 +42,7 @@ import { AddanswersComponent } from './addanswers/addanswers.component';
     MatDialogModule,
     ReactiveFormsModule,
     MatCardModule,
-
+    MatSnackBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

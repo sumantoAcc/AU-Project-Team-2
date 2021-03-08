@@ -1,3 +1,6 @@
+/* eslint-disable no-useless-constructor */
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-empty-function */
 /* eslint-disable import/prefer-default-export */
 import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
