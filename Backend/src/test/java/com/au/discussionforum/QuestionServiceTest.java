@@ -97,11 +97,11 @@ class QuestionServiceTest {
 		
 		List<Question> q_sorted_List= new ArrayList<Question>();
 		
-		q_sorted_List.add(ques4);
-		q_sorted_List.add(ques3);
 		q_sorted_List.add(ques1);
-		q_sorted_List.add(ques6);
+		q_sorted_List.add(ques3);
+		q_sorted_List.add(ques4);
 		q_sorted_List.add(ques2);
+		q_sorted_List.add(ques6);
 		q_sorted_List.add(ques5);
 		
 		assertEquals(q_sorted_List,questionService.getSortedQuestionList(q_List));

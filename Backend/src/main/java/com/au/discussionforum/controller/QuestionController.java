@@ -16,6 +16,7 @@ import com.au.discussionforum.model.Question;
 import com.au.discussionforum.model.Topic;
 import com.au.discussionforum.model.User;
 import com.au.discussionforum.model.UserTopic;
+import com.au.discussionforum.model.DTO.QuestionDTO;
 import com.au.discussionforum.service.EmailService;
 import com.au.discussionforum.service.QuesKeywordsService;
 import com.au.discussionforum.service.QuestionService;
@@ -45,9 +46,9 @@ public class QuestionController {
 	EmailService emailService;
 	
 	@PostMapping(path = "/api/question/keywords")
-    public List<Question> getQuestionsByKeyword(@RequestBody QuesKeywords quesKeywords) {
+    public List<Question> getQuestionsByKeyword(@RequestBody String quesKeywords) {
 			
-		List<String> keywords = Arrays.asList(quesKeywords.getKeyword().split(","));
+		List<String> keywords = Arrays.asList(quesKeywords.split(","));
 		List<Question> questionList = quesKeywordsService.getQuestionByKeyword(keywords);
 		questionList = questionService.getSortedQuestionList(questionList);
 		
@@ -60,22 +61,22 @@ public class QuestionController {
 		return questionService.getQuestionByUser(userId);
 	}
 	
-	@PostMapping(path = "/api/addquestion/{keyword}")
-	public void addQuestion(@RequestBody Question q,@PathVariable String keyword) {
+	@PostMapping(path = "/api/addquestion")
+	public void addQuestion(@RequestBody QuestionDTO questionDTO) {
 		Question question = new Question();
-		User user = userService.getUserByUserId(q.getUser().getUserId());
-		Topic topic = topicService.getTopicById(q.getTopic().getTopicId());
+		User user = userService.getUserByUserId(questionDTO.getUserId());
+		Topic topic = topicService.getTopicByName(questionDTO.getTopicName());
 		
-		question.setTitle(q.getTitle());
-		question.setBody(q.getBody());
+		question.setTitle(questionDTO.getTitle());
+		question.setBody(questionDTO.getBody());
 		question.setMarked(false);
 		question.setUser(user);
 		question.setTopic(topic);
 		
 		question = questionService.addQuestion(question);
 		
-		System.out.println(keyword);
-		List<String> keywords = Arrays.asList(keyword.split(","));
+		System.out.println(questionDTO.getKeyword());
+		List<String> keywords = Arrays.asList(questionDTO.getKeyword().split(","));
 		
 		for(String key : keywords) {
 			System.out.println(key);

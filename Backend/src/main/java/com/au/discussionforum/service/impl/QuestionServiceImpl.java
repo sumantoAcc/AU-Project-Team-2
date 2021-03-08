@@ -67,5 +67,9 @@ public class QuestionServiceImpl implements QuestionService{
 		}
 		return res;
 	}
+
+	public Question getQuestionById(int quesId) {
+		return questionRepository.findByQuesId(quesId);
+	}
 	
 }

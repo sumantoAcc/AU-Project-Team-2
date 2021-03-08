@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.au.discussionforum.model.User;
+import com.au.discussionforum.model.DTO.UserDTO;
 import com.au.discussionforum.service.UserService;
 
 @RestController
@@ -17,13 +18,13 @@ public class UserController {
 	private UserService userService;
 	
 	@PostMapping(path = "/api/login")
-    public User checkUser(@RequestBody User user1) {
+    public User checkUser(@RequestBody UserDTO userDTO) {
 			
-        	User user = userService.getUserbyUsername(user1.getUsername());
+        	User user = userService.getUserbyUsername(userDTO.getUsername());
         	if(user==null) {
         		return null;
         	}else {
-        		if(user.getPassword().equals(user1.getPassword())) {
+        		if(user.getPassword().equals(userDTO.getPassword())) {
         			return user;
         		}
         	}

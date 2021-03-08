@@ -15,5 +15,9 @@ public class TopicServiceImpl implements TopicService{
 	public Topic getTopicById(int topicId) {
 		return topicRepository.findByTopicId(topicId);
 	}
+
+	public Topic getTopicByName(String topicName) {
+		return topicRepository.findByTopicName(topicName);
+	}
 	
 }
