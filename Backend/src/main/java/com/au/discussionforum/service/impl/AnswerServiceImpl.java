@@ -16,7 +16,15 @@ public class AnswerServiceImpl implements AnswerService{
 	public List<Answer> getAnswerByQuesId(int quesId){
 		return answerRepository.findByQuestionQuesId(quesId);
 	}
-	@Override
+
+	public Answer getAnswerByAnswerId(int ansId) {
+		return answerRepository.findByAnsId(ansId);
+	}
+
+	public void setCorrectAnswer(Answer answer) {
+		answerRepository.save(answer);
+	}
+	
 	public Boolean addAnswer(Answer answer) {
 		try {
 			answerRepository.save(answer);
@@ -28,4 +36,3 @@ public class AnswerServiceImpl implements AnswerService{
 		}
 	}
 }
-

@@ -13,6 +13,16 @@ public class Topic {
 	
 	private String topicName;
 
+	public Topic(int topicId, String topicName) {
+		super();
+		this.topicId = topicId;
+		this.topicName = topicName;
+	}
+	
+	public Topic() {
+		
+	}
+
 	public int getTopicId() {
 		return topicId;
 	}
@@ -36,4 +46,3 @@ public class Topic {
 
 	
 }
-

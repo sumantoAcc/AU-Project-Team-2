@@ -17,6 +17,8 @@ import { QuestionService } from '../question.service';
 export class SearchQueryPageComponent implements OnInit {
   Qkeywords: String;
 
+  qlen1: number;
+
   temp=[];
 
   ftest: boolean;
@@ -25,6 +27,7 @@ export class SearchQueryPageComponent implements OnInit {
 
   constructor(private router: Router, private questionService : QuestionService) {
     this.Qkeywords = '';
+    this.qlen1 = 0;
   }
 
   answerTab() {
@@ -44,7 +47,10 @@ export class SearchQueryPageComponent implements OnInit {
           title: data[i].title,
           body: data[i].body,
           qid: data[i].quesId,
+          quphoto: data[i].user.photo,
+          quser: data[i].user.username,
         });
+        this.qlen1 = this.temp.length;
       }
     });
     console.log(this.temp);
