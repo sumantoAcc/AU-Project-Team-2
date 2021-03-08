@@ -85,6 +85,9 @@ insert into userTopic values(2, 1);
 insert into userTopic values(3, 1);
 insert into userTopic values(4, 1);
 
+update user set photo="https://i.ibb.co/mc1D229/1.jpg" where user_id=1;
+update user set photo="https://i.ibb.co/DKDWFTq/Screenshot-716.png" where user_id=2;
+update user set photo="https://i.ibb.co/5vMpxqZ/Screenshot-715.png" where user_id=4;
 
 
 
