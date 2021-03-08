@@ -13,6 +13,9 @@
             {{answer.body}}
         </mat-card-content><br>
     </mat-card>
+    <div *ngIf='mark'>
+        <button class='button' (click)='upvote(answer.ansId)'>Mark</button>
+    </div>
     </div>
     </div>
     

@@ -21,22 +21,68 @@ export class AnswerlistComponent implements OnInit {
 
   @Input() quesId : any;
 
+  @Input('mark') mark: boolean;
+
+  @Input('markbutton') markbutton:boolean;
+
   // eslint-disable-next-line no-useless-constructor
-  constructor(private answerService: AnswerService) { }
+  constructor(private answerService: AnswerService) { 
+    this.markbutton = false;
+  }
 
   ngOnInit(): void {
-    console.log(this.quesId);
+    this.mark = this.markbutton;
     this.answerService.getAnswer(this.quesId).subscribe((data) => {
+      const temp: any = [];
+      const tempArray: any = [];
       for (let i = 0; i < data.length; i += 1) {
-        this.ansList.push({
+        tempArray.push({
           user: data[i].user.username,
           uidd: data[i].user.userId,
           body: data[i].answerBody,
-          correctAnswer: data[i].question.marked,
+          correctAnswer: data[i].correct,
           aphoto: data[i].user.photo,
+          ansId: data[i].ansId,
         });
+        if (data[i].correct) {
+          this.ansList.push(tempArray[i]);
+          this.mark = false;
+        }
+      }
+      for (let i = 0; i < data.length; i += 1) {
+        if (!tempArray[i].correctAnswer) this.ansList.push(tempArray[i]);
       }
       this.len = this.ansList.length;
+    });
+  }
+
+  upvote(ansId) {
+    console.log(ansId);
+    this.answerService.markCorrect(ansId).subscribe(() => {
+      this.mark = false;
+      this.ansList = [];
+      this.answerService.getAnswer(this.quesId).subscribe((data) => {
+        const temp: any = [];
+        const tempArray: any = [];
+        for (let i = 0; i < data.length; i += 1) {
+          tempArray.push({
+            user: data[i].user.username,
+            uidd: data[i].user.userId,
+            body: data[i].answerBody,
+            correctAnswer: data[i].correct,
+            aphoto: data[i].user.photo,
+            ansId: data[i].ansId,
+          });
+          if (data[i].correct) {
+            this.ansList.push(tempArray[i]);
+            this.mark = false;
+          }
+        }
+        for (let i = 0; i < data.length; i += 1) {
+          if (!tempArray[i].correctAnswer) this.ansList.push(tempArray[i]);
+        }
+        this.len = this.ansList.length;
+      });
     });
   }
 }

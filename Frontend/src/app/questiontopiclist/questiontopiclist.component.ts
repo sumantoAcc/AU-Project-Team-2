@@ -1,7 +1,8 @@
+/* eslint-disable import/prefer-default-export */
 import { Component, Input, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { AddanswersComponent } from '../addanswers/addanswers.component';
 import { QuestionService } from '../question.service';
-import { MatDialog } from '@angular/material/dialog';
 import { AnswerService } from '../answer.service';
 
 @Component({
@@ -18,7 +19,9 @@ export class QuestiontopiclistComponent implements OnInit {
 
   @Input() userId: number;
 
-  constructor(private answerService: AnswerService,private box: MatDialog, private questionService: QuestionService) { }
+  constructor(private answerService: AnswerService,
+    private box: MatDialog,
+    private questionService: QuestionService) { }
 
   ngOnInit(): void {
     this.questionService.getQuestionsbytopic().subscribe((data) => {
