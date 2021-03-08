@@ -23,6 +23,17 @@ public class UserTopic {
 	@JoinColumn(name="topic_id")
 	private Topic topic;
 
+	public UserTopic(int userTopicId, User user, Topic topic) {
+		super();
+		this.userTopicId = userTopicId;
+		this.user = user;
+		this.topic = topic;
+	}
+	
+	public UserTopic() {
+		
+	}
+
 	public int getUserTopicId() {
 		return userTopicId;
 	}

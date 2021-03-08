@@ -15,9 +15,6 @@ public class User {
 	private String username;
 	private String photo;
 
-	
-	
-
 	public User(int userId, String email, String password, String username, String photo) {
 		super();
 		this.userId = userId;
@@ -25,6 +22,10 @@ public class User {
 		this.password = password;
 		this.username = username;
 		this.photo = photo;
+	}
+	
+	public User() {
+		
 	}
 
 	public int getUserId() {

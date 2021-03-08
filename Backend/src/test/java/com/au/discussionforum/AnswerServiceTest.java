@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 
 
+
 import org.junit.jupiter.api.Test;
 
 
@@ -13,14 +14,11 @@ import static org.mockito.Mockito.verify;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.test.context.junit4.SpringRunner;
 
 import com.au.discussionforum.dao.AnswerRepository;
 import com.au.discussionforum.model.Answer;
@@ -28,8 +26,6 @@ import com.au.discussionforum.model.Question;
 import com.au.discussionforum.model.Topic;
 import com.au.discussionforum.model.User;
 import com.au.discussionforum.service.AnswerService;
-
-import org.junit.jupiter.api.Test;
 
 @SpringBootTest
 class AnswerServiceTest {
@@ -89,5 +85,11 @@ class AnswerServiceTest {
 		
 		answerService.setCorrectAnswer(ans);
 		verify(answerRepository,times(1)).save(ans);
+	}
+	
+	@Test
+	public void addAnswerTest() {
+		
+		
 	}
 }

@@ -2,10 +2,7 @@ package com.au.discussionforum;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-
-
 import org.junit.jupiter.api.Test;
-
 
 import static org.mockito.Mockito.when;
 import static org.mockito.Mockito.times;
@@ -16,11 +13,9 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.test.context.junit4.SpringRunner;
 
 import com.au.discussionforum.dao.QuesKeywordsRepository;
 import com.au.discussionforum.model.QuesKeywords;
@@ -80,16 +75,12 @@ class QuesKeywordsServiceTest {
 	
 	QuesKeywords quesKeyword3= new QuesKeywords(3,ques3,"bird");
 	
-	List<QuesKeywords> quesKeywords= new ArrayList<QuesKeywords>();
-	quesKeywords.add(quesKeyword1);
-	quesKeywords.add(quesKeyword2);
-	quesKeywords.add(quesKeyword3);
-	
 	List<Question> ques= new ArrayList<Question>();
 	ques.add(ques1);
 	ques.add(ques2);
 	ques.add(ques3);
 	
+	when(quesKeywordsRepository.findByKeywordIn(keywords)).thenReturn(Stream.of(quesKeyword1,quesKeyword2,quesKeyword3).collect(Collectors.toList()));
 	assertEquals(ques,quesKeywordsService.getQuestionByKeyword(keywords));
 	
 	}	

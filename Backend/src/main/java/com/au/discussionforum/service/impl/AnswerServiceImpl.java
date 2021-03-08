@@ -24,4 +24,15 @@ public class AnswerServiceImpl implements AnswerService{
 	public void setCorrectAnswer(Answer answer) {
 		answerRepository.save(answer);
 	}
+	
+	public Boolean addAnswer(Answer answer) {
+		try {
+			answerRepository.save(answer);
+			return true;	
+		}
+		catch (Exception e)
+		{
+			return false;
+		}
+	}
 }

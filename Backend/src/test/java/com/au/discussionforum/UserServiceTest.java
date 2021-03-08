@@ -1,22 +1,15 @@
 package com.au.discussionforum;
 
 import static org.junit.jupiter.api.Assertions.*;
-
-
-
 import org.junit.jupiter.api.Test;
-
 
 import static org.mockito.Mockito.when;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.test.context.junit4.SpringRunner;
-
 
 import com.au.discussionforum.dao.UserRepository;
 import com.au.discussionforum.model.User;
@@ -63,7 +56,5 @@ class UserServiceTest {
 		.thenReturn(user);
          assertEquals(2, userService.getUserByUserId(user_id).getUserId());
 	}
-	
-
 	
 }

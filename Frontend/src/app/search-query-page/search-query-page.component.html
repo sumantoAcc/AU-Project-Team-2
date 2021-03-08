@@ -2,5 +2,11 @@
 <button (click)="answerTab()">Answer Query</button>
 <button (click)="logout()">LogOut</button>
 
-<input name="search" placeholder="tagsForSearch">
-<button>Submit</button>
+<br>
+
+  
+<input name="search" placeholder="tagsForSearch" [(ngModel)]="Qkeywords" [ngModelOptions]="{standalone: true}">
+<button (click)="quesSearch()">Submit</button>
+
+<app-questionlist [temp]='temp' [ftest]='ftest'></app-questionlist>
+

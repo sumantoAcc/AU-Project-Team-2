@@ -6,12 +6,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.au.discussionforum.model.Answer;
 import com.au.discussionforum.model.Question;
+import com.au.discussionforum.model.User;
 import com.au.discussionforum.service.AnswerService;
 import com.au.discussionforum.service.QuestionService;
+import com.au.discussionforum.service.UserService;
 
 @RestController
 public class AnswerController {
@@ -21,6 +24,9 @@ public class AnswerController {
 	
 	@Autowired
 	private QuestionService questionService;
+
+	@Autowired
+	private UserService userService;
 	
 	@GetMapping(path = "/api/answer/{id}")
     public List<Answer> getAnswers(@PathVariable("id") int quesId) {
@@ -38,4 +44,15 @@ public class AnswerController {
 		answerService.setCorrectAnswer(answer);
 	}
 	
+	@PostMapping(path = "/api/addanswers")
+	public Boolean addAnswers(@RequestBody Answer ans) {
+		Answer answer = new Answer();
+		
+		User user = userService.getUserByUserId(ans.getUser().getUserId());
+		answer.setUser(user);
+		answer.setQuestion(ans.getQuestion());
+		answer.setCorrect(false);
+		answer.setAnswerBody(ans.getAnswerBody());
+		return answerService.addAnswer(answer);
+    }
 }

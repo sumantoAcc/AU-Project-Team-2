@@ -12,13 +12,15 @@ public class Topic {
 	private int topicId;
 	
 	private String topicName;
-	
-	
 
 	public Topic(int topicId, String topicName) {
 		super();
 		this.topicId = topicId;
 		this.topicName = topicName;
+	}
+	
+	public Topic() {
+		
 	}
 
 	public int getTopicId() {

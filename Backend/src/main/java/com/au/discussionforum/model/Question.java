@@ -31,11 +31,6 @@ public class Question implements Comparator<Question>{
 	private String body;
 	private boolean marked;
 	
-	
-	
-	public Question() {
-		super();
-	}
 	public Question(int quesId, User user, Topic topic, String title, String body, boolean marked) {
 		super();
 		this.quesId = quesId;
@@ -44,6 +39,8 @@ public class Question implements Comparator<Question>{
 		this.title = title;
 		this.body = body;
 		this.marked = marked;
+	}
+	public Question() {
 	}
 	public int getQuesId() {
 		return quesId;

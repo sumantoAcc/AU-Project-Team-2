@@ -25,7 +25,6 @@ public class Answer {
 	private String answerBody;
 	private boolean correct;
 	
-	
 	public Answer(int ansId, User user, Question question, String answerBody, boolean correct) {
 		super();
 		this.ansId = ansId;
@@ -33,6 +32,8 @@ public class Answer {
 		this.question = question;
 		this.answerBody = answerBody;
 		this.correct = correct;
+	}
+	public Answer() {
 	}
 	public int getAnsId() {
 		return ansId;

@@ -1,0 +1,67 @@
+<button (click)="showsearchQues()">Home</button>
+<div *ngIf="toogleques">
+<h1>Questions</h1>
+<div *ngIf='qlen2'>
+<div *ngFor="let question of questionlist; index as i">
+    <mat-card class="example-card">
+        <mat-card-header>
+            <div mat-card-avatar style="background-image: url({{question.quphoto}});
+            background-size: cover;"></div>
+            <mat-card-title>{{question.title}}</mat-card-title>
+            <mat-card-subtitle>{{question.body}} </mat-card-subtitle>
+        </mat-card-header>
+        
+        <!-- <div *ngIf="showVar[i]">
+            <app-answerlist quesId={{question.qid}}></app-answerlist>
+            <button>Mark</button>
+        </div> -->
+
+        <button class="button" (click)="showans(i)"><span>View answers</span></button>
+        <mat-card-content>
+            <div *ngIf="showVar[i]">
+                <p>
+                <app-answerlist quesId={{question.qid}}></app-answerlist>
+                </p>
+            </div>
+        </mat-card-content>
+    </mat-card>
+      
+    </div>
+</div>
+
+<div *ngIf='!qlen2'>
+    <span>No Questions Found</span>
+</div>
+
+</div>
+    
+
+
+
+<div *ngIf="!toogleques">
+    <h1>SQuestions</h1>
+    <button (click)="addQues()">Add New Question</button>
+<div *ngFor="let squestion of seachQueList; index as i">
+    <mat-card class="example-card">
+        <mat-card-header>
+            <div mat-card-avatar style="background-image: url({{squestion.quphoto}});
+            background-size: cover;"></div>
+            <mat-card-title>{{squestion.title}}</mat-card-title>
+            <mat-card-subtitle>{{squestion.body}} </mat-card-subtitle>
+        </mat-card-header>
+        <button class="button" (click)="showans(i)"><span>View answers</span></button>
+        <mat-card-content>
+            <div *ngIf="showVar[i]">
+                <p>
+                <app-answerlist quesId={{squestion.qid}}></app-answerlist>
+                </p>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>
+<div *ngIf='!qlen1'>
+    <br>
+    <br>
+    <span>No Questions Found</span>
+</div>
+</div>
