@@ -28,7 +28,6 @@
     text-transform: uppercase;
     overflow: hidden;
     transition: .5s;
-    margin-top: 10px;
     letter-spacing: 4px;
     border-radius: 5px;
   }
@@ -39,10 +38,6 @@
     cursor: pointer;
   }
 
-  .searc{
-      margin-left: 40%;
-      margin-top: 3%;
-  }
   .s{
         width: 35%;
         padding:1%;

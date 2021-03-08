@@ -1,4 +1,4 @@
-<button class="b" style="margin-left: 47.3%;" (click)="showsearchQues()">Home</button>
+<button class="b" style="position: absolute; margin-top: -5%; margin-left: 23%" (click)="showsearchQues()">My Questions</button>
 <div *ngIf="toogleques">
 <div *ngIf='qlen2'>
 <div *ngFor="let question of questionlist; index as i">
@@ -14,7 +14,7 @@
         <mat-card-content>
             <div *ngIf="showVar[i]">
                 <p>
-                <app-answerlist quesId={{question.qid}}></app-answerlist>
+                <app-answerlist quesId={{question.qid}} [markbutton]=true></app-answerlist>
                 </p>
             </div>
         </mat-card-content>
@@ -23,7 +23,7 @@
     </div>
 </div>
 
-<div style="color:var(--ligt);  font-size: 17px; margin-top: 8%; margin-left: 43%;" *ngIf='toogleques && !qlen2'>
+<div *ngIf='!qlen2' style="color:var(--ligt);  font-size: 17px; margin-top: 8%; margin-left: 43%;">
     <span>You have not asked any questions!</span>
 </div>
 
@@ -33,29 +33,29 @@
 
 
 <div *ngIf="!toogleques">
-    <button class="b" style="margin-left: 43%;" (click)="addQues()">Ask a question</button>
-<div *ngFor="let squestion of seachQueList; index as i">
-    <mat-card class="example-card">
-        <mat-card-header>
-            <div mat-card-avatar style="background-image: url({{squestion.quphoto}});
-            background-size: cover;"></div>
-            <mat-card-title>{{squestion.quser}}</mat-card-title> 
-            <mat-card-subtitle>{{squestion.title}}</mat-card-subtitle>
-            <mat-card-subtitle>{{squestion.body}} </mat-card-subtitle>
-        </mat-card-header>
-        <button class="button" (click)="showans(i)"><span>View answers</span></button>
-        <mat-card-content>
-            <div *ngIf="showVar[i]">
-                <p>
-                <app-answerlist quesId={{squestion.qid}}></app-answerlist>
-                </p>
-            </div>
-        </mat-card-content>
-    </mat-card>
-</div>
-<div *ngIf='!toogleques && !qlen1'>
-    <br>
-    <br>
-    <span>No Questions Found{{toogleques}}</span>
-</div>
+        <button class="b" style="margin-left: 43%;" (click)="addQues()">Ask a question</button>
+    <div *ngFor="let squestion of seachQueList; index as i">
+        <mat-card class="example-card">
+            <mat-card-header>
+                <div mat-card-avatar style="background-image: url({{squestion.quphoto}});
+                background-size: cover;"></div>
+                <mat-card-title>{{squestion.quser}}</mat-card-title> 
+                <mat-card-subtitle>{{squestion.title}}</mat-card-subtitle>
+                <mat-card-subtitle>{{squestion.body}} </mat-card-subtitle>
+            </mat-card-header>
+            <button class="button" (click)="showans(i)"><span>View answers</span></button>
+            <mat-card-content>
+                <div *ngIf="showVar[i]">
+                    <p>
+                    <app-answerlist quesId={{squestion.qid}} [markbutton]=false></app-answerlist>
+                    </p>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <div *ngIf='!qlen1' style="color:var(--ligt);  font-size: 17px; margin-top: 8%; margin-left: 46.5%;">
+        <br>
+        <br>
+        <span>No results to show!</span>
+    </div>
 </div>

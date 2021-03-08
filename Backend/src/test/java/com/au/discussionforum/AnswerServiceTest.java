@@ -1,12 +1,7 @@
 package com.au.discussionforum;
-
-import static org.junit.jupiter.api.Assertions.*;
-
-
-
 import org.junit.jupiter.api.Test;
 
-
+import static org.junit.Assert.*;
 import static org.mockito.Mockito.when;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
@@ -62,7 +57,7 @@ class AnswerServiceTest {
 	@Test
 	public void getAnswerByAnswerIdTest() {
 		
-		int ans_id=2;
+		int ans_id=1;
 		User user= new User(1,"abc@gmail.com","1234","Aman","img.jpg");
 		Topic topic= new Topic(3,"games");
 		Question ques= new Question(1,user,topic,"national game","Which is our national game?",false);

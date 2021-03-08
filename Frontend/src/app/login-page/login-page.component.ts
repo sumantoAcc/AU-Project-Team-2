@@ -41,12 +41,12 @@ export class LoginPageComponent implements OnInit {
     this.loginservice.login(this.user).subscribe((response) => {
       console.log(response);
       if (!response) {
-        this.err = 'Inavalid Username or Password';
+        this.err = 'Invalid credentials!';
       } else {
         this.id = response.userId;
-        this.questionService.uid = this.id;
+        localStorage.setItem('token', JSON.stringify(this.id));
+        this.questionService.uid=this.id;
         this.router.navigate(['/search']);
-        //localStorage.setItem('token', this.username);
       }
     });
   }

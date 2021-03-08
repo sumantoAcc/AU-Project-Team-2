@@ -19,6 +19,8 @@ export class AnswerQueryPageComponent implements OnInit {
   }
 
   logout() {
+    localStorage.removeItem('token');
+
     this.router.navigate(['']);
   }
 

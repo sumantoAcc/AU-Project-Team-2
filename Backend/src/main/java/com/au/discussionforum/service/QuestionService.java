@@ -9,4 +9,5 @@ public interface QuestionService {
 	List<Question> getQuestionByUser(int userId);
 	Question addQuestion(Question q);
 	List<Question> getQuestionByTopic(int topicId);
+	Question getQuestionById(int quesId);
 }

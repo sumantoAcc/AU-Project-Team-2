@@ -30,7 +30,9 @@ insert into user(user_id, email, password, username, photo) values (3, 'amundra6
 insert into user(user_id, email, password, username, photo) values (4, 'amcoc1234@gmail.com', '1234', 'Ashit Mundra', 'https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg');
 insert into user(user_id, email, password, username, photo) values (5, 'acprealms@gmail.com', '1234', 'Sumanto Pal', 'https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg');
 insert into user(user_id, email, password, username, photo) values (6, 'acprealms@gmail.com', 1234, 'Devansh', 'https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg');
-
+update user set photo="https://i.ibb.co/mc1D229/1.jpg" where user_id=1;
+update user set photo="https://i.ibb.co/DKDWFTq/Screenshot-716.png" where user_id=2;
+update user set photo="https://i.ibb.co/5vMpxqZ/Screenshot-715.png" where user_id=4;
 
 insert into question(ques_id, user_id, topic_id, title, body, marked) values (1, 2, 6, 'When you are winning, is it ethical to not go for a checkmate right away?', 'If you are leading a game, is it ethical to capture your opponent pieces one by one or go straight for checkmate?', FALSE);
 insert into question(ques_id, user_id, topic_id, title, body, marked) values (2, 1, 2, 'Is this connected-component labeling algorithm new?', 'A long time ago, I made a game in which a sort of connected-component labeling is required to implement AI part. I used the two-pass algorithm unknowingly at that time. Recently, I got to know that I can make them faster using bit-scan based method instead. It uses 1-bit-per-pixel data as input, instead of typical bytes-per-pixel input. Then it finds every linear chunks in each scan-lines using BSF instruction.', FALSE);

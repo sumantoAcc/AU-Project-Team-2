@@ -17,6 +17,8 @@ import { QuestionService } from '../question.service';
 export class SearchQueryPageComponent implements OnInit {
   Qkeywords: String;
 
+  qlen1: number;
+
   temp=[];
 
   ftest: boolean;
@@ -25,6 +27,7 @@ export class SearchQueryPageComponent implements OnInit {
 
   constructor(private router: Router, private questionService : QuestionService) {
     this.Qkeywords = '';
+    this.qlen1 = 0;
   }
 
   answerTab() {
@@ -32,12 +35,14 @@ export class SearchQueryPageComponent implements OnInit {
   }
 
   logout() {
+    localStorage.removeItem('token');
     this.router.navigate(['']);
   }
 
   quesSearch() {
     this.temp=[];
     console.log(this.Qkeywords);
+    this.questionService.oldkey=this.Qkeywords;
     this.questionService.Searching(this.Qkeywords).subscribe((data) => {
       for (let i = 0; i < data.length; i += 1) {
         this.temp.push({
@@ -47,9 +52,11 @@ export class SearchQueryPageComponent implements OnInit {
           quphoto: data[i].user.photo,
           quser: data[i].user.username,
         });
+        
       }
+      this.qlen1 = this.temp.length;
+      console.log(this.qlen1);
     });
-    console.log(this.temp);
   }
 
   ngOnInit(): void {

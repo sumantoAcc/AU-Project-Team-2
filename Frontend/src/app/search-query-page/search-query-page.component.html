@@ -4,10 +4,9 @@
     <button class="b" (click)="logout()">LogOut</button>
 </div>
 <br>
+ 
+<input style="margin-top: 5%; margin-left: 40%; width: 25%; " class="s" name="search" placeholder="Enter comma separated keywords here" [(ngModel)]="Qkeywords" [ngModelOptions]="{standalone: true}"><br>
+<button class="b" style="position: absolute; margin-top: -5%; margin-left: 70%;" (click)="quesSearch()">Go</button>
 
-<div class="searc"> 
-<input class="s" name="search" placeholder="Enter comma separated keywords here" [(ngModel)]="Qkeywords" [ngModelOptions]="{standalone: true}"><br>
-<button class="b" style="margin-left: 11%;" (click)="quesSearch()">Submit</button>
-</div>
-<app-questionlist [temp]='temp' [ftest]='ftest'></app-questionlist>
+<app-questionlist [temp]='temp' [ftest]='ftest' [qlen1]='qlen1' ></app-questionlist>
 <br><br><br>

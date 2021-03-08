@@ -26,21 +26,21 @@ export class QuestionlistComponent implements OnInit {
 
   queId: number;
 
-  qlen1: number;
-
   qlen2: number;
 
   showVar: boolean[] = [];
 
   quphoto: String;
 
-  quser: String;
-
   @Input('temp') temp:any;
 
   @Input('ftest') ftest:any;
 
-  constructor(private questionService: QuestionService, private squery : SearchQueryPageComponent, private box: MatDialog) { }
+  @Input('qlen1') qlen1:any;
+
+  constructor(private questionService: QuestionService, private squery : SearchQueryPageComponent, private box: MatDialog) {
+    
+   }
 
   ngOnInit(): void {
     this.toogleques = true;
@@ -52,7 +52,6 @@ export class QuestionlistComponent implements OnInit {
           body: data[i].body,
           qid: data[i].quesId,
           quphoto: data[i].user.photo,
-          quser:"jbj",
         });
         this.qlen2 = this.questionlist.length;
       }
@@ -60,8 +59,7 @@ export class QuestionlistComponent implements OnInit {
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    this.seachQueList = this.squery.temp;
-    this.qlen1 = this.seachQueList.length;
+    this.seachQueList = this.temp;
     this.toogleques = false;
   }
 
