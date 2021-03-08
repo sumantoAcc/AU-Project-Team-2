@@ -36,12 +36,8 @@ export class AddanswersComponent implements OnInit {
 
   addAns() {
     const ansObject = {
-      user: {
-        userId: this.questionService.uid,
-      },
-      question: {
-        quesId: this.answerSevice.quesId_AddAns,
-      },
+      userId: this.questionService.uid,
+      quesId: this.answerSevice.quesId_AddAns,
       answerBody: this.ansBody.value,
     };
     console.log(ansObject);

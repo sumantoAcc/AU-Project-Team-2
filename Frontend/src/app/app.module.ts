@@ -18,6 +18,8 @@ import { AnswerlistComponent } from './answerlist/answerlist.component';
 import { QuestiontopiclistComponent } from './questiontopiclist/questiontopiclist.component';
 import { AddquestionsComponent } from './addquestions/addquestions.component';
 import { AddanswersComponent } from './addanswers/addanswers.component';
+import { NavbarModule, WavesModule, ButtonsModule } from 'angular-bootstrap-md';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,10 @@ import { AddanswersComponent } from './addanswers/addanswers.component';
     MatDialogModule,
     ReactiveFormsModule,
     MatCardModule,
-
+    NavbarModule, 
+    WavesModule, 
+    ButtonsModule,
+    MatSnackBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

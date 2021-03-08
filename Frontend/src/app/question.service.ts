@@ -9,6 +9,8 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Question } from './model/question';
 import { QuestionlistComponent } from './questionlist/questionlist.component';
+import { Router } from '@angular/router';
+
 
 @Injectable({
   providedIn: 'root',
@@ -19,16 +21,25 @@ export class QuestionService {
 
     Squestions=[];
 
-    constructor(private http:HttpClient) { }
+    oldkey: String;
+
+    constructor(private http:HttpClient, private router: Router) {
+      this.uid = JSON.parse(localStorage.getItem('token'));
+      if(!this.uid){
+        this.router.navigate(['']);
+      }
+     }
 
     getQuestions() {
       console.log(this.uid);
       return this.http.get<any>(`/api/userquestions/${this.uid}`);
     }
 
-    Searching = (keywords : String) : Observable<any> => this.http.post<any>('/api/question/keywords', {"keyword":keywords});
+    Searching = (keywords : String) : Observable<any> => this.http.post<any>('/api/question/keywords', keywords);
 
-    getQuestionsbytopic(){
+    getQuestionsbytopic() {
       return this.http.get<any>(`/api/questions/${this.uid}`);
     }
+
+    postQuestion = (ques : any) : Observable<any> => this.http.post<any>('/api/addquestion', ques);
 }

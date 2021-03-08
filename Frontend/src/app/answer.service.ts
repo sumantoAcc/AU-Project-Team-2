@@ -25,4 +25,6 @@ export class AnswerService {
   }
 
   postAnswer = (answer : any) : Observable<any> => this.http.post<any>('/api/addanswers', answer);
+
+  markCorrect = (ansId : any) : Observable<any> => this.http.post<any>('/api/answer/markcorrect/', ansId);
 }
