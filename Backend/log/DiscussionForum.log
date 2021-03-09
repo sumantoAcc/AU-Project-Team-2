@@ -22586,3 +22586,644 @@
 2021-03-09 10:37:02 [http-nio-8080-exec-6] DEBUG TwoPhaseLoad:211 - Processing attribute `user` : value = 4
 2021-03-09 10:37:02 [http-nio-8080-exec-6] DEBUG TwoPhaseLoad:242 - Attribute (`user`)  - enhanced for lazy-loading? - false
 2021-03-09 10:37:02 [http-nio-8080-exec-6] DEBUG TwoPhaseLoad:381 - Done materializing entity [com.au.discussionforum.model.Answer#9]
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG CriteriaQueryImpl:303 - Rendered criteria query -> select generatedAlias0 from QuesKeywords as generatedAlias0 where generatedAlias0.keyword in (:param0)
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG QueryParameterBindingsImpl:415 - Converting QueryParameterBinding to QueryParameterListBinding for given QueryParameter : org.hibernate.engine.query.spi.NamedParameterDescriptor@c4aaf943
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG SQL:144 - select queskeywor0_.ques_keywords_id as ques_key1_1_, queskeywor0_.keyword as keyword2_1_, queskeywor0_.ques_id as ques_id3_1_ from ques_keywords queskeywor0_ where queskeywor0_.keyword in (?)
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG Loader:384 - Result set row: 0
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG Loader:1593 - Result row: EntityKey[com.au.discussionforum.model.QuesKeywords#23]
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG Loader:384 - Result set row: 1
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG Loader:1593 - Result row: EntityKey[com.au.discussionforum.model.QuesKeywords#29]
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG Loader:384 - Result set row: 2
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG Loader:1593 - Result row: EntityKey[com.au.discussionforum.model.QuesKeywords#31]
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG Loader:384 - Result set row: 3
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG Loader:1593 - Result row: EntityKey[com.au.discussionforum.model.QuesKeywords#33]
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG Loader:384 - Result set row: 4
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG Loader:1593 - Result row: EntityKey[com.au.discussionforum.model.QuesKeywords#35]
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG Loader:384 - Result set row: 5
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG Loader:1593 - Result row: EntityKey[com.au.discussionforum.model.QuesKeywords#38]
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG Loader:384 - Result set row: 6
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG Loader:1593 - Result row: EntityKey[com.au.discussionforum.model.QuesKeywords#41]
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:198 - Resolving attributes for [com.au.discussionforum.model.QuesKeywords#23]
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:211 - Processing attribute `keyword` : value = chess
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:242 - Attribute (`keyword`)  - enhanced for lazy-loading? - false
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:211 - Processing attribute `question` : value = 7
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:242 - Attribute (`question`)  - enhanced for lazy-loading? - false
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG SQL:144 - select question0_.ques_id as ques_id1_2_0_, question0_.body as body2_2_0_, question0_.marked as marked3_2_0_, question0_.title as title4_2_0_, question0_.topic_id as topic_id5_2_0_, question0_.user_id as user_id6_2_0_, topic1_.topic_id as topic_id1_3_1_, topic1_.topic_name as topic_na2_3_1_, user2_.user_id as user_id1_4_2_, user2_.email as email2_4_2_, user2_.password as password3_4_2_, user2_.photo as photo4_4_2_, user2_.username as username5_4_2_ from question question0_ left outer join topic topic1_ on question0_.topic_id=topic1_.topic_id left outer join user user2_ on question0_.user_id=user2_.user_id where question0_.ques_id=?
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG EntityReferenceInitializerImpl:131 - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:198 - Resolving attributes for [com.au.discussionforum.model.Question#7]
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:211 - Processing attribute `body` : value = Hello How are you?
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:242 - Attribute (`body`)  - enhanced for lazy-loading? - false
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:211 - Processing attribute `marked` : value = false
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:242 - Attribute (`marked`)  - enhanced for lazy-loading? - false
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:211 - Processing attribute `title` : value = Testing
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:242 - Attribute (`title`)  - enhanced for lazy-loading? - false
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:211 - Processing attribute `topic` : value = 1
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:242 - Attribute (`topic`)  - enhanced for lazy-loading? - false
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:211 - Processing attribute `user` : value = 1
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:242 - Attribute (`user`)  - enhanced for lazy-loading? - false
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:381 - Done materializing entity [com.au.discussionforum.model.Question#7]
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:198 - Resolving attributes for [com.au.discussionforum.model.Topic#1]
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:211 - Processing attribute `topicName` : value = badminton
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:242 - Attribute (`topicName`)  - enhanced for lazy-loading? - false
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:381 - Done materializing entity [com.au.discussionforum.model.Topic#1]
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:198 - Resolving attributes for [com.au.discussionforum.model.User#1]
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:211 - Processing attribute `email` : value = acprealms@gmail.com
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:242 - Attribute (`email`)  - enhanced for lazy-loading? - false
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:211 - Processing attribute `password` : value = 1234
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:242 - Attribute (`password`)  - enhanced for lazy-loading? - false
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:211 - Processing attribute `photo` : value = https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:242 - Attribute (`photo`)  - enhanced for lazy-loading? - false
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:211 - Processing attribute `username` : value = Parth Modhvadia
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:242 - Attribute (`username`)  - enhanced for lazy-loading? - false
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:381 - Done materializing entity [com.au.discussionforum.model.User#1]
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG AbstractLoadPlanBasedEntityLoader:307 - Done entity load : com.au.discussionforum.model.Question#7
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:381 - Done materializing entity [com.au.discussionforum.model.QuesKeywords#23]
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:198 - Resolving attributes for [com.au.discussionforum.model.QuesKeywords#29]
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:211 - Processing attribute `keyword` : value = chess
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:242 - Attribute (`keyword`)  - enhanced for lazy-loading? - false
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:211 - Processing attribute `question` : value = 8
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:242 - Attribute (`question`)  - enhanced for lazy-loading? - false
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG SQL:144 - select question0_.ques_id as ques_id1_2_0_, question0_.body as body2_2_0_, question0_.marked as marked3_2_0_, question0_.title as title4_2_0_, question0_.topic_id as topic_id5_2_0_, question0_.user_id as user_id6_2_0_, topic1_.topic_id as topic_id1_3_1_, topic1_.topic_name as topic_na2_3_1_, user2_.user_id as user_id1_4_2_, user2_.email as email2_4_2_, user2_.password as password3_4_2_, user2_.photo as photo4_4_2_, user2_.username as username5_4_2_ from question question0_ left outer join topic topic1_ on question0_.topic_id=topic1_.topic_id left outer join user user2_ on question0_.user_id=user2_.user_id where question0_.ques_id=?
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG EntityReferenceInitializerImpl:131 - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:198 - Resolving attributes for [com.au.discussionforum.model.Question#8]
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:211 - Processing attribute `body` : value = Hello How are you?
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:242 - Attribute (`body`)  - enhanced for lazy-loading? - false
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:211 - Processing attribute `marked` : value = false
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:242 - Attribute (`marked`)  - enhanced for lazy-loading? - false
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:211 - Processing attribute `title` : value = Testing
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:242 - Attribute (`title`)  - enhanced for lazy-loading? - false
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:211 - Processing attribute `topic` : value = 3
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:242 - Attribute (`topic`)  - enhanced for lazy-loading? - false
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:211 - Processing attribute `user` : value = 2
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:242 - Attribute (`user`)  - enhanced for lazy-loading? - false
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:381 - Done materializing entity [com.au.discussionforum.model.Question#8]
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:198 - Resolving attributes for [com.au.discussionforum.model.Topic#3]
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:211 - Processing attribute `topicName` : value = technology
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:242 - Attribute (`topicName`)  - enhanced for lazy-loading? - false
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:381 - Done materializing entity [com.au.discussionforum.model.Topic#3]
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:198 - Resolving attributes for [com.au.discussionforum.model.User#2]
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:211 - Processing attribute `email` : value = amcoc123@gmail.com
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:242 - Attribute (`email`)  - enhanced for lazy-loading? - false
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:211 - Processing attribute `password` : value = 1234
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:242 - Attribute (`password`)  - enhanced for lazy-loading? - false
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:211 - Processing attribute `photo` : value = https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:242 - Attribute (`photo`)  - enhanced for lazy-loading? - false
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:211 - Processing attribute `username` : value = Nisarg Shah
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:242 - Attribute (`username`)  - enhanced for lazy-loading? - false
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:381 - Done materializing entity [com.au.discussionforum.model.User#2]
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG AbstractLoadPlanBasedEntityLoader:307 - Done entity load : com.au.discussionforum.model.Question#8
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:381 - Done materializing entity [com.au.discussionforum.model.QuesKeywords#29]
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:198 - Resolving attributes for [com.au.discussionforum.model.QuesKeywords#31]
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:211 - Processing attribute `keyword` : value = chess
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:242 - Attribute (`keyword`)  - enhanced for lazy-loading? - false
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:211 - Processing attribute `question` : value = 9
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:242 - Attribute (`question`)  - enhanced for lazy-loading? - false
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG SQL:144 - select question0_.ques_id as ques_id1_2_0_, question0_.body as body2_2_0_, question0_.marked as marked3_2_0_, question0_.title as title4_2_0_, question0_.topic_id as topic_id5_2_0_, question0_.user_id as user_id6_2_0_, topic1_.topic_id as topic_id1_3_1_, topic1_.topic_name as topic_na2_3_1_, user2_.user_id as user_id1_4_2_, user2_.email as email2_4_2_, user2_.password as password3_4_2_, user2_.photo as photo4_4_2_, user2_.username as username5_4_2_ from question question0_ left outer join topic topic1_ on question0_.topic_id=topic1_.topic_id left outer join user user2_ on question0_.user_id=user2_.user_id where question0_.ques_id=?
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG EntityReferenceInitializerImpl:131 - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:198 - Resolving attributes for [com.au.discussionforum.model.Question#9]
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:211 - Processing attribute `body` : value = Hello How are you?
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:242 - Attribute (`body`)  - enhanced for lazy-loading? - false
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:211 - Processing attribute `marked` : value = false
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:242 - Attribute (`marked`)  - enhanced for lazy-loading? - false
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:211 - Processing attribute `title` : value = Testing
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:242 - Attribute (`title`)  - enhanced for lazy-loading? - false
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:211 - Processing attribute `topic` : value = 3
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:242 - Attribute (`topic`)  - enhanced for lazy-loading? - false
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:211 - Processing attribute `user` : value = 1
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:242 - Attribute (`user`)  - enhanced for lazy-loading? - false
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:381 - Done materializing entity [com.au.discussionforum.model.Question#9]
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG AbstractLoadPlanBasedEntityLoader:307 - Done entity load : com.au.discussionforum.model.Question#9
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:381 - Done materializing entity [com.au.discussionforum.model.QuesKeywords#31]
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:198 - Resolving attributes for [com.au.discussionforum.model.QuesKeywords#33]
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:211 - Processing attribute `keyword` : value = chess
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:242 - Attribute (`keyword`)  - enhanced for lazy-loading? - false
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:211 - Processing attribute `question` : value = 10
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:242 - Attribute (`question`)  - enhanced for lazy-loading? - false
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG SQL:144 - select question0_.ques_id as ques_id1_2_0_, question0_.body as body2_2_0_, question0_.marked as marked3_2_0_, question0_.title as title4_2_0_, question0_.topic_id as topic_id5_2_0_, question0_.user_id as user_id6_2_0_, topic1_.topic_id as topic_id1_3_1_, topic1_.topic_name as topic_na2_3_1_, user2_.user_id as user_id1_4_2_, user2_.email as email2_4_2_, user2_.password as password3_4_2_, user2_.photo as photo4_4_2_, user2_.username as username5_4_2_ from question question0_ left outer join topic topic1_ on question0_.topic_id=topic1_.topic_id left outer join user user2_ on question0_.user_id=user2_.user_id where question0_.ques_id=?
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG EntityReferenceInitializerImpl:131 - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:198 - Resolving attributes for [com.au.discussionforum.model.Question#10]
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:211 - Processing attribute `body` : value = Hello How are you?
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:242 - Attribute (`body`)  - enhanced for lazy-loading? - false
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:211 - Processing attribute `marked` : value = false
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:242 - Attribute (`marked`)  - enhanced for lazy-loading? - false
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:211 - Processing attribute `title` : value = Testing
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:242 - Attribute (`title`)  - enhanced for lazy-loading? - false
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:211 - Processing attribute `topic` : value = 1
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:242 - Attribute (`topic`)  - enhanced for lazy-loading? - false
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:211 - Processing attribute `user` : value = 1
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:242 - Attribute (`user`)  - enhanced for lazy-loading? - false
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:381 - Done materializing entity [com.au.discussionforum.model.Question#10]
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG AbstractLoadPlanBasedEntityLoader:307 - Done entity load : com.au.discussionforum.model.Question#10
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:381 - Done materializing entity [com.au.discussionforum.model.QuesKeywords#33]
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:198 - Resolving attributes for [com.au.discussionforum.model.QuesKeywords#35]
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:211 - Processing attribute `keyword` : value = chess
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:242 - Attribute (`keyword`)  - enhanced for lazy-loading? - false
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:211 - Processing attribute `question` : value = 11
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:242 - Attribute (`question`)  - enhanced for lazy-loading? - false
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG SQL:144 - select question0_.ques_id as ques_id1_2_0_, question0_.body as body2_2_0_, question0_.marked as marked3_2_0_, question0_.title as title4_2_0_, question0_.topic_id as topic_id5_2_0_, question0_.user_id as user_id6_2_0_, topic1_.topic_id as topic_id1_3_1_, topic1_.topic_name as topic_na2_3_1_, user2_.user_id as user_id1_4_2_, user2_.email as email2_4_2_, user2_.password as password3_4_2_, user2_.photo as photo4_4_2_, user2_.username as username5_4_2_ from question question0_ left outer join topic topic1_ on question0_.topic_id=topic1_.topic_id left outer join user user2_ on question0_.user_id=user2_.user_id where question0_.ques_id=?
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG EntityReferenceInitializerImpl:131 - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:198 - Resolving attributes for [com.au.discussionforum.model.Question#11]
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:211 - Processing attribute `body` : value = Hello How are you?
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:242 - Attribute (`body`)  - enhanced for lazy-loading? - false
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:211 - Processing attribute `marked` : value = false
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:242 - Attribute (`marked`)  - enhanced for lazy-loading? - false
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:211 - Processing attribute `title` : value = Testing
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:242 - Attribute (`title`)  - enhanced for lazy-loading? - false
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:211 - Processing attribute `topic` : value = 1
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:242 - Attribute (`topic`)  - enhanced for lazy-loading? - false
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:211 - Processing attribute `user` : value = 1
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:242 - Attribute (`user`)  - enhanced for lazy-loading? - false
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:381 - Done materializing entity [com.au.discussionforum.model.Question#11]
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG AbstractLoadPlanBasedEntityLoader:307 - Done entity load : com.au.discussionforum.model.Question#11
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:381 - Done materializing entity [com.au.discussionforum.model.QuesKeywords#35]
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:198 - Resolving attributes for [com.au.discussionforum.model.QuesKeywords#38]
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:211 - Processing attribute `keyword` : value = chess
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:242 - Attribute (`keyword`)  - enhanced for lazy-loading? - false
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:211 - Processing attribute `question` : value = 12
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:242 - Attribute (`question`)  - enhanced for lazy-loading? - false
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG SQL:144 - select question0_.ques_id as ques_id1_2_0_, question0_.body as body2_2_0_, question0_.marked as marked3_2_0_, question0_.title as title4_2_0_, question0_.topic_id as topic_id5_2_0_, question0_.user_id as user_id6_2_0_, topic1_.topic_id as topic_id1_3_1_, topic1_.topic_name as topic_na2_3_1_, user2_.user_id as user_id1_4_2_, user2_.email as email2_4_2_, user2_.password as password3_4_2_, user2_.photo as photo4_4_2_, user2_.username as username5_4_2_ from question question0_ left outer join topic topic1_ on question0_.topic_id=topic1_.topic_id left outer join user user2_ on question0_.user_id=user2_.user_id where question0_.ques_id=?
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG EntityReferenceInitializerImpl:131 - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:198 - Resolving attributes for [com.au.discussionforum.model.Question#12]
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:211 - Processing attribute `body` : value = Hello How are you updated?
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:242 - Attribute (`body`)  - enhanced for lazy-loading? - false
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:211 - Processing attribute `marked` : value = false
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:242 - Attribute (`marked`)  - enhanced for lazy-loading? - false
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:211 - Processing attribute `title` : value = Testing 2
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:242 - Attribute (`title`)  - enhanced for lazy-loading? - false
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:211 - Processing attribute `topic` : value = 1
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:242 - Attribute (`topic`)  - enhanced for lazy-loading? - false
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:211 - Processing attribute `user` : value = 1
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:242 - Attribute (`user`)  - enhanced for lazy-loading? - false
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:381 - Done materializing entity [com.au.discussionforum.model.Question#12]
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG AbstractLoadPlanBasedEntityLoader:307 - Done entity load : com.au.discussionforum.model.Question#12
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:381 - Done materializing entity [com.au.discussionforum.model.QuesKeywords#38]
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:198 - Resolving attributes for [com.au.discussionforum.model.QuesKeywords#41]
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:211 - Processing attribute `keyword` : value = chess
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:242 - Attribute (`keyword`)  - enhanced for lazy-loading? - false
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:211 - Processing attribute `question` : value = 13
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:242 - Attribute (`question`)  - enhanced for lazy-loading? - false
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG SQL:144 - select question0_.ques_id as ques_id1_2_0_, question0_.body as body2_2_0_, question0_.marked as marked3_2_0_, question0_.title as title4_2_0_, question0_.topic_id as topic_id5_2_0_, question0_.user_id as user_id6_2_0_, topic1_.topic_id as topic_id1_3_1_, topic1_.topic_name as topic_na2_3_1_, user2_.user_id as user_id1_4_2_, user2_.email as email2_4_2_, user2_.password as password3_4_2_, user2_.photo as photo4_4_2_, user2_.username as username5_4_2_ from question question0_ left outer join topic topic1_ on question0_.topic_id=topic1_.topic_id left outer join user user2_ on question0_.user_id=user2_.user_id where question0_.ques_id=?
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG EntityReferenceInitializerImpl:131 - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:198 - Resolving attributes for [com.au.discussionforum.model.Question#13]
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:211 - Processing attribute `body` : value = Hello How are you updated?
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:242 - Attribute (`body`)  - enhanced for lazy-loading? - false
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:211 - Processing attribute `marked` : value = false
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:242 - Attribute (`marked`)  - enhanced for lazy-loading? - false
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:211 - Processing attribute `title` : value = Testing 2
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:242 - Attribute (`title`)  - enhanced for lazy-loading? - false
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:211 - Processing attribute `topic` : value = 1
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:242 - Attribute (`topic`)  - enhanced for lazy-loading? - false
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:211 - Processing attribute `user` : value = 1
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:242 - Attribute (`user`)  - enhanced for lazy-loading? - false
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:381 - Done materializing entity [com.au.discussionforum.model.Question#13]
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG AbstractLoadPlanBasedEntityLoader:307 - Done entity load : com.au.discussionforum.model.Question#13
+2021-03-09 10:45:17 [http-nio-8080-exec-7] DEBUG TwoPhaseLoad:381 - Done materializing entity [com.au.discussionforum.model.QuesKeywords#41]
+2021-03-09 10:45:17 [http-nio-8080-exec-8] DEBUG CriteriaQueryImpl:303 - Rendered criteria query -> select generatedAlias0 from Answer as generatedAlias0 left join generatedAlias0.question as generatedAlias1 where generatedAlias1.quesId=:param0
+2021-03-09 10:45:17 [http-nio-8080-exec-8] DEBUG SQL:144 - select answer0_.ans_id as ans_id1_0_, answer0_.answer_body as answer_b2_0_, answer0_.correct as correct3_0_, answer0_.ques_id as ques_id4_0_, answer0_.user_id as user_id5_0_ from answer answer0_ left outer join question question1_ on answer0_.ques_id=question1_.ques_id where question1_.ques_id=?
+2021-03-09 10:45:34 [http-nio-8080-exec-9] DEBUG CriteriaQueryImpl:303 - Rendered criteria query -> select generatedAlias0 from User as generatedAlias0 where generatedAlias0.userId=:param0
+2021-03-09 10:45:34 [http-nio-8080-exec-9] DEBUG QueryTranslatorImpl:292 - parse() - HQL: select generatedAlias0 from com.au.discussionforum.model.User as generatedAlias0 where generatedAlias0.userId=:param0
+2021-03-09 10:45:34 [http-nio-8080-exec-9] DEBUG ErrorTracker:97 - throwQueryException() : no errors
+2021-03-09 10:45:34 [http-nio-8080-exec-9] DEBUG QueryTranslatorImpl:313 - --- HQL AST ---
+ \-[QUERY] Node: 'query'
+    +-[SELECT_FROM] Node: 'SELECT_FROM'
+    |  +-[FROM] Node: 'from'
+    |  |  \-[RANGE] Node: 'RANGE'
+    |  |     +-[DOT] Node: '.'
+    |  |     |  +-[DOT] Node: '.'
+    |  |     |  |  +-[DOT] Node: '.'
+    |  |     |  |  |  +-[DOT] Node: '.'
+    |  |     |  |  |  |  +-[IDENT] Node: 'com'
+    |  |     |  |  |  |  \-[IDENT] Node: 'au'
+    |  |     |  |  |  \-[IDENT] Node: 'discussionforum'
+    |  |     |  |  \-[IDENT] Node: 'model'
+    |  |     |  \-[IDENT] Node: 'User'
+    |  |     \-[ALIAS] Node: 'generatedAlias0'
+    |  \-[SELECT] Node: 'select'
+    |     \-[IDENT] Node: 'generatedAlias0'
+    \-[WHERE] Node: 'where'
+       \-[EQ] Node: '='
+          +-[DOT] Node: '.'
+          |  +-[IDENT] Node: 'generatedAlias0'
+          |  \-[IDENT] Node: 'userId'
+          \-[COLON] Node: ':'
+             \-[IDENT] Node: 'param0'
+
+2021-03-09 10:45:34 [http-nio-8080-exec-9] DEBUG HqlSqlBaseWalker:129 - select << begin [level=1, statement=select]
+2021-03-09 10:45:34 [http-nio-8080-exec-9] DEBUG FromElement:153 - FromClause{level=1} : com.au.discussionforum.model.User (generatedAlias0) -> user0_
+2021-03-09 10:45:34 [http-nio-8080-exec-9] DEBUG FromReferenceNode:60 - Resolved : generatedAlias0 -> user0_.user_id
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG FromReferenceNode:60 - Resolved : generatedAlias0 -> user0_.user_id
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG DotNode:696 - getDataType() : userId -> org.hibernate.type.IntegerType@2e56b4d
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG FromReferenceNode:60 - Resolved : generatedAlias0.userId -> user0_.user_id
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG HqlSqlBaseWalker:133 - select : finishing up [level=1, statement=select]
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG HqlSqlWalker:760 - processQuery() :  ( SELECT ( {select clause} user0_.user_id ) ( FromClause{level=1} user user0_ ) ( where ( = ( user0_.user_id user0_.user_id userId ) ? ) ) )
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG JoinProcessor:129 - Tables referenced from query nodes:
+ \-QueryNode
+    +-SelectClause
+    | referencedTables(entity User): [user]
+    |  +-IdentNode
+    |  | persister: SingleTableEntityPersister(com.au.discussionforum.model.User)
+    |  | originalText: generatedAlias0
+    |  \-SqlFragment
+    +-FromClause
+    |  \-FromElement
+    \-SqlNode
+       \-BinaryLogicOperatorNode
+          +-DotNode
+          | persister: SingleTableEntityPersister(com.au.discussionforum.model.User)
+          | path: generatedAlias0.userId
+          |  +-IdentNode
+          |  | persister: SingleTableEntityPersister(com.au.discussionforum.model.User)
+          |  | originalText: generatedAlias0
+          |  \-IdentNode
+          |    persister: null
+          |    originalText: userId
+          \-ParameterNode
+
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG JoinProcessor:304 - Using FROM fragment [user user0_]
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG HqlSqlBaseWalker:137 - select >> end [level=1, statement=select]
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG QueryTranslatorImpl:279 - --- SQL AST ---
+ \-[SELECT] QueryNode: 'SELECT'  querySpaces (user)
+    +-[SELECT_CLAUSE] SelectClause: '{select clause}'
+    |  +-[ALIAS_REF] IdentNode: 'user0_.user_id as user_id1_4_' {alias=generatedAlias0, className=com.au.discussionforum.model.User, tableAlias=user0_}
+    |  \-[SQL_TOKEN] SqlFragment: 'user0_.email as email2_4_, user0_.password as password3_4_, user0_.photo as photo4_4_, user0_.username as username5_4_'
+    +-[FROM] FromClause: 'from' FromClause{level=1, fromElementCounter=1, fromElements=1, fromElementByClassAlias=[generatedAlias0], fromElementByTableAlias=[user0_], fromElementsByPath=[], collectionJoinFromElementsByPath=[], impliedElements=[]}
+    |  \-[FROM_FRAGMENT] FromElement: 'user user0_' FromElement{explicit,not a collection join,not a fetch join,fetch non-lazy properties,classAlias=generatedAlias0,role=null,tableName=user,tableAlias=user0_,origin=null,columns={,className=com.au.discussionforum.model.User}}
+    \-[WHERE] SqlNode: 'where'
+       \-[EQ] BinaryLogicOperatorNode: '='
+          +-[DOT] DotNode: 'user0_.user_id' {propertyName=userId,dereferenceType=PRIMITIVE,getPropertyPath=userId,path=generatedAlias0.userId,tableAlias=user0_,className=com.au.discussionforum.model.User,classAlias=generatedAlias0}
+          |  +-[ALIAS_REF] IdentNode: 'user0_.user_id' {alias=generatedAlias0, className=com.au.discussionforum.model.User, tableAlias=user0_}
+          |  \-[IDENT] IdentNode: 'userId' {originalText=userId}
+          \-[NAMED_PARAM] ParameterNode: '?' {name=param0, expectedType=org.hibernate.type.IntegerType@2e56b4d}
+
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG ErrorTracker:97 - throwQueryException() : no errors
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG QueryTranslatorImpl:258 - HQL: select generatedAlias0 from com.au.discussionforum.model.User as generatedAlias0 where generatedAlias0.userId=:param0
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG QueryTranslatorImpl:259 - SQL: select user0_.user_id as user_id1_4_, user0_.email as email2_4_, user0_.password as password3_4_, user0_.photo as photo4_4_, user0_.username as username5_4_ from user user0_ where user0_.user_id=?
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG ErrorTracker:97 - throwQueryException() : no errors
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG SQL:144 - select user0_.user_id as user_id1_4_, user0_.email as email2_4_, user0_.password as password3_4_, user0_.photo as photo4_4_, user0_.username as username5_4_ from user user0_ where user0_.user_id=?
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG Loader:384 - Result set row: 0
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG Loader:1593 - Result row: EntityKey[com.au.discussionforum.model.User#4]
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG TwoPhaseLoad:198 - Resolving attributes for [com.au.discussionforum.model.User#4]
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG TwoPhaseLoad:211 - Processing attribute `email` : value = amcoc1234@gmail.com
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG TwoPhaseLoad:242 - Attribute (`email`)  - enhanced for lazy-loading? - false
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG TwoPhaseLoad:211 - Processing attribute `password` : value = 1234
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG TwoPhaseLoad:242 - Attribute (`password`)  - enhanced for lazy-loading? - false
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG TwoPhaseLoad:211 - Processing attribute `photo` : value = https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG TwoPhaseLoad:242 - Attribute (`photo`)  - enhanced for lazy-loading? - false
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG TwoPhaseLoad:211 - Processing attribute `username` : value = Ashit Mundra
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG TwoPhaseLoad:242 - Attribute (`username`)  - enhanced for lazy-loading? - false
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG TwoPhaseLoad:381 - Done materializing entity [com.au.discussionforum.model.User#4]
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG CriteriaQueryImpl:303 - Rendered criteria query -> select generatedAlias0 from Topic as generatedAlias0 where generatedAlias0.topicName=:param0
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG QueryTranslatorImpl:292 - parse() - HQL: select generatedAlias0 from com.au.discussionforum.model.Topic as generatedAlias0 where generatedAlias0.topicName=:param0
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG ErrorTracker:97 - throwQueryException() : no errors
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG QueryTranslatorImpl:313 - --- HQL AST ---
+ \-[QUERY] Node: 'query'
+    +-[SELECT_FROM] Node: 'SELECT_FROM'
+    |  +-[FROM] Node: 'from'
+    |  |  \-[RANGE] Node: 'RANGE'
+    |  |     +-[DOT] Node: '.'
+    |  |     |  +-[DOT] Node: '.'
+    |  |     |  |  +-[DOT] Node: '.'
+    |  |     |  |  |  +-[DOT] Node: '.'
+    |  |     |  |  |  |  +-[IDENT] Node: 'com'
+    |  |     |  |  |  |  \-[IDENT] Node: 'au'
+    |  |     |  |  |  \-[IDENT] Node: 'discussionforum'
+    |  |     |  |  \-[IDENT] Node: 'model'
+    |  |     |  \-[IDENT] Node: 'Topic'
+    |  |     \-[ALIAS] Node: 'generatedAlias0'
+    |  \-[SELECT] Node: 'select'
+    |     \-[IDENT] Node: 'generatedAlias0'
+    \-[WHERE] Node: 'where'
+       \-[EQ] Node: '='
+          +-[DOT] Node: '.'
+          |  +-[IDENT] Node: 'generatedAlias0'
+          |  \-[IDENT] Node: 'topicName'
+          \-[COLON] Node: ':'
+             \-[IDENT] Node: 'param0'
+
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG HqlSqlBaseWalker:129 - select << begin [level=1, statement=select]
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG FromElement:153 - FromClause{level=1} : com.au.discussionforum.model.Topic (generatedAlias0) -> topic0_
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG FromReferenceNode:60 - Resolved : generatedAlias0 -> topic0_.topic_id
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG FromReferenceNode:60 - Resolved : generatedAlias0 -> topic0_.topic_id
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG DotNode:696 - getDataType() : topicName -> org.hibernate.type.StringType@474749b8
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG FromReferenceNode:60 - Resolved : generatedAlias0.topicName -> topic0_.topic_name
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG HqlSqlBaseWalker:133 - select : finishing up [level=1, statement=select]
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG HqlSqlWalker:760 - processQuery() :  ( SELECT ( {select clause} topic0_.topic_id ) ( FromClause{level=1} topic topic0_ ) ( where ( = ( topic0_.topic_name topic0_.topic_id topicName ) ? ) ) )
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG JoinProcessor:129 - Tables referenced from query nodes:
+ \-QueryNode
+    +-SelectClause
+    | referencedTables(entity Topic): [topic]
+    |  +-IdentNode
+    |  | persister: SingleTableEntityPersister(com.au.discussionforum.model.Topic)
+    |  | originalText: generatedAlias0
+    |  \-SqlFragment
+    +-FromClause
+    |  \-FromElement
+    \-SqlNode
+       \-BinaryLogicOperatorNode
+          +-DotNode
+          | persister: SingleTableEntityPersister(com.au.discussionforum.model.Topic)
+          | path: generatedAlias0.topicName
+          |  +-IdentNode
+          |  | persister: SingleTableEntityPersister(com.au.discussionforum.model.Topic)
+          |  | originalText: generatedAlias0
+          |  \-IdentNode
+          |    persister: null
+          |    originalText: topicName
+          \-ParameterNode
+
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG JoinProcessor:304 - Using FROM fragment [topic topic0_]
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG HqlSqlBaseWalker:137 - select >> end [level=1, statement=select]
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG QueryTranslatorImpl:279 - --- SQL AST ---
+ \-[SELECT] QueryNode: 'SELECT'  querySpaces (topic)
+    +-[SELECT_CLAUSE] SelectClause: '{select clause}'
+    |  +-[ALIAS_REF] IdentNode: 'topic0_.topic_id as topic_id1_3_' {alias=generatedAlias0, className=com.au.discussionforum.model.Topic, tableAlias=topic0_}
+    |  \-[SQL_TOKEN] SqlFragment: 'topic0_.topic_name as topic_na2_3_'
+    +-[FROM] FromClause: 'from' FromClause{level=1, fromElementCounter=1, fromElements=1, fromElementByClassAlias=[generatedAlias0], fromElementByTableAlias=[topic0_], fromElementsByPath=[], collectionJoinFromElementsByPath=[], impliedElements=[]}
+    |  \-[FROM_FRAGMENT] FromElement: 'topic topic0_' FromElement{explicit,not a collection join,not a fetch join,fetch non-lazy properties,classAlias=generatedAlias0,role=null,tableName=topic,tableAlias=topic0_,origin=null,columns={,className=com.au.discussionforum.model.Topic}}
+    \-[WHERE] SqlNode: 'where'
+       \-[EQ] BinaryLogicOperatorNode: '='
+          +-[DOT] DotNode: 'topic0_.topic_name' {propertyName=topicName,dereferenceType=PRIMITIVE,getPropertyPath=topicName,path=generatedAlias0.topicName,tableAlias=topic0_,className=com.au.discussionforum.model.Topic,classAlias=generatedAlias0}
+          |  +-[ALIAS_REF] IdentNode: 'topic0_.topic_id' {alias=generatedAlias0, className=com.au.discussionforum.model.Topic, tableAlias=topic0_}
+          |  \-[IDENT] IdentNode: 'topicName' {originalText=topicName}
+          \-[NAMED_PARAM] ParameterNode: '?' {name=param0, expectedType=org.hibernate.type.StringType@474749b8}
+
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG ErrorTracker:97 - throwQueryException() : no errors
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG QueryTranslatorImpl:258 - HQL: select generatedAlias0 from com.au.discussionforum.model.Topic as generatedAlias0 where generatedAlias0.topicName=:param0
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG QueryTranslatorImpl:259 - SQL: select topic0_.topic_id as topic_id1_3_, topic0_.topic_name as topic_na2_3_ from topic topic0_ where topic0_.topic_name=?
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG ErrorTracker:97 - throwQueryException() : no errors
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG SQL:144 - select topic0_.topic_id as topic_id1_3_, topic0_.topic_name as topic_na2_3_ from topic topic0_ where topic0_.topic_name=?
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG Loader:384 - Result set row: 0
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG Loader:1593 - Result row: EntityKey[com.au.discussionforum.model.Topic#2]
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG TwoPhaseLoad:198 - Resolving attributes for [com.au.discussionforum.model.Topic#2]
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG TwoPhaseLoad:211 - Processing attribute `topicName` : value = algorithm
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG TwoPhaseLoad:242 - Attribute (`topicName`)  - enhanced for lazy-loading? - false
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG TwoPhaseLoad:381 - Done materializing entity [com.au.discussionforum.model.Topic#2]
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG TransactionImpl:53 - On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG TransactionImpl:81 - begin
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG ActionQueue:281 - Executing identity-insert immediately
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG SQL:144 - insert into question (body, marked, title, topic_id, user_id) values (?, ?, ?, ?, ?)
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG IdentifierGeneratorHelper:78 - Natively generated identity: 17
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG ResourceRegistryStandardImpl:106 - HHH000387: ResultSet's statement was not registered
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG TransactionImpl:98 - committing
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG AbstractFlushingEventListener:140 - Processing flush-time cascades
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG AbstractFlushingEventListener:193 - Dirty checking collections
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG AbstractFlushingEventListener:114 - Flushed: 0 insertions, 0 updates, 0 deletions to 3 objects
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG AbstractFlushingEventListener:121 - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG EntityPrinter:110 - Listing entities:
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG EntityPrinter:117 - com.au.discussionforum.model.Topic{topicId=2, topicName=algorithm}
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG EntityPrinter:117 - com.au.discussionforum.model.User{password=1234, photo=https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg, userId=4, email=amcoc1234@gmail.com, username=Ashit Mundra}
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG EntityPrinter:117 - com.au.discussionforum.model.Question{marked=false, topic=com.au.discussionforum.model.Topic#2, body=Hello, title=Question, user=com.au.discussionforum.model.User#4, quesId=17}
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG TransactionImpl:81 - begin
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG ActionQueue:281 - Executing identity-insert immediately
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG SQL:144 - insert into ques_keywords (keyword, ques_id) values (?, ?)
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG IdentifierGeneratorHelper:78 - Natively generated identity: 46
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG ResourceRegistryStandardImpl:106 - HHH000387: ResultSet's statement was not registered
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG TransactionImpl:98 - committing
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG AbstractFlushingEventListener:140 - Processing flush-time cascades
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG AbstractFlushingEventListener:193 - Dirty checking collections
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG AbstractFlushingEventListener:114 - Flushed: 0 insertions, 0 updates, 0 deletions to 4 objects
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG AbstractFlushingEventListener:121 - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG EntityPrinter:110 - Listing entities:
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG EntityPrinter:117 - com.au.discussionforum.model.Topic{topicId=2, topicName=algorithm}
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG EntityPrinter:117 - com.au.discussionforum.model.User{password=1234, photo=https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg, userId=4, email=amcoc1234@gmail.com, username=Ashit Mundra}
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG EntityPrinter:117 - com.au.discussionforum.model.Question{marked=false, topic=com.au.discussionforum.model.Topic#2, body=Hello, title=Question, user=com.au.discussionforum.model.User#4, quesId=17}
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG EntityPrinter:117 - com.au.discussionforum.model.QuesKeywords{question=com.au.discussionforum.model.Question#17, quesKeywordsId=46, keyword=chess}
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG CriteriaQueryImpl:303 - Rendered criteria query -> select generatedAlias0 from UserTopic as generatedAlias0 left join generatedAlias0.topic as generatedAlias1 where generatedAlias1.topicId=:param0
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG QueryTranslatorImpl:292 - parse() - HQL: select generatedAlias0 from com.au.discussionforum.model.UserTopic as generatedAlias0 left join generatedAlias0.topic as generatedAlias1 where generatedAlias1.topicId=:param0
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG ErrorTracker:97 - throwQueryException() : no errors
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG QueryTranslatorImpl:313 - --- HQL AST ---
+ \-[QUERY] Node: 'query'
+    +-[SELECT_FROM] Node: 'SELECT_FROM'
+    |  +-[FROM] Node: 'from'
+    |  |  +-[RANGE] Node: 'RANGE'
+    |  |  |  +-[DOT] Node: '.'
+    |  |  |  |  +-[DOT] Node: '.'
+    |  |  |  |  |  +-[DOT] Node: '.'
+    |  |  |  |  |  |  +-[DOT] Node: '.'
+    |  |  |  |  |  |  |  +-[IDENT] Node: 'com'
+    |  |  |  |  |  |  |  \-[IDENT] Node: 'au'
+    |  |  |  |  |  |  \-[IDENT] Node: 'discussionforum'
+    |  |  |  |  |  \-[IDENT] Node: 'model'
+    |  |  |  |  \-[IDENT] Node: 'UserTopic'
+    |  |  |  \-[ALIAS] Node: 'generatedAlias0'
+    |  |  \-[JOIN] Node: 'join'
+    |  |     +-[LEFT] Node: 'left'
+    |  |     +-[DOT] Node: '.'
+    |  |     |  +-[IDENT] Node: 'generatedAlias0'
+    |  |     |  \-[IDENT] Node: 'topic'
+    |  |     \-[ALIAS] Node: 'generatedAlias1'
+    |  \-[SELECT] Node: 'select'
+    |     \-[IDENT] Node: 'generatedAlias0'
+    \-[WHERE] Node: 'where'
+       \-[EQ] Node: '='
+          +-[DOT] Node: '.'
+          |  +-[IDENT] Node: 'generatedAlias1'
+          |  \-[IDENT] Node: 'topicId'
+          \-[COLON] Node: ':'
+             \-[IDENT] Node: 'param0'
+
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG HqlSqlBaseWalker:129 - select << begin [level=1, statement=select]
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG FromElement:153 - FromClause{level=1} : com.au.discussionforum.model.UserTopic (generatedAlias0) -> usertopic0_
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG FromReferenceNode:60 - Resolved : generatedAlias0 -> usertopic0_.user_topic_id
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG DotNode:696 - getDataType() : topic -> org.hibernate.type.ManyToOneType(com.au.discussionforum.model.Topic)
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG DotNode:441 - dereferenceEntityJoin() : generating join for topic in com.au.discussionforum.model.UserTopic (generatedAlias1) parent = [ {null} ]
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG FromElement:153 - FromClause{level=1} : com.au.discussionforum.model.Topic (generatedAlias1) -> topic1_
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG FromClause:295 - addJoinByPathMap() : generatedAlias0.topic -> FromElement{explicit,not a collection join,not a fetch join,fetch non-lazy properties,classAlias=generatedAlias1,role=null,tableName=topic,tableAlias=topic1_,origin=user_topic usertopic0_,columns={usertopic0_.topic_id,className=com.au.discussionforum.model.Topic}}
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG FromReferenceNode:60 - Resolved : generatedAlias0.topic -> usertopic0_.topic_id
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG HqlSqlWalker:442 - createFromJoinElement() : -- join tree --
+ \-[JOIN_FRAGMENT] FromElement: 'topic topic1_' FromElement{explicit,not a collection join,not a fetch join,fetch non-lazy properties,classAlias=generatedAlias1,role=com.au.discussionforum.model.UserTopic.topic,tableName=topic,tableAlias=topic1_,origin=user_topic usertopic0_,columns={usertopic0_.topic_id,className=com.au.discussionforum.model.Topic}}
+
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG FromReferenceNode:60 - Resolved : generatedAlias0 -> usertopic0_.user_topic_id
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG FromReferenceNode:60 - Resolved : generatedAlias1 -> topic1_.topic_id
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG DotNode:696 - getDataType() : topicId -> org.hibernate.type.IntegerType@2e56b4d
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG FromReferenceNode:60 - Resolved : generatedAlias1.topicId -> topic1_.topic_id
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG HqlSqlBaseWalker:133 - select : finishing up [level=1, statement=select]
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG HqlSqlWalker:760 - processQuery() :  ( SELECT ( {select clause} usertopic0_.user_topic_id ) ( FromClause{level=1} ( user_topic usertopic0_ topic topic1_ ) ) ( where ( = ( topic1_.topic_id topic1_.topic_id topicId ) ? ) ) )
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG JoinProcessor:129 - Tables referenced from query nodes:
+ \-QueryNode
+    +-SelectClause
+    | referencedTables(entity UserTopic): [user_topic]
+    |  +-IdentNode
+    |  | persister: SingleTableEntityPersister(com.au.discussionforum.model.UserTopic)
+    |  | originalText: generatedAlias0
+    |  \-SqlFragment
+    +-FromClause
+    |  \-FromElement
+    |     \-FromElement
+    \-SqlNode
+       \-BinaryLogicOperatorNode
+          +-DotNode
+          | persister: SingleTableEntityPersister(com.au.discussionforum.model.Topic)
+          | path: generatedAlias1.topicId
+          |  +-IdentNode
+          |  | persister: SingleTableEntityPersister(com.au.discussionforum.model.Topic)
+          |  | originalText: generatedAlias1
+          |  \-IdentNode
+          |    persister: null
+          |    originalText: topicId
+          \-ParameterNode
+
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG JoinProcessor:304 - Using FROM fragment [user_topic usertopic0_]
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG JoinProcessor:304 - Using FROM fragment [left outer join topic topic1_ on usertopic0_.topic_id=topic1_.topic_id]
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG HqlSqlBaseWalker:137 - select >> end [level=1, statement=select]
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG QueryTranslatorImpl:279 - --- SQL AST ---
+ \-[SELECT] QueryNode: 'SELECT'  querySpaces (user_topic,topic)
+    +-[SELECT_CLAUSE] SelectClause: '{select clause}'
+    |  +-[ALIAS_REF] IdentNode: 'usertopic0_.user_topic_id as user_top1_5_' {alias=generatedAlias0, className=com.au.discussionforum.model.UserTopic, tableAlias=usertopic0_}
+    |  \-[SQL_TOKEN] SqlFragment: 'usertopic0_.topic_id as topic_id2_5_, usertopic0_.user_id as user_id3_5_'
+    +-[FROM] FromClause: 'from' FromClause{level=1, fromElementCounter=2, fromElements=2, fromElementByClassAlias=[generatedAlias0, generatedAlias1], fromElementByTableAlias=[usertopic0_, topic1_], fromElementsByPath=[generatedAlias0.topic], collectionJoinFromElementsByPath=[], impliedElements=[]}
+    |  \-[FROM_FRAGMENT] FromElement: 'user_topic usertopic0_' FromElement{explicit,not a collection join,not a fetch join,fetch non-lazy properties,classAlias=generatedAlias0,role=null,tableName=user_topic,tableAlias=usertopic0_,origin=null,columns={,className=com.au.discussionforum.model.UserTopic}}
+    |     \-[JOIN_FRAGMENT] FromElement: 'left outer join topic topic1_ on usertopic0_.topic_id=topic1_.topic_id' FromElement{explicit,not a collection join,not a fetch join,fetch non-lazy properties,classAlias=generatedAlias1,role=com.au.discussionforum.model.UserTopic.topic,tableName=topic,tableAlias=topic1_,origin=user_topic usertopic0_,columns={usertopic0_.topic_id,className=com.au.discussionforum.model.Topic}}
+    \-[WHERE] SqlNode: 'where'
+       \-[EQ] BinaryLogicOperatorNode: '='
+          +-[DOT] DotNode: 'topic1_.topic_id' {propertyName=topicId,dereferenceType=PRIMITIVE,getPropertyPath=topicId,path=generatedAlias1.topicId,tableAlias=topic1_,className=com.au.discussionforum.model.Topic,classAlias=generatedAlias1}
+          |  +-[ALIAS_REF] IdentNode: 'topic1_.topic_id' {alias=generatedAlias1, className=com.au.discussionforum.model.Topic, tableAlias=topic1_}
+          |  \-[IDENT] IdentNode: 'topicId' {originalText=topicId}
+          \-[NAMED_PARAM] ParameterNode: '?' {name=param0, expectedType=org.hibernate.type.IntegerType@2e56b4d}
+
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG ErrorTracker:97 - throwQueryException() : no errors
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG QueryTranslatorImpl:258 - HQL: select generatedAlias0 from com.au.discussionforum.model.UserTopic as generatedAlias0 left join generatedAlias0.topic as generatedAlias1 where generatedAlias1.topicId=:param0
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG QueryTranslatorImpl:259 - SQL: select usertopic0_.user_topic_id as user_top1_5_, usertopic0_.topic_id as topic_id2_5_, usertopic0_.user_id as user_id3_5_ from user_topic usertopic0_ left outer join topic topic1_ on usertopic0_.topic_id=topic1_.topic_id where topic1_.topic_id=?
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG ErrorTracker:97 - throwQueryException() : no errors
+2021-03-09 10:45:35 [http-nio-8080-exec-9] DEBUG SQL:144 - select usertopic0_.user_topic_id as user_top1_5_, usertopic0_.topic_id as topic_id2_5_, usertopic0_.user_id as user_id3_5_ from user_topic usertopic0_ left outer join topic topic1_ on usertopic0_.topic_id=topic1_.topic_id where topic1_.topic_id=?
+2021-03-09 10:46:27 [http-nio-8080-exec-10] DEBUG CriteriaQueryImpl:303 - Rendered criteria query -> select generatedAlias0 from User as generatedAlias0 where generatedAlias0.userId=:param0
+2021-03-09 10:46:27 [http-nio-8080-exec-10] DEBUG SQL:144 - select user0_.user_id as user_id1_4_, user0_.email as email2_4_, user0_.password as password3_4_, user0_.photo as photo4_4_, user0_.username as username5_4_ from user user0_ where user0_.user_id=?
+2021-03-09 10:46:27 [http-nio-8080-exec-10] DEBUG Loader:384 - Result set row: 0
+2021-03-09 10:46:27 [http-nio-8080-exec-10] DEBUG Loader:1593 - Result row: EntityKey[com.au.discussionforum.model.User#4]
+2021-03-09 10:46:27 [http-nio-8080-exec-10] DEBUG TwoPhaseLoad:198 - Resolving attributes for [com.au.discussionforum.model.User#4]
+2021-03-09 10:46:27 [http-nio-8080-exec-10] DEBUG TwoPhaseLoad:211 - Processing attribute `email` : value = amcoc1234@gmail.com
+2021-03-09 10:46:27 [http-nio-8080-exec-10] DEBUG TwoPhaseLoad:242 - Attribute (`email`)  - enhanced for lazy-loading? - false
+2021-03-09 10:46:27 [http-nio-8080-exec-10] DEBUG TwoPhaseLoad:211 - Processing attribute `password` : value = 1234
+2021-03-09 10:46:27 [http-nio-8080-exec-10] DEBUG TwoPhaseLoad:242 - Attribute (`password`)  - enhanced for lazy-loading? - false
+2021-03-09 10:46:27 [http-nio-8080-exec-10] DEBUG TwoPhaseLoad:211 - Processing attribute `photo` : value = https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg
+2021-03-09 10:46:27 [http-nio-8080-exec-10] DEBUG TwoPhaseLoad:242 - Attribute (`photo`)  - enhanced for lazy-loading? - false
+2021-03-09 10:46:27 [http-nio-8080-exec-10] DEBUG TwoPhaseLoad:211 - Processing attribute `username` : value = Ashit Mundra
+2021-03-09 10:46:27 [http-nio-8080-exec-10] DEBUG TwoPhaseLoad:242 - Attribute (`username`)  - enhanced for lazy-loading? - false
+2021-03-09 10:46:27 [http-nio-8080-exec-10] DEBUG TwoPhaseLoad:381 - Done materializing entity [com.au.discussionforum.model.User#4]
+2021-03-09 10:46:27 [http-nio-8080-exec-10] DEBUG CriteriaQueryImpl:303 - Rendered criteria query -> select generatedAlias0 from Topic as generatedAlias0 where generatedAlias0.topicName=:param0
+2021-03-09 10:46:27 [http-nio-8080-exec-10] DEBUG SQL:144 - select topic0_.topic_id as topic_id1_3_, topic0_.topic_name as topic_na2_3_ from topic topic0_ where topic0_.topic_name=?
+2021-03-09 10:46:27 [http-nio-8080-exec-10] DEBUG Loader:384 - Result set row: 0
+2021-03-09 10:46:27 [http-nio-8080-exec-10] DEBUG Loader:1593 - Result row: EntityKey[com.au.discussionforum.model.Topic#1]
+2021-03-09 10:46:27 [http-nio-8080-exec-10] DEBUG TwoPhaseLoad:198 - Resolving attributes for [com.au.discussionforum.model.Topic#1]
+2021-03-09 10:46:27 [http-nio-8080-exec-10] DEBUG TwoPhaseLoad:211 - Processing attribute `topicName` : value = badminton
+2021-03-09 10:46:27 [http-nio-8080-exec-10] DEBUG TwoPhaseLoad:242 - Attribute (`topicName`)  - enhanced for lazy-loading? - false
+2021-03-09 10:46:27 [http-nio-8080-exec-10] DEBUG TwoPhaseLoad:381 - Done materializing entity [com.au.discussionforum.model.Topic#1]
+2021-03-09 10:46:27 [http-nio-8080-exec-10] DEBUG TransactionImpl:53 - On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+2021-03-09 10:46:27 [http-nio-8080-exec-10] DEBUG TransactionImpl:81 - begin
+2021-03-09 10:46:27 [http-nio-8080-exec-10] DEBUG ActionQueue:281 - Executing identity-insert immediately
+2021-03-09 10:46:27 [http-nio-8080-exec-10] DEBUG SQL:144 - insert into question (body, marked, title, topic_id, user_id) values (?, ?, ?, ?, ?)
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG IdentifierGeneratorHelper:78 - Natively generated identity: 18
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG ResourceRegistryStandardImpl:106 - HHH000387: ResultSet's statement was not registered
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG TransactionImpl:98 - committing
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG AbstractFlushingEventListener:140 - Processing flush-time cascades
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG AbstractFlushingEventListener:193 - Dirty checking collections
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG AbstractFlushingEventListener:114 - Flushed: 0 insertions, 0 updates, 0 deletions to 3 objects
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG AbstractFlushingEventListener:121 - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG EntityPrinter:110 - Listing entities:
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG EntityPrinter:117 - com.au.discussionforum.model.Topic{topicId=1, topicName=badminton}
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG EntityPrinter:117 - com.au.discussionforum.model.User{password=1234, photo=https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg, userId=4, email=amcoc1234@gmail.com, username=Ashit Mundra}
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG EntityPrinter:117 - com.au.discussionforum.model.Question{marked=false, topic=com.au.discussionforum.model.Topic#1, body=hik, title=hjjhi, user=com.au.discussionforum.model.User#4, quesId=18}
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG TransactionImpl:81 - begin
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG ActionQueue:281 - Executing identity-insert immediately
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG SQL:144 - insert into ques_keywords (keyword, ques_id) values (?, ?)
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG IdentifierGeneratorHelper:78 - Natively generated identity: 47
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG ResourceRegistryStandardImpl:106 - HHH000387: ResultSet's statement was not registered
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG TransactionImpl:98 - committing
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG AbstractFlushingEventListener:140 - Processing flush-time cascades
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG AbstractFlushingEventListener:193 - Dirty checking collections
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG AbstractFlushingEventListener:114 - Flushed: 0 insertions, 0 updates, 0 deletions to 4 objects
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG AbstractFlushingEventListener:121 - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG EntityPrinter:110 - Listing entities:
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG EntityPrinter:117 - com.au.discussionforum.model.Topic{topicId=1, topicName=badminton}
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG EntityPrinter:117 - com.au.discussionforum.model.User{password=1234, photo=https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg, userId=4, email=amcoc1234@gmail.com, username=Ashit Mundra}
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG EntityPrinter:117 - com.au.discussionforum.model.Question{marked=false, topic=com.au.discussionforum.model.Topic#1, body=hik, title=hjjhi, user=com.au.discussionforum.model.User#4, quesId=18}
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG EntityPrinter:117 - com.au.discussionforum.model.QuesKeywords{question=com.au.discussionforum.model.Question#18, quesKeywordsId=47, keyword=chess}
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG CriteriaQueryImpl:303 - Rendered criteria query -> select generatedAlias0 from UserTopic as generatedAlias0 left join generatedAlias0.topic as generatedAlias1 where generatedAlias1.topicId=:param0
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG SQL:144 - select usertopic0_.user_topic_id as user_top1_5_, usertopic0_.topic_id as topic_id2_5_, usertopic0_.user_id as user_id3_5_ from user_topic usertopic0_ left outer join topic topic1_ on usertopic0_.topic_id=topic1_.topic_id where topic1_.topic_id=?
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG Loader:384 - Result set row: 0
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG Loader:1593 - Result row: EntityKey[com.au.discussionforum.model.UserTopic#5]
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG Loader:384 - Result set row: 1
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG Loader:1593 - Result row: EntityKey[com.au.discussionforum.model.UserTopic#8]
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG Loader:384 - Result set row: 2
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG Loader:1593 - Result row: EntityKey[com.au.discussionforum.model.UserTopic#9]
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG Loader:384 - Result set row: 3
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG Loader:1593 - Result row: EntityKey[com.au.discussionforum.model.UserTopic#10]
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG TwoPhaseLoad:198 - Resolving attributes for [com.au.discussionforum.model.UserTopic#5]
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG TwoPhaseLoad:211 - Processing attribute `topic` : value = 1
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG TwoPhaseLoad:242 - Attribute (`topic`)  - enhanced for lazy-loading? - false
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG TwoPhaseLoad:211 - Processing attribute `user` : value = 1
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG TwoPhaseLoad:242 - Attribute (`user`)  - enhanced for lazy-loading? - false
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG SQL:144 - select user0_.user_id as user_id1_4_0_, user0_.email as email2_4_0_, user0_.password as password3_4_0_, user0_.photo as photo4_4_0_, user0_.username as username5_4_0_ from user user0_ where user0_.user_id=?
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG EntityReferenceInitializerImpl:131 - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG TwoPhaseLoad:198 - Resolving attributes for [com.au.discussionforum.model.User#1]
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG TwoPhaseLoad:211 - Processing attribute `email` : value = acprealms@gmail.com
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG TwoPhaseLoad:242 - Attribute (`email`)  - enhanced for lazy-loading? - false
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG TwoPhaseLoad:211 - Processing attribute `password` : value = 1234
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG TwoPhaseLoad:242 - Attribute (`password`)  - enhanced for lazy-loading? - false
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG TwoPhaseLoad:211 - Processing attribute `photo` : value = https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG TwoPhaseLoad:242 - Attribute (`photo`)  - enhanced for lazy-loading? - false
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG TwoPhaseLoad:211 - Processing attribute `username` : value = Parth Modhvadia
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG TwoPhaseLoad:242 - Attribute (`username`)  - enhanced for lazy-loading? - false
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG TwoPhaseLoad:381 - Done materializing entity [com.au.discussionforum.model.User#1]
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG AbstractLoadPlanBasedEntityLoader:307 - Done entity load : com.au.discussionforum.model.User#1
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG TwoPhaseLoad:381 - Done materializing entity [com.au.discussionforum.model.UserTopic#5]
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG TwoPhaseLoad:198 - Resolving attributes for [com.au.discussionforum.model.UserTopic#8]
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG TwoPhaseLoad:211 - Processing attribute `topic` : value = 1
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG TwoPhaseLoad:242 - Attribute (`topic`)  - enhanced for lazy-loading? - false
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG TwoPhaseLoad:211 - Processing attribute `user` : value = 2
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG TwoPhaseLoad:242 - Attribute (`user`)  - enhanced for lazy-loading? - false
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG SQL:144 - select user0_.user_id as user_id1_4_0_, user0_.email as email2_4_0_, user0_.password as password3_4_0_, user0_.photo as photo4_4_0_, user0_.username as username5_4_0_ from user user0_ where user0_.user_id=?
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG EntityReferenceInitializerImpl:131 - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG TwoPhaseLoad:198 - Resolving attributes for [com.au.discussionforum.model.User#2]
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG TwoPhaseLoad:211 - Processing attribute `email` : value = amcoc123@gmail.com
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG TwoPhaseLoad:242 - Attribute (`email`)  - enhanced for lazy-loading? - false
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG TwoPhaseLoad:211 - Processing attribute `password` : value = 1234
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG TwoPhaseLoad:242 - Attribute (`password`)  - enhanced for lazy-loading? - false
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG TwoPhaseLoad:211 - Processing attribute `photo` : value = https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG TwoPhaseLoad:242 - Attribute (`photo`)  - enhanced for lazy-loading? - false
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG TwoPhaseLoad:211 - Processing attribute `username` : value = Nisarg Shah
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG TwoPhaseLoad:242 - Attribute (`username`)  - enhanced for lazy-loading? - false
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG TwoPhaseLoad:381 - Done materializing entity [com.au.discussionforum.model.User#2]
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG AbstractLoadPlanBasedEntityLoader:307 - Done entity load : com.au.discussionforum.model.User#2
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG TwoPhaseLoad:381 - Done materializing entity [com.au.discussionforum.model.UserTopic#8]
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG TwoPhaseLoad:198 - Resolving attributes for [com.au.discussionforum.model.UserTopic#9]
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG TwoPhaseLoad:211 - Processing attribute `topic` : value = 1
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG TwoPhaseLoad:242 - Attribute (`topic`)  - enhanced for lazy-loading? - false
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG TwoPhaseLoad:211 - Processing attribute `user` : value = 3
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG TwoPhaseLoad:242 - Attribute (`user`)  - enhanced for lazy-loading? - false
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG SQL:144 - select user0_.user_id as user_id1_4_0_, user0_.email as email2_4_0_, user0_.password as password3_4_0_, user0_.photo as photo4_4_0_, user0_.username as username5_4_0_ from user user0_ where user0_.user_id=?
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG EntityReferenceInitializerImpl:131 - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG TwoPhaseLoad:198 - Resolving attributes for [com.au.discussionforum.model.User#3]
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG TwoPhaseLoad:211 - Processing attribute `email` : value = amundra6@gmail.com
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG TwoPhaseLoad:242 - Attribute (`email`)  - enhanced for lazy-loading? - false
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG TwoPhaseLoad:211 - Processing attribute `password` : value = 1234
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG TwoPhaseLoad:242 - Attribute (`password`)  - enhanced for lazy-loading? - false
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG TwoPhaseLoad:211 - Processing attribute `photo` : value = https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG TwoPhaseLoad:242 - Attribute (`photo`)  - enhanced for lazy-loading? - false
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG TwoPhaseLoad:211 - Processing attribute `username` : value = Sakshi Bansal
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG TwoPhaseLoad:242 - Attribute (`username`)  - enhanced for lazy-loading? - false
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG TwoPhaseLoad:381 - Done materializing entity [com.au.discussionforum.model.User#3]
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG AbstractLoadPlanBasedEntityLoader:307 - Done entity load : com.au.discussionforum.model.User#3
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG TwoPhaseLoad:381 - Done materializing entity [com.au.discussionforum.model.UserTopic#9]
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG TwoPhaseLoad:198 - Resolving attributes for [com.au.discussionforum.model.UserTopic#10]
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG TwoPhaseLoad:211 - Processing attribute `topic` : value = 1
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG TwoPhaseLoad:242 - Attribute (`topic`)  - enhanced for lazy-loading? - false
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG TwoPhaseLoad:211 - Processing attribute `user` : value = 4
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG TwoPhaseLoad:242 - Attribute (`user`)  - enhanced for lazy-loading? - false
+2021-03-09 10:46:28 [http-nio-8080-exec-10] DEBUG TwoPhaseLoad:381 - Done materializing entity [com.au.discussionforum.model.UserTopic#10]
+2021-03-09 10:47:34 [http-nio-8080-exec-1] DEBUG CriteriaQueryImpl:303 - Rendered criteria query -> select generatedAlias0 from User as generatedAlias0 where generatedAlias0.username=:param0
+2021-03-09 10:47:34 [http-nio-8080-exec-1] DEBUG SQL:144 - select user0_.user_id as user_id1_4_, user0_.email as email2_4_, user0_.password as password3_4_, user0_.photo as photo4_4_, user0_.username as username5_4_ from user user0_ where user0_.username=?
+2021-03-09 10:47:57 [http-nio-8080-exec-2] DEBUG CriteriaQueryImpl:303 - Rendered criteria query -> select generatedAlias0 from User as generatedAlias0 where generatedAlias0.username=:param0
+2021-03-09 10:47:57 [http-nio-8080-exec-2] DEBUG SQL:144 - select user0_.user_id as user_id1_4_, user0_.email as email2_4_, user0_.password as password3_4_, user0_.photo as photo4_4_, user0_.username as username5_4_ from user user0_ where user0_.username=?
+2021-03-09 10:47:57 [http-nio-8080-exec-2] DEBUG Loader:384 - Result set row: 0
+2021-03-09 10:47:57 [http-nio-8080-exec-2] DEBUG Loader:1593 - Result row: EntityKey[com.au.discussionforum.model.User#4]
+2021-03-09 10:47:57 [http-nio-8080-exec-2] DEBUG TwoPhaseLoad:198 - Resolving attributes for [com.au.discussionforum.model.User#4]
+2021-03-09 10:47:57 [http-nio-8080-exec-2] DEBUG TwoPhaseLoad:211 - Processing attribute `email` : value = amcoc1234@gmail.com
+2021-03-09 10:47:57 [http-nio-8080-exec-2] DEBUG TwoPhaseLoad:242 - Attribute (`email`)  - enhanced for lazy-loading? - false
+2021-03-09 10:47:57 [http-nio-8080-exec-2] DEBUG TwoPhaseLoad:211 - Processing attribute `password` : value = 1234
+2021-03-09 10:47:57 [http-nio-8080-exec-2] DEBUG TwoPhaseLoad:242 - Attribute (`password`)  - enhanced for lazy-loading? - false
+2021-03-09 10:47:57 [http-nio-8080-exec-2] DEBUG TwoPhaseLoad:211 - Processing attribute `photo` : value = https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg
+2021-03-09 10:47:57 [http-nio-8080-exec-2] DEBUG TwoPhaseLoad:242 - Attribute (`photo`)  - enhanced for lazy-loading? - false
+2021-03-09 10:47:57 [http-nio-8080-exec-2] DEBUG TwoPhaseLoad:211 - Processing attribute `username` : value = Ashit Mundra
+2021-03-09 10:47:57 [http-nio-8080-exec-2] DEBUG TwoPhaseLoad:242 - Attribute (`username`)  - enhanced for lazy-loading? - false
+2021-03-09 10:47:57 [http-nio-8080-exec-2] DEBUG TwoPhaseLoad:381 - Done materializing entity [com.au.discussionforum.model.User#4]
