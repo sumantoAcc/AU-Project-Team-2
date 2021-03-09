@@ -1,8 +1,8 @@
 /* eslint-disable import/prefer-default-export */
 export class Answer {
-    body:String;
+    body:string;
 
-    user:String;
+    user:string;
 
-    correctAnswer: Boolean;
+    correctAnswer: boolean;
 }

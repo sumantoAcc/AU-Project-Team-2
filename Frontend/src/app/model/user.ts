@@ -1,6 +1,6 @@
 /* eslint-disable import/prefer-default-export */
 export class User {
-    username:String;
+    username:string;
 
-    password:String;
+    password:string;
 }

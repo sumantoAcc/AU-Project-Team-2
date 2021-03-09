@@ -15,7 +15,7 @@ import { QuestionService } from '../question.service';
   styleUrls: ['./search-query-page.component.css'],
 })
 export class SearchQueryPageComponent implements OnInit {
-  Qkeywords: String;
+  Qkeywords: string;
 
   qlen1: number;
 
@@ -23,7 +23,7 @@ export class SearchQueryPageComponent implements OnInit {
 
   ftest: boolean;
 
-  keywordpass = { keyword: String };
+  keywordpass = { keyword: string };
 
   constructor(private router: Router, private questionService : QuestionService) {
     this.Qkeywords = '';

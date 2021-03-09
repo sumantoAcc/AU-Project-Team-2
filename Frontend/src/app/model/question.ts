@@ -1,8 +1,8 @@
 /* eslint-disable import/prefer-default-export */
 export class Question {
-    title:String;
+    title:string;
 
-    body:String;
+    body:string;
 
     qid: number;
 }
