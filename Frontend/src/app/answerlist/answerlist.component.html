@@ -1,26 +1,28 @@
-<div *ngIf="len">
-    <div *ngFor="let answer of ansList">
-    <mat-card class="example-card">
-        <mat-card-header>
-            <div mat-card-avatar style="background-image: url({{answer.aphoto}});
-            background-size: cover;"></div>
-            <mat-card-title><em>{{answer.user}}</em> </mat-card-title>
-            <div *ngIf="answer.correctAnswer">
-            <mat-card-subtitle>Accepted answer</mat-card-subtitle>
-            </div>
-        </mat-card-header><br>
-        <mat-card-content>
-            {{answer.body}}
-        </mat-card-content><br>
-    </mat-card>
+    <div *ngIf="len">
+        <div *ngFor="let answer of ansList">
+        <mat-card class="example-card" style="padding: 3%; background-color: var(--dark); color:var(--ligt);">
+            <mat-card-header>
+                <div mat-card-avatar style="background-image: url({{answer.aphoto}});
+                background-size: cover;"></div>
+                <mat-card-title><em>{{answer.user}}</em> </mat-card-title>
+                <div *ngIf="answer.correctAnswer">
+                <button class="ba"><i>Accepted answer</i></button>
+                </div>
+            </mat-card-header><br>
+            <mat-card-content>
+                {{answer.body}}
+            </mat-card-content><br>
+        
     <div *ngIf='mark'>
-        <button class='button' (click)='upvote(answer.ansId)'>Mark</button>
-    </div>
-    </div>
+        <button class='b' (click)='upvote(answer.ansId)'>Mark</button>
     </div>
     
-    <div *ngIf="!len">
-        <span>
-        No one has answered this yet!
-        </span>
-    </div>
+</mat-card><br>
+        </div>
+        </div>
+        
+        <div *ngIf="!len">
+            <span>
+            No one has answered this yet!
+            </span>
+        </div>    

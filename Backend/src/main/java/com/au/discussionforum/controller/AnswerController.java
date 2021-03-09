@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.au.discussionforum.model.Answer;
 import com.au.discussionforum.model.Question;
 import com.au.discussionforum.model.User;
-import com.au.discussionforum.model.DTO.AnswerDTO;
+import com.au.discussionforum.model.dto.AnswerDTO;
 import com.au.discussionforum.service.AnswerService;
 import com.au.discussionforum.service.QuestionService;
 import com.au.discussionforum.service.UserService;

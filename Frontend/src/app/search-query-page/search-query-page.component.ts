@@ -52,10 +52,11 @@ export class SearchQueryPageComponent implements OnInit {
           quphoto: data[i].user.photo,
           quser: data[i].user.username,
         });
-        this.qlen1 = this.temp.length;
+        
       }
+      this.qlen1 = this.temp.length;
+      console.log(this.qlen1);
     });
-    console.log(this.temp);
   }
 
   ngOnInit(): void {

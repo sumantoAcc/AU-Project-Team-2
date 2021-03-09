@@ -3,6 +3,8 @@ package com.au.discussionforum.controller;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,7 +18,7 @@ import com.au.discussionforum.model.Question;
 import com.au.discussionforum.model.Topic;
 import com.au.discussionforum.model.User;
 import com.au.discussionforum.model.UserTopic;
-import com.au.discussionforum.model.DTO.QuestionDTO;
+import com.au.discussionforum.model.dto.QuestionDTO;
 import com.au.discussionforum.service.EmailService;
 import com.au.discussionforum.service.QuesKeywordsService;
 import com.au.discussionforum.service.QuestionService;
@@ -44,6 +46,9 @@ public class QuestionController {
 	
 	@Autowired
 	EmailService emailService;
+	
+	static Logger log = LogManager.getLogger(QuestionController.class);
+
 	
 	@PostMapping(path = "/api/question/keywords")
     public List<Question> getQuestionsByKeyword(@RequestBody String quesKeywords) {
@@ -75,11 +80,9 @@ public class QuestionController {
 		
 		question = questionService.addQuestion(question);
 		
-		System.out.println(questionDTO.getKeyword());
 		List<String> keywords = Arrays.asList(questionDTO.getKeyword().split(","));
 		
 		for(String key : keywords) {
-			System.out.println(key);
 			QuesKeywords quesKeywords = new QuesKeywords();
 			quesKeywords.setQuestion(question);
 			quesKeywords.setKeyword(key);
@@ -91,7 +94,7 @@ public class QuestionController {
 				emailService.sendSimpleMessage(u.getEmail(), "New Question Added", "Someone asked Question related to " + topic.getTopicName()+" visit your profile for answering the question");
 			}
 		}catch(Exception e) {
-			
+			log.error("Failed To Send Email");
 		}
 	} 
 	

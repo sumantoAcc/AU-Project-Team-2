@@ -1,6 +1,3 @@
-/* eslint-disable no-useless-constructor */
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-empty-function */
 /* eslint-disable import/prefer-default-export */
 import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
@@ -30,13 +27,15 @@ export class QuestiontopiclistComponent implements OnInit {
     this.questionService.getQuestionsbytopic().subscribe((data) => {
       for (let i = 0; i < data.length; i += 1) {
         this.showVar.push(false);
-        this.questiontopiclist.push({
-          title: data[i].title,
-          body: data[i].body,
-          qid: data[i].quesId,
-          quser: data[i].user.username,
-          qphoto: data[i].user.photo,
-        });
+        if(!data[i].marked){
+          this.questiontopiclist.push({
+            title: data[i].title,
+            body: data[i].body,
+            qid: data[i].quesId,
+            quser: data[i].user.username,
+            qphoto: data[i].user.photo,
+          });
+      }
       }
     });
   }

@@ -1,13 +1,12 @@
-/* eslint-disable max-classes-per-file */
 /* eslint-disable no-useless-constructor */
 /* eslint-disable import/prefer-default-export */
 /* eslint-disable no-empty-function */
 import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { FormControl, FormGroup } from '@angular/forms';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { QuestionlistComponent } from '../questionlist/questionlist.component';
 import { QuestionService } from '../question.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-addquestions',
@@ -56,11 +55,10 @@ export class AddquestionsComponent implements OnInit {
 
       body: this.quesDesc.value,
 
-      keyword: `${this.Keywords.value},${this.questionService.oldkey}`,
+      keyword: this.Keywords.value,
     };
-
-    this.snackBar.open('Adding Question', 'wait', {
-      duration: 5000,
+    this.snackBar.open('Adding, box will close automatically after question is added', '', {
+      duration: 3000,
    });
     console.log(quesObject);
     this.questionService.postQuestion(quesObject).subscribe(() => {

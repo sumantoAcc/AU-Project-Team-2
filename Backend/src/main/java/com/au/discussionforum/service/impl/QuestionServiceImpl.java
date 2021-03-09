@@ -1,17 +1,13 @@
 package com.au.discussionforum.service.impl;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.TreeMap;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
-import org.hibernate.mapping.Set;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,8 +23,8 @@ public class QuestionServiceImpl implements QuestionService{
 	 
 	public List<Question> getSortedQuestionList(List<Question> questionList){	
 		
-		List<Question> sortedQuestionList = new ArrayList<Question>();
-		Map<Question,Integer> questionCount = new HashMap<Question, Integer>();
+		List<Question> sortedQuestionList = new ArrayList<>();
+		Map<Question,Integer> questionCount = new HashMap<>();
 		for(Question q : questionList) {
             if(questionCount.containsKey(q)) {
                 Integer  count = questionCount.get(q);

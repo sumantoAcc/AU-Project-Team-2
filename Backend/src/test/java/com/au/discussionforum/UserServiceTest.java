@@ -26,7 +26,7 @@ class UserServiceTest {
 	
 	
 	@Test
-	public void getUserbyUsernameTest() {
+	void getUserbyUsernameTest() {
 		
 		String username="Rupali";
 		User user= new User(1,"abc@gmail.com","1234","Rupali","img.jpg");
@@ -37,7 +37,7 @@ class UserServiceTest {
 	}
 	
 	@Test
-	public void getAllUsersTest() {
+	void getAllUsersTest() {
 		
 		User user1= new User(1,"abc@gmail.com","1234","Aman","img.jpg");
 		User user2= new User(2,"pqr@gmail.com","098","Rupali","pic.jpg");
@@ -47,7 +47,7 @@ class UserServiceTest {
 	}
 	
 	@Test
-	public void getUserByUserIdTest() {
+	void getUserByUserIdTest() {
 		
 		int user_id=2;
 		User user= new User(2,"abc@gmail.com","1234","Aman","img.jpg");

@@ -30,6 +30,8 @@ export class QuestionlistComponent implements OnInit {
 
   showVar: boolean[] = [];
 
+  quphoto: String;
+
   @Input('temp') temp:any;
 
   @Input('ftest') ftest:any;
@@ -37,7 +39,7 @@ export class QuestionlistComponent implements OnInit {
   @Input('qlen1') qlen1:any;
 
   constructor(private questionService: QuestionService, private squery : SearchQueryPageComponent, private box: MatDialog) {
-    this.qlen1 = 0;
+    
    }
 
   ngOnInit(): void {
