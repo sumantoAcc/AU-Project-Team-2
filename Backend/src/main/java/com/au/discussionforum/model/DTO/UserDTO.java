@@ -1,4 +1,4 @@
-package com.au.discussionforum.model.DTO;
+package com.au.discussionforum.model.dto;
 
 public class UserDTO {
 	private String username;

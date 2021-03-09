@@ -27,7 +27,7 @@ export class QuestiontopiclistComponent implements OnInit {
     this.questionService.getQuestionsbytopic().subscribe((data) => {
       for (let i = 0; i < data.length; i += 1) {
         this.showVar.push(false);
-        if(!data[i].marked){
+        if (!data[i].marked) {
           this.questiontopiclist.push({
             title: data[i].title,
             body: data[i].body,
@@ -35,13 +35,13 @@ export class QuestiontopiclistComponent implements OnInit {
             quser: data[i].user.username,
             qphoto: data[i].user.photo,
           });
-      }
+        }
       }
     });
   }
 
   showans= (i) => {
-    this.showVar[i] = this.showVar[i] != true;
+    this.showVar[i] = !this.showVar[i];
   }
 
   addAns(qID) {

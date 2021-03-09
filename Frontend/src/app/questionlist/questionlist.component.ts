@@ -30,7 +30,7 @@ export class QuestionlistComponent implements OnInit {
 
   showVar: boolean[] = [];
 
-  quphoto: String;
+  quphoto: string;
 
   @Input('temp') temp:any;
 

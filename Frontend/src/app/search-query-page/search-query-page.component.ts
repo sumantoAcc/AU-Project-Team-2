@@ -15,7 +15,7 @@ import { QuestionService } from '../question.service';
   styleUrls: ['./search-query-page.component.css'],
 })
 export class SearchQueryPageComponent implements OnInit {
-  Qkeywords: String;
+  Qkeywords: string;
 
   qlen1: number;
 
