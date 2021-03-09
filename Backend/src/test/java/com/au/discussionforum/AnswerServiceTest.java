@@ -80,4 +80,33 @@ class AnswerServiceTest {
 		answerService.setCorrectAnswer(ans);
 		verify(answerRepository,times(1)).save(ans);
 	}
+	
+	@Test
+	void addAnswerTest() {
+		User user= new User(1,"abc@gmail.com","1234","Aman","img.jpg");
+		Topic topic= new Topic(3,"games");
+		Question ques= new Question(1,user,topic,"national game","Which is our national game?",false);
+		
+		Answer ans= new Answer(1,user,ques,"hockey is our national game",false);
+		
+		answerService.addAnswer(ans);
+		verify(answerRepository,times(1)).save(ans);
+		
+		when(answerService.addAnswer(ans)).thenThrow(new IllegalStateException());
+		answerService.addAnswer(ans);
+	}
+	
+	@Test
+	void addAnswerCatchTest() {
+		User user= new User(1,"abc@gmail.com","1234","Aman","img.jpg");
+		Topic topic= new Topic(3,"games");
+		Question ques= new Question(1,user,topic,"national game","Which is our national game?",false);
+		
+		Answer ans= new Answer(1,user,ques,"hockey is our national game",false);
+		
+		when(answerService.addAnswer(ans)).thenThrow(new IllegalStateException());
+		answerService.addAnswer(ans);
+		verify(answerRepository,times(1)).save(ans);
+
+	}
 }

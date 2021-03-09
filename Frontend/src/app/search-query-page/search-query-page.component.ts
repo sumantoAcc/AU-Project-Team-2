@@ -23,7 +23,7 @@ export class SearchQueryPageComponent implements OnInit {
 
   ftest: boolean;
 
-  keywordpass = { keyword: string };
+  keywordpass = { keyword: String };
 
   constructor(private router: Router, private questionService : QuestionService) {
     this.Qkeywords = '';
