@@ -10,6 +10,7 @@ import { Answer } from '../model/answer';
 import { AnswerService } from '../answer.service';
 import { MatDialog } from '@angular/material/dialog';
 import { AddcommentsComponent} from '../addcomments/addcomments.component'
+import { CommentService } from '../comment.service';
 
 @Component({
   selector: 'app-answerlist',
@@ -30,7 +31,7 @@ export class AnswerlistComponent implements OnInit {
   @Input('markbutton') markbutton:boolean;
 
   // eslint-disable-next-line no-useless-constructor
-  constructor(private answerService: AnswerService, private box: MatDialog) {
+  constructor(private answerService: AnswerService, private box: MatDialog, private commentService: CommentService) {
     this.markbutton = false;
   }
 
@@ -72,7 +73,8 @@ export class AnswerlistComponent implements OnInit {
     });
   }
 
-  addComment(){
+  addComment(ans_Id){
+    this.commentService.temp = ans_Id;
     this.box.open(AddcommentsComponent);
   }
 

@@ -12,6 +12,8 @@ import { Answer } from './model/answer';
 
       ansid : number;
 
+      temp : number;
+      
       getComment(ansid) {
         return this.http.get<any>(`/api/comment/${ansid}`);
       }

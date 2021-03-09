@@ -22,12 +22,16 @@ export class AddcommentsComponent implements OnInit {
     this.lecform = new FormGroup({
       comBody: new FormControl(''),
     });
+  }
+    get comBody() {
+      return this.lecform.get('comBody') as FormControl;
+    }
 
-    addCom(ansId) {
+    addCom() {
       const comObject = {
-        userId: this.answerService.uid,
-        ansId: this.answerService.quesId_AddAns,
-        commentBody: this.ansBody.value,
+        userId: this.questionService.uid,
+        ansId: this.commentService.temp,
+        commentBody: this.comBody.value,
       };
       this.commentService.postComment(comObject).subscribe(() => {
         this.dialogRef.close();
