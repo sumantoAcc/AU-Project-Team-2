@@ -10,7 +10,7 @@
   background:var(--ligt);
   box-sizing: border-box;
   border-radius: 20px;
-  font-family: nevis;
+  font-family: nevis,sans-serif;
   font-size: larger;
 }
 
@@ -81,7 +81,7 @@
   background-color: var(--dark);
   font-size: 17px;
   color: var(--ligt);
-  font-family: nevis;
+  font-family: nevis,sans-serif;
 }
 
 .c{

@@ -21,7 +21,7 @@ export class QuestionService {
 
     Squestions=[];
 
-    oldkey: String;
+    oldkey: string;
 
     constructor(private http:HttpClient, private router: Router) {
       this.uid = JSON.parse(localStorage.getItem('token'));
@@ -35,7 +35,7 @@ export class QuestionService {
       return this.http.get<any>(`/api/userquestions/${this.uid}`);
     }
 
-    Searching = (keywords : String) : Observable<any> => this.http.post<any>('/api/question/keywords', keywords);
+    Searching = (keywords : string) : Observable<any> => this.http.post<any>('/api/question/keywords', keywords);
 
     getQuestionsbytopic() {
       return this.http.get<any>(`/api/questions/${this.uid}`);

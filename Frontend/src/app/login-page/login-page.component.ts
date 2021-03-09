@@ -16,13 +16,13 @@ import { QuestionService } from '../question.service';
 })
 // eslint-disable-next-line import/prefer-default-export
 export class LoginPageComponent implements OnInit {
-  username : String;
+  username : string;
 
-  password : String;
+  password : string;
 
   user : User;
 
-  err: String;
+  err: string;
 
   id : number;
 

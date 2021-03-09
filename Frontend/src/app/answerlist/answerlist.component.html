@@ -6,7 +6,7 @@
                 background-size: cover;"></div>
                 <mat-card-title><em>{{answer.user}}</em> </mat-card-title>
                 <div *ngIf="answer.correctAnswer">
-                <button class="ba"><i>Accepted answer</i></button>
+                <button class="ba"><em>Accepted answer</em></button>
                 </div>
             </mat-card-header><br>
             <mat-card-content>
@@ -16,6 +16,8 @@
     <div *ngIf='mark'>
         <button class='b' (click)='upvote(answer.ansId)'>Mark</button>
     </div>
+
+    <button class='b'>Add Comment</button>
     
 </mat-card><br>
         </div>
