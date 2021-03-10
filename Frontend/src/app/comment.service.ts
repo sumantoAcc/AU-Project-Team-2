@@ -4,17 +4,19 @@ import { Observable } from 'rxjs';
 import { Answer } from './model/answer';
 
 @Injectable({
-  providedIn: 'root',
-})
+    providedIn: 'root',
+  })
 
-export default class CommentService {
-  constructor(private http:HttpClient) { }
+  export class CommentService {
+      constructor(private http:HttpClient) {}
 
-    ansid : number;
+      ansid : number;
 
-    getAnswer(quid) {
-      return this.http.get<any>(`/api/comment/${quid}`);
-    }
+      temp : number;
+      
+      getComment(ansid) {
+        return this.http.get<any>(`/api/comment/${ansid}`);
+      }
 
-    postAnswer = (comment : any) : Observable<any> => this.http.post<any>('/api/addcomments', comment);
-}
+      postComment = (comment : any) : Observable<any> => this.http.post<any>('/api/addcomment', comment);
+  }

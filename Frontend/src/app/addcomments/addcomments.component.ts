@@ -1,0 +1,40 @@
+import { Component, OnInit } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
+import { FormControl, FormGroup } from '@angular/forms';
+import { CommentService } from '../comment.service';
+import { AnswerService } from '../answer.service';
+import { QuestionService } from '../question.service';
+import { CommentlistComponent } from '../commentlist/commentlist.component';
+
+@Component({
+  selector: 'app-addcomments',
+  templateUrl: './addcomments.component.html',
+  styleUrls: ['./addcomments.component.css'],
+})
+export class AddcommentsComponent implements OnInit {
+  lecform: FormGroup;
+
+  constructor(private dialogRef: MatDialogRef<CommentlistComponent>, private answerService: AnswerService,
+    private questionService: QuestionService, private commentService: CommentService) { }
+
+  ngOnInit(): void {
+    this.lecform = new FormGroup({
+      comBody: new FormControl(''),
+    });
+  }
+
+  get comBody() {
+    return this.lecform.get('comBody') as FormControl;
+  }
+
+  addCom() {
+    const comObject = {
+      userId: this.questionService.uid,
+      ansId: this.commentService.temp,
+      commentBody: this.comBody.value,
+    };
+    this.commentService.postComment(comObject).subscribe(() => {
+      this.dialogRef.close();
+    });
+  }
+}

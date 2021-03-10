@@ -20,7 +20,8 @@ import { AddquestionsComponent } from './addquestions/addquestions.component';
 import { AddanswersComponent } from './addanswers/addanswers.component';
 import { NavbarModule, WavesModule, ButtonsModule } from 'angular-bootstrap-md';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { AddcommentComponent } from './addcomment/addcomment.component';
+import { CommentlistComponent } from './commentlist/commentlist.component';
+import { AddcommentsComponent } from './addcomments/addcomments.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { AddcommentComponent } from './addcomment/addcomment.component';
     QuestiontopiclistComponent,
     AddquestionsComponent,
     AddanswersComponent,
-    AddcommentComponent,
+    CommentlistComponent,
+    AddcommentsComponent,
   ],
   imports: [
     BrowserModule,

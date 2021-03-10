@@ -32,5 +32,14 @@ class TopicServiceTest {
 		assertEquals(2,topicService.getTopicById(topic_id).getTopicId());
 		
 	}
+	
+	@Test
+	void getTopicByNameTest() {
+		String topic_name = "Badminton";
+		Topic topic = new Topic(1,"Badminton");
+		
+		when(topicRepository.findByTopicName(topic_name)).thenReturn(topic);
+		assertEquals("Badminton",topicService.getTopicByName(topic_name).getTopicName());
+	}
 
 }

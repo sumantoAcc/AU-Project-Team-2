@@ -8,6 +8,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Answer } from '../model/answer';
 import { AnswerService } from '../answer.service';
+import { MatDialog } from '@angular/material/dialog';
+import { AddcommentsComponent} from '../addcomments/addcomments.component'
+import { CommentService } from '../comment.service';
 
 @Component({
   selector: 'app-answerlist',
@@ -21,12 +24,14 @@ export class AnswerlistComponent implements OnInit {
 
   @Input() quesId : any;
 
+  showVar: boolean[] = [];
+
   @Input('mark') mark: boolean;
 
   @Input('markbutton') markbutton:boolean;
 
   // eslint-disable-next-line no-useless-constructor
-  constructor(private answerService: AnswerService) {
+  constructor(private answerService: AnswerService, private box: MatDialog, private commentService: CommentService) {
     this.markbutton = false;
   }
 
@@ -37,7 +42,6 @@ export class AnswerlistComponent implements OnInit {
 
   getAnswer() {
     this.answerService.getAnswer(this.quesId).subscribe((data) => {
-      const temp: any = [];
       const tempArray: any = [];
       for (let i = 0; i < data.length; i += 1) {
         tempArray.push({
@@ -68,4 +72,13 @@ export class AnswerlistComponent implements OnInit {
       this.getAnswer();
     });
   }
+
+  addComment(ans_Id){
+    this.commentService.temp = ans_Id;
+    this.box.open(AddcommentsComponent);
+  }
+
+  showcomment= (i) => {
+    this.showVar[i] = !this.showVar[i];
+  } 
 }
