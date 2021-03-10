@@ -13,9 +13,12 @@ import { CommentlistComponent } from '../commentlist/commentlist.component';
 })
 export class AddcommentsComponent implements OnInit {
   lecform: FormGroup;
+  err: string;
 
   constructor(private dialogRef: MatDialogRef<CommentlistComponent>, private answerService: AnswerService,
-    private questionService: QuestionService, private commentService: CommentService) { }
+    private questionService: QuestionService, private commentService: CommentService) {
+      this.err='';
+     }
 
   ngOnInit(): void {
     this.lecform = new FormGroup({
@@ -28,6 +31,10 @@ export class AddcommentsComponent implements OnInit {
   }
 
   addCom() {
+    if(!this.comBody.value){
+      this.err="Enter Some Comments";
+      return;
+    }
     const comObject = {
       userId: this.questionService.uid,
       ansId: this.commentService.temp,

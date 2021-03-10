@@ -33,7 +33,7 @@ class UserServiceTest {
 		
 		when(userRepository.findByUsername(username))
 		.thenReturn(user);
-         assertEquals("Rupali", userService.getUserbyUsername(username).getUsername());
+         assertEquals("Rupali", userService.getUserByUsername(username).getUsername());
 	}
 	
 	@Test

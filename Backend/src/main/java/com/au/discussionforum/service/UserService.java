@@ -5,7 +5,10 @@ import com.au.discussionforum.model.User;
 
 public interface UserService {
 	
-	public User getUserbyUsername(String username);
-	public List<User> getAllUsers();
+	User getUserByUsername(String username);
+	List<User> getAllUsers();
 	User getUserByUserId(int id);
+	User addUser(User user);
+	User getUserByEmail(String email);
+
 }

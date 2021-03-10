@@ -94,3 +94,8 @@
   color:var(--ligt);
   background-color: var(--dark);
 }
+
+.err{
+  color: red;
+  font-size: xx-small;
+}

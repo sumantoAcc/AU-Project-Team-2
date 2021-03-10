@@ -45,10 +45,14 @@ export class LoginPageComponent implements OnInit {
       } else {
         this.id = response.userId;
         localStorage.setItem('token', JSON.stringify(this.id));
-        this.questionService.uid=this.id;
+        this.questionService.uid = this.id;
         this.router.navigate(['/search']);
       }
     });
+  }
+
+  signUp() {
+    this.router.navigate(['/signup']);
   }
 
   ngOnInit(): void {

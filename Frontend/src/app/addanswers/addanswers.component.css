@@ -83,3 +83,8 @@
   color: var(--ligt);
   font-family: nevis,sans-serif;
 }
+
+.err{
+  color: red;
+  font-size: xx-small;
+}

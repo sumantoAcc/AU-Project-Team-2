@@ -1,9 +1,14 @@
-.login-box {
+.error{
+    color:var(--dark);
+    font-size: 15px;
+  }
+  
+    .login-box {
     position: absolute;
-    top: 47%;
+    top: 54%;
     left: 50%;
-    width: 30%;
-    height: 75%;
+    width: 23%;
+    height: 58%;
     padding: 3%;
     text-align: center;
     transform: translate(-50%, -50%);
@@ -14,7 +19,7 @@
     font-size: larger;
   }
   
-  .login-box h3 {
+  .login-box h2 {
     margin: 0 0 30px;
     padding: 0;
     color:var(--dark);
@@ -55,7 +60,7 @@
     font-size: 12px;
   }
   
-  .button {
+  .login-box form a {
     position: relative;
     display: inline-block;
     padding: 10px 20px;
@@ -71,20 +76,29 @@
     border-radius: 5px;
   }
   
-  .button:hover {
+  .login-box form a:hover {
     background: var(--dark);
     color: var(--ligt);
     cursor: pointer;
   }
-  
-  .tx{
-    background-color: var(--dark);
-    font-size: 17px;
+  .c{
     color: var(--ligt);
-    font-family: nevis,sans-serif;
+     background-color: var(--dark);
+     width: 60%; 
+    font-size: 18px;
   }
-
+  .c option :hover{
+    color:var(--ligt);
+    background-color: var(--dark);
+  }
+  
   .err{
     color: red;
     font-size: xx-small;
   }
+  
+  
+  
+  
+  
+  

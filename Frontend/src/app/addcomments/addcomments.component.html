@@ -5,8 +5,11 @@
         <label>Enter Comment</label>
         <br><br>
         <textarea rows="10" cols="40" formControlName="comBody" class="tx"></textarea>
+        <span class='err'>{{err}}</span>
       </div>
       <br><br>
+      
+      <br>
       <button class="button" (click)=addCom() >Add</button>
     </form>
   </div>

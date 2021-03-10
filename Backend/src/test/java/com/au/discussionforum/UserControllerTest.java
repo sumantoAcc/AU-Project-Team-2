@@ -37,7 +37,7 @@ class UserControllerTest {
 		user2.setUsername("Nisarg");
 		user2.setPassword("1234");
 		
-		when(userService.getUserbyUsername("Nisarg")).thenReturn(user);
+		when(userService.getUserByUsername("Nisarg")).thenReturn(user);
 		
 		String url = "/api/login";
 		MvcResult mvcResult = mockMvc.perform(
