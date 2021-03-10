@@ -19,10 +19,14 @@ import { QuestionService } from '../question.service';
 export class AddanswersComponent implements OnInit {
   lecform: FormGroup;
 
+  err: string;
+
   // eslint-disable-next-line no-unused-vars
   constructor(private dialogRef: MatDialogRef<AnswerlistComponent>, private answerSevice: AnswerService,
     // eslint-disable-next-line no-unused-vars
-    private questionService: QuestionService) { }
+    private questionService: QuestionService) {
+    this.err = '';
+  }
 
   ngOnInit(): void {
     this.lecform = new FormGroup({
@@ -35,6 +39,10 @@ export class AddanswersComponent implements OnInit {
   }
 
   addAns() {
+    if (!this.ansBody.value) {
+      this.err = 'This field cannot be empty';
+      return;
+    }
     const ansObject = {
       userId: this.questionService.uid,
       quesId: this.answerSevice.quesId_AddAns,

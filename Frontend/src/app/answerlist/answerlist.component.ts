@@ -73,9 +73,10 @@ export class AnswerlistComponent implements OnInit {
     });
   }
 
-  addComment(ans_Id){
+  addComment(ans_Id, i){
     this.commentService.temp = ans_Id;
     this.box.open(AddcommentsComponent);
+    this.showVar[i] = false;
   }
 
   showcomment= (i) => {

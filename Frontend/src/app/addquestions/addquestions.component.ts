@@ -4,9 +4,9 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { FormControl, FormGroup } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { QuestionlistComponent } from '../questionlist/questionlist.component';
 import { QuestionService } from '../question.service';
-import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-addquestions',
@@ -16,9 +16,22 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class AddquestionsComponent implements OnInit {
   quesObj: FormGroup;
 
+  err1: string;
+
+  err2: string;
+
+  err3: string;
+
+  err4: string;
+
   constructor(private dialogRef: MatDialogRef<QuestionlistComponent>,
     private questionService: QuestionService,
-    private snackBar: MatSnackBar) { }
+    private snackBar: MatSnackBar) {
+    this.err1 = '';
+    this.err2 = '';
+    this.err3 = '';
+    this.err4 = '';
+  }
 
   ngOnInit(): void {
     this.quesObj = new FormGroup({
@@ -57,9 +70,29 @@ export class AddquestionsComponent implements OnInit {
 
       keyword: this.Keywords.value,
     };
-    this.snackBar.open('Adding, box will close automatically after question is added', '', {
-      duration: 3000,
-   });
+    if (!this.topic.value) {
+      this.err1 = 'Please choose a topic';
+      return;
+    }this.err1='';
+
+    if (!this.Keywords.value) {
+      this.err2 = 'This field cannot be empty';
+      return;
+    }this.err2='';
+    
+    if (!this.quesTitle.value) {
+      this.err3 = 'This field cannot be empty';
+      return;
+    }this.err3='';
+
+    if (!this.quesDesc.value) {
+      this.err4 = 'This field cannot be empty';
+      return;
+    }this.err4='';
+
+    this.snackBar.open('Adding. Add Question box will close automatically.', '', {
+      duration: 5000,
+    });
     console.log(quesObject);
     this.questionService.postQuestion(quesObject).subscribe(() => {
       this.dialogRef.close();

@@ -8,7 +8,7 @@
             <mat-card-subtitle>{{squestion.body}} </mat-card-subtitle>
         </mat-card-header>
         <button class="button" (click)="showans(i)"><span>View answers</span></button>
-        <button class="button" (click)="addAns(squestion.qid)"><span>Write answer</span></button>
+        <button class="button" (click)="addAns(squestion.qid, i)"><span>Write answer</span></button>
         <mat-card-content>
             <div *ngIf="showVar[i]">
                 <p>

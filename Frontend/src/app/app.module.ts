@@ -22,6 +22,8 @@ import { NavbarModule, WavesModule, ButtonsModule } from 'angular-bootstrap-md';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { CommentlistComponent } from './commentlist/commentlist.component';
 import { AddcommentsComponent } from './addcomments/addcomments.component';
+import { SignupComponent } from './signup/signup.component';
+import {MatIconModule} from '@angular/material/icon'; 
 
 @NgModule({
   declarations: [
@@ -36,6 +38,7 @@ import { AddcommentsComponent } from './addcomments/addcomments.component';
     AddanswersComponent,
     CommentlistComponent,
     AddcommentsComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,6 +54,7 @@ import { AddcommentsComponent } from './addcomments/addcomments.component';
     WavesModule, 
     ButtonsModule,
     MatSnackBarModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
