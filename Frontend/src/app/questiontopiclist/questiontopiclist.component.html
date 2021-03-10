@@ -3,16 +3,16 @@
         <mat-card-header>
             <div mat-card-avatar style="background-image: url({{squestion.qphoto}});
             background-size: cover;"></div>
-            <mat-card-title>{{squestion.quser}}</mat-card-title> 
+            <mat-card-title>{{squestion.quser}}</mat-card-title>
             <mat-card-subtitle>{{squestion.title}}</mat-card-subtitle>
             <mat-card-subtitle>{{squestion.body}} </mat-card-subtitle>
         </mat-card-header>
         <button class="button" (click)="showans(i)"><span>View answers</span></button>
-        <button class="button" (click)="addAns(squestion.qid)"><span>Write answer</span></button>
+        <button class="button" (click)="addAns(squestion.qid, i)"><span>Write answer</span></button>
         <mat-card-content>
             <div *ngIf="showVar[i]">
                 <p>
-                <app-answerlist quesId={{squestion.qid}} [markbutton]=false></app-answerlist>
+                    <app-answerlist quesId={{squestion.qid}} [markbutton]=false></app-answerlist>
                 </p>
             </div>
         </mat-card-content>
@@ -21,5 +21,3 @@
 
 
 <br><br><br>
-    
-    

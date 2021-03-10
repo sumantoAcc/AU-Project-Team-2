@@ -1,8 +1,3 @@
-/* eslint-disable import/prefer-default-export */
-/* eslint-disable class-methods-use-this */
-/* eslint-disable no-empty-function */
-/* eslint-disable no-useless-constructor */
-/* eslint-disable no-unused-vars */
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -12,18 +7,29 @@ import { Router } from '@angular/router';
   styleUrls: ['./answer-query-page.component.css'],
 })
 export class AnswerQueryPageComponent implements OnInit {
-  constructor(private router : Router) { }
+	
+	 foto: string;
 
-  searchTab() {
+  duname: string;
+  
+  constructor(private router : Router) { 
+    this.foto=JSON.parse(localStorage.getItem('userrrphoto')); 
+    this.duname=JSON.parse(localStorage.getItem('userrr'));
+  }
+
+  searchTab() : void{
     this.router.navigate(['/search']);
   }
 
-  logout() {
+  logout() : void{
     localStorage.removeItem('token');
-
+    localStorage.removeItem('userrr');
+    localStorage.removeItem('userrrphoto');
     this.router.navigate(['']);
   }
 
   ngOnInit(): void {
+    this.foto=JSON.parse(localStorage.getItem('userrrphoto')); 
+    this.duname=JSON.parse(localStorage.getItem('userrr'));
   }
 }

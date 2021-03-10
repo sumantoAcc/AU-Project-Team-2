@@ -1,4 +1,3 @@
-/* eslint-disable import/no-unresolved */
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -8,6 +7,9 @@ import { MatTreeModule } from '@angular/material/tree';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatCardModule } from '@angular/material/card';
+import { NavbarModule, WavesModule, ButtonsModule } from 'angular-bootstrap-md';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatIconModule } from '@angular/material/icon';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginPageComponent } from './login-page/login-page.component';
@@ -18,8 +20,9 @@ import { AnswerlistComponent } from './answerlist/answerlist.component';
 import { QuestiontopiclistComponent } from './questiontopiclist/questiontopiclist.component';
 import { AddquestionsComponent } from './addquestions/addquestions.component';
 import { AddanswersComponent } from './addanswers/addanswers.component';
-import { NavbarModule, WavesModule, ButtonsModule } from 'angular-bootstrap-md';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { CommentlistComponent } from './commentlist/commentlist.component';
+import { AddcommentsComponent } from './addcomments/addcomments.component';
+import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +35,9 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     QuestiontopiclistComponent,
     AddquestionsComponent,
     AddanswersComponent,
+    CommentlistComponent,
+    AddcommentsComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,13 +49,13 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatDialogModule,
     ReactiveFormsModule,
     MatCardModule,
-    NavbarModule, 
-    WavesModule, 
+    NavbarModule,
+    WavesModule,
     ButtonsModule,
     MatSnackBarModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
-// eslint-disable-next-line import/prefer-default-export
 export class AppModule { }

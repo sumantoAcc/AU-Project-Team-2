@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { AddanswersComponent } from '../addanswers/addanswers.component';
@@ -40,12 +39,13 @@ export class QuestiontopiclistComponent implements OnInit {
     });
   }
 
-  showans= (i) => {
+  showans= (i : number) : void => {
     this.showVar[i] = !this.showVar[i];
   }
 
-  addAns(qID) {
-    this.answerService.quesId_AddAns = qID;
+  addAns(qID, i:  number) : void {
+    this.answerService.quesAnsId = qID;
     this.box.open(AddanswersComponent);
+    this.showVar[i] = false;
   }
 }

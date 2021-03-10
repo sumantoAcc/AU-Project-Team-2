@@ -1,8 +1,3 @@
-/* eslint-disable import/no-unresolved */
-/* eslint-disable no-unused-vars */
-/* eslint-disable max-len */
-/* eslint-disable no-useless-constructor */
-/* eslint-disable no-empty-function */
 import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { FormControl, FormGroup } from '@angular/forms';
@@ -15,14 +10,17 @@ import { QuestionService } from '../question.service';
   templateUrl: './addanswers.component.html',
   styleUrls: ['./addanswers.component.css'],
 })
-// eslint-disable-next-line import/prefer-default-export
+
 export class AddanswersComponent implements OnInit {
   lecform: FormGroup;
 
-  // eslint-disable-next-line no-unused-vars
-  constructor(private dialogRef: MatDialogRef<AnswerlistComponent>, private answerSevice: AnswerService,
-    // eslint-disable-next-line no-unused-vars
-    private questionService: QuestionService) { }
+  err: string;
+
+  constructor(private dialogRef: MatDialogRef<AnswerlistComponent>,
+    private answerSevice: AnswerService,
+    private questionService: QuestionService) {
+    this.err = '';
+  }
 
   ngOnInit(): void {
     this.lecform = new FormGroup({
@@ -30,17 +28,20 @@ export class AddanswersComponent implements OnInit {
     });
   }
 
-  get ansBody() {
+  get ansBody() : FormControl {
     return this.lecform.get('ansBody') as FormControl;
   }
 
-  addAns() {
+  addAns() : void {
+    if (!this.ansBody.value) {
+      this.err = 'This field cannot be empty';
+      return;
+    }
     const ansObject = {
       userId: this.questionService.uid,
-      quesId: this.answerSevice.quesId_AddAns,
+      quesId: this.answerSevice.quesAnsId,
       answerBody: this.ansBody.value,
     };
-    console.log(ansObject);
     this.answerSevice.postAnswer(ansObject).subscribe(() => {
       this.dialogRef.close();
     });
