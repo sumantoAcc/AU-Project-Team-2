@@ -1,9 +1,7 @@
 package com.au.discussionforum.service.impl;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,7 +18,7 @@ public class QuesKeywordsServiceImpl implements QuesKeywordsService{
 	
 	public List<Question> getQuestionByKeyword(List<String> keyword){
 		List<QuesKeywords> quesKeywords = quesKeywordsRepository.findByKeywordIn(keyword);
-		List<Question> questions = new ArrayList<Question>();
+		List<Question> questions = new ArrayList<>();
 		for(QuesKeywords quesKeyword : quesKeywords) {
 			questions.add(quesKeyword.getQuestion());
 		}

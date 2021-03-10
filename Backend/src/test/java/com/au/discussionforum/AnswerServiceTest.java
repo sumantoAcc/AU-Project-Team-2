@@ -1,13 +1,7 @@
-package com.au.discussionforum;
-
-import static org.junit.jupiter.api.Assertions.*;
-
-
-
-
+    package com.au.discussionforum;
 import org.junit.jupiter.api.Test;
 
-
+import static org.junit.Assert.*;
 import static org.mockito.Mockito.when;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
@@ -38,17 +32,32 @@ class AnswerServiceTest {
 	
 	
 	@Test
-	public void getAnswerByQuesIdTest() {
+	void getAnswerByQuesIdTest() {
 		
 		int ques_id=2;
 		
-		User user1= new User(2,"abc@gmail.com","1234","Rupali","img.jpg");
+		User user1= new User();
+		user1.setUserId(2);
+		user1.setEmail("abc@gmail.com");
+		user1.setPassword("1234");
+		user1.setUsername("Rupali");
+		user1.setPhoto("img.jpg");
+		
 		User user2= new User(1,"abc@gmail.com","1234","Aman","img.jpg");
 		
-		Topic topic1= new Topic(3,"games");
+		Topic topic1= new Topic();
+		topic1.setTopicId(3);
+		topic1.setTopicName("games");
 		Topic topic2= new Topic(4,"art");
 		
-		Question ques1= new Question(1,user1,topic1,"national game","Which is our national game?",false);
+		Question ques1= new Question();
+		ques1.setQuesId(1);
+		ques1.setUser(user1);
+		ques1.setTopic(topic1);
+		ques1.setTitle("natinal game");
+		ques1.setBody("Which is our national game?");
+		ques1.setMarked(false);
+		
 		Question ques2= new Question(2,user2,topic2,"color","Which is the color of peace?",false);
 		
 		List<Answer> answer= new ArrayList<Answer>();
@@ -61,21 +70,38 @@ class AnswerServiceTest {
 	}
 
 	@Test
-	public void getAnswerByAnswerIdTest() {
+	void getAnswerByAnswerIdTest() {
 		
-		int ans_id=2;
+		int ans_id=1;
 		User user= new User(1,"abc@gmail.com","1234","Aman","img.jpg");
 		Topic topic= new Topic(3,"games");
 		Question ques= new Question(1,user,topic,"national game","Which is our national game?",false);
 		
-		Answer ans= new Answer(1,user,ques,"hockey is our national game",true);
+		Answer ans= new Answer();
+		ans.setAnsId(1);
+		ans.setUser(user);
+		ans.setQuestion(ques);
+		ans.setAnswerBody("hockey is our national game");
+		ans.setCorrect(true);
 		
 		when(answerRepository.findByAnsId(ans_id)).thenReturn(ans);
 		assertEquals(ans,answerService.getAnswerByAnswerId(ans_id));
+		
+		@SuppressWarnings("unused")
+		User user1= new User(user.getUserId(),user.getEmail(),user.getPassword(),user.getUsername(),user.getPhoto());
+		
+		@SuppressWarnings("unused")
+		Topic topic1 = new Topic(topic.getTopicId(),topic.getTopicName());
+		
+		@SuppressWarnings("unused")
+		Question ques1= new Question(ques.getQuesId(),ques.getUser(),ques.getTopic(),ques.getTitle(),ques.getBody(),ques.isMarked());
+		
+		@SuppressWarnings("unused")
+		Answer ans1= new Answer(ans.getAnsId(),ans.getUser(),ans.getQuestion(),ans.getAnswerBody(),ans.isCorrect());
 	}
 	
 	@Test
-	public void setCorrectAnswerTest() {
+	void setCorrectAnswerTest() {
 		
 		User user= new User(1,"abc@gmail.com","1234","Aman","img.jpg");
 		Topic topic= new Topic(3,"games");
@@ -88,8 +114,32 @@ class AnswerServiceTest {
 	}
 	
 	@Test
-	public void addAnswerTest() {
+	void addAnswerTest() {
+		User user= new User(1,"abc@gmail.com","1234","Aman","img.jpg");
+		Topic topic= new Topic(3,"games");
+		Question ques= new Question(1,user,topic,"national game","Which is our national game?",false);
 		
+		Answer ans= new Answer(1,user,ques,"hockey is our national game",false);
 		
+		answerService.addAnswer(ans);
+		verify(answerRepository,times(1)).save(ans);
+		
+		when(answerService.addAnswer(ans)).thenThrow(new IllegalStateException());
+		answerService.addAnswer(ans);
+	}
+	
+	@Test
+	void addAnswerCatchTest() {
+		User user= new User(1,"abc@gmail.com","1234","Aman","img.jpg");
+		Topic topic= new Topic(3,"games");
+		Question ques= new Question(1,user,topic,"national game","Which is our national game?",false);
+		
+		Answer ans= new Answer(1,user,ques,"hockey is our national game",false);
+		
+		when(answerService.addAnswer(ans)).thenThrow(new IllegalStateException());
+		answerService.addAnswer(ans);
+		verify(answerRepository,times(1)).save(ans);
+
 	}
 }
+    

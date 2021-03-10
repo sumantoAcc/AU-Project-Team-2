@@ -19,7 +19,7 @@ public class UserTopicServiceImpl implements UserTopicService{
 	
 	public List<User> getUsersByTopic(int topicId) {
 		List<UserTopic> userTopic = userTopicRepository.findByTopicTopicId(topicId);
-		List<User> users = new ArrayList<User>();
+		List<User> users = new ArrayList<>();
 		for(UserTopic usertopic : userTopic) {
 			users.add(usertopic.getUser());
 		}
@@ -28,6 +28,10 @@ public class UserTopicServiceImpl implements UserTopicService{
 	
 	public List <UserTopic> getTopicByUser(int userId){
 		return userTopicRepository.findByUserUserId(userId);
+	}
+
+	public UserTopic addUserTopic(UserTopic userTopic) {
+		return userTopicRepository.save(userTopic);
 	}
 
 }

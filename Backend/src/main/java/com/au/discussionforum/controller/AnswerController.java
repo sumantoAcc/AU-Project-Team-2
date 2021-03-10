@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.au.discussionforum.model.Answer;
 import com.au.discussionforum.model.Question;
 import com.au.discussionforum.model.User;
+import com.au.discussionforum.model.dto.AnswerDTO;
 import com.au.discussionforum.service.AnswerService;
 import com.au.discussionforum.service.QuestionService;
 import com.au.discussionforum.service.UserService;
@@ -34,8 +35,8 @@ public class AnswerController {
 		return answerService.getAnswerByQuesId(quesId);
     }
 	
-	@PostMapping(path = "/api/answer/markcorrect/{id}")
-	public void setCorrectAnswer(@PathVariable("id") int ansId) {
+	@PostMapping(path = "/api/answer/markcorrect")
+	public void setCorrectAnswer(@RequestBody int ansId) {
 		Answer answer = answerService.getAnswerByAnswerId(ansId);
 		answer.setCorrect(true);
 		Question question = answer.getQuestion();
@@ -45,14 +46,16 @@ public class AnswerController {
 	}
 	
 	@PostMapping(path = "/api/addanswers")
-	public Boolean addAnswers(@RequestBody Answer ans) {
+	public Boolean addAnswers(@RequestBody AnswerDTO answerDTO) {
 		Answer answer = new Answer();
 		
-		User user = userService.getUserByUserId(ans.getUser().getUserId());
+		User user = userService.getUserByUserId(answerDTO.getUserId());
+		Question question = questionService.getQuestionById(answerDTO.getQuesId());
+		
 		answer.setUser(user);
-		answer.setQuestion(ans.getQuestion());
+		answer.setQuestion(question);
 		answer.setCorrect(false);
-		answer.setAnswerBody(ans.getAnswerBody());
+		answer.setAnswerBody(answerDTO.getAnswerBody());
 		return answerService.addAnswer(answer);
     }
 }

@@ -1,4 +1,4 @@
-package com.au.discussionforum;
+    package com.au.discussionforum;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -31,11 +31,17 @@ class UserTopicServiceTest {
 	private UserTopicRepository userTopicRepository;
 	
 	@Test
-	public void getUsersByTopicTest() {
+	void getUsersByTopicTest() {
 		
 		int topic_id=2;
 		
-		User user1= new User(1,"abc@gmail.com","123","Sakshi","img.jpg");
+		User user1= new User();
+		user1.setUserId(1);
+		user1.setEmail("abc@gmail.com");
+		user1.setPassword("123");
+		user1.setUsername("Sakshi");
+		user1.setPhoto("img.jpg");
+		
 		User user2= new User(2,"pqr@gmail.com","111","Rupali","aa.jpg");
 		
 		Topic topic1= new Topic(2,"games");
@@ -48,11 +54,19 @@ class UserTopicServiceTest {
 		
 		when(userTopicRepository.findByTopicTopicId(topic_id)).thenReturn(Stream.of(user_topic1,user_topic2).collect(Collectors.toList()));
 		assertEquals(users,userTopicService.getUsersByTopic(topic_id));
+	
+		@SuppressWarnings("unused")
+		User user3=new User(user1.getUserId(),user1.getEmail(),user1.getPassword(),user1.getUsername(),user1.getPhoto());
 		
+		@SuppressWarnings("unused")
+		Topic topic2= new Topic(topic1.getTopicId(),topic1.getTopicName());
+		
+		@SuppressWarnings("unused")
+		UserTopic user_topic3= new UserTopic(user_topic1.getUserTopicId(),user_topic1.getUser(),user_topic1.getTopic());
 	}
 	
 	@Test
-	public void getTopicByUserTest(){
+	void getTopicByUserTest(){
 	int user_id=1;
 	
 	User user1= new User(1,"abc@gmail.com","123","Sakshi","img.jpg");
@@ -73,3 +87,4 @@ class UserTopicServiceTest {
 	
 	}
 }
+    

@@ -3,6 +3,8 @@ package com.au.discussionforum.controller;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,6 +18,7 @@ import com.au.discussionforum.model.Question;
 import com.au.discussionforum.model.Topic;
 import com.au.discussionforum.model.User;
 import com.au.discussionforum.model.UserTopic;
+import com.au.discussionforum.model.dto.QuestionDTO;
 import com.au.discussionforum.service.EmailService;
 import com.au.discussionforum.service.QuesKeywordsService;
 import com.au.discussionforum.service.QuestionService;
@@ -44,10 +47,13 @@ public class QuestionController {
 	@Autowired
 	EmailService emailService;
 	
+	static Logger log = LogManager.getLogger(QuestionController.class);
+
+	
 	@PostMapping(path = "/api/question/keywords")
-    public List<Question> getQuestionsByKeyword(@RequestBody QuesKeywords quesKeywords) {
+    public List<Question> getQuestionsByKeyword(@RequestBody String quesKeywords) {
 			
-		List<String> keywords = Arrays.asList(quesKeywords.getKeyword().split(","));
+		List<String> keywords = Arrays.asList(quesKeywords.split(","));
 		List<Question> questionList = quesKeywordsService.getQuestionByKeyword(keywords);
 		questionList = questionService.getSortedQuestionList(questionList);
 		
@@ -60,25 +66,23 @@ public class QuestionController {
 		return questionService.getQuestionByUser(userId);
 	}
 	
-	@PostMapping(path = "/api/addquestion/{keyword}")
-	public void addQuestion(@RequestBody Question q,@PathVariable String keyword) {
+	@PostMapping(path = "/api/addquestion")
+	public void addQuestion(@RequestBody QuestionDTO questionDTO) {
 		Question question = new Question();
-		User user = userService.getUserByUserId(q.getUser().getUserId());
-		Topic topic = topicService.getTopicById(q.getTopic().getTopicId());
+		User user = userService.getUserByUserId(questionDTO.getUserId());
+		Topic topic = topicService.getTopicByName(questionDTO.getTopicName());
 		
-		question.setTitle(q.getTitle());
-		question.setBody(q.getBody());
+		question.setTitle(questionDTO.getTitle());
+		question.setBody(questionDTO.getBody());
 		question.setMarked(false);
 		question.setUser(user);
 		question.setTopic(topic);
 		
 		question = questionService.addQuestion(question);
 		
-		System.out.println(keyword);
-		List<String> keywords = Arrays.asList(keyword.split(","));
+		List<String> keywords = Arrays.asList(questionDTO.getKeyword().split(","));
 		
 		for(String key : keywords) {
-			System.out.println(key);
 			QuesKeywords quesKeywords = new QuesKeywords();
 			quesKeywords.setQuestion(question);
 			quesKeywords.setKeyword(key);
@@ -90,7 +94,7 @@ public class QuestionController {
 				emailService.sendSimpleMessage(u.getEmail(), "New Question Added", "Someone asked Question related to " + topic.getTopicName()+" visit your profile for answering the question");
 			}
 		}catch(Exception e) {
-			
+			log.error("Failed To Send Email");
 		}
 	} 
 	

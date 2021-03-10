@@ -2,8 +2,6 @@ package com.au.discussionforum.service.impl;
 
 import java.util.Properties;
 
-import javax.mail.internet.MimeMessage;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -23,7 +21,6 @@ public class EmailServiceImpl implements EmailService {
         props.put("mail.smtp.auth", true);
         props.put("mail.smtp.ssl.trust", "*");
     	
-  
         SimpleMailMessage message = new SimpleMailMessage(); 
         message.setFrom("auprojecteam2@gmail.com");
         message.setTo(to); 

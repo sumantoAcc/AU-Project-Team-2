@@ -8,4 +8,5 @@ import com.au.discussionforum.model.Topic;
 @Repository
 public interface TopicRepository extends JpaRepository<Topic,Long>{
 	Topic findByTopicId(int id); 
+	Topic findByTopicName(String name);
 }
