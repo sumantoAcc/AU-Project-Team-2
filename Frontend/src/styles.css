@@ -6,13 +6,3 @@ html, body { height: 100%; background-color:var(--dark);}
     --dark: #2b7a78;
     --ligt:#DADED4;
 }
-
-@font-face {
-    font-family: "mario";
-    src: local("Oxygen"), url(./assets/fonts/super-mario-bros-font/SuperMarioBros-ov7d.ttf) format("truetype");
-}
-
-@font-face {
-    font-family: "nevis";
-    src: local("Oxygen"), url(./assets/fonts/nevis-font/NevisBold-KGwl.ttf) format("truetype");
-}

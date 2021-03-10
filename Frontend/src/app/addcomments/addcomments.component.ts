@@ -32,7 +32,7 @@ export class AddcommentsComponent implements OnInit {
 
   addCom() {
     if(!this.comBody.value){
-      this.err="Enter Some Comments";
+      this.err="This field cannot be empty";
       return;
     }
     const comObject = {

@@ -6,12 +6,12 @@
                 background-size: cover;"></div>
                 <mat-card-title><em>{{answer.user}}</em> </mat-card-title>
                 <div *ngIf="answer.correctAnswer">
-                <button class="ba"><em>Accepted answer</em></button>
+                    <mat-icon style="font-size: 33px;">verified</mat-icon>
                 </div>
             </mat-card-header><br>
             <mat-card-content>
                 {{answer.body}} <br> <br><br>
-                <button class="button" (click)="addComment(answer.ansId)">Add comment</button> &nbsp;&nbsp;&nbsp;
+                <button class="button" (click)="addComment(answer.ansId, i)">Add comment</button> &nbsp;&nbsp;&nbsp;
                 <button class="button" (click)="showcomment(i)">View comments</button> &nbsp;&nbsp;&nbsp;
                 <div *ngIf='mark' style="margin-top: -4.8%; margin-left: 33%;">
                     <button class="button" (click)='upvote(answer.ansId)'>Mark as correct</button>

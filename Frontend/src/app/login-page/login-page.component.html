@@ -10,9 +10,9 @@
           <input type="password" [(ngModel)]="password" [ngModelOptions]="{standalone: true}">
           <label style="font-size:small;">Password<br></label>
         </div>
-        <span class="error">{{err}}</span><br>
+        <span style="color: red;" class="error">{{err}}</span><br>
         <a (click)='loggedIn()'>
-          Submit
+          Go
         </a>
         <br>
         <br>

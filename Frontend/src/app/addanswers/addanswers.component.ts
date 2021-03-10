@@ -40,7 +40,7 @@ export class AddanswersComponent implements OnInit {
 
   addAns() {
     if (!this.ansBody.value) {
-      this.err = 'Enter Some Answer';
+      this.err = 'This field cannot be empty';
       return;
     }
     const ansObject = {

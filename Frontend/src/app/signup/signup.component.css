@@ -5,17 +5,17 @@
   
     .login-box {
     position: absolute;
-    top: 54%;
+    top: 60%;
     left: 50%;
-    width: 23%;
-    height: 58%;
+    width: 30%;
+    height: 80%;
     padding: 3%;
     text-align: center;
     transform: translate(-50%, -50%);
     background:var(--ligt);
     box-sizing: border-box;
     border-radius: 20px;
-    font-family: nevis,sans-serif;
+    font-family: sans-serif;
     font-size: larger;
   }
   
@@ -94,7 +94,11 @@
   
   .err{
     color: red;
-    font-size: xx-small;
+    font-size: small;
+    position: absolute;
+    margin-top: -10%;
+    margin-left: -15%;
+    text-align: center;
   }
   
   

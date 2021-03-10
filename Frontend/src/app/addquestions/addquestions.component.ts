@@ -71,23 +71,27 @@ export class AddquestionsComponent implements OnInit {
       keyword: this.Keywords.value,
     };
     if (!this.topic.value) {
-      this.err1 = 'Topic cannot be empty';
+      this.err1 = 'Please choose a topic';
       return;
-    }
+    }this.err1='';
+
     if (!this.Keywords.value) {
-      this.err2 = 'Enter Keywords';
+      this.err2 = 'This field cannot be empty';
       return;
-    }
+    }this.err2='';
+    
     if (!this.quesTitle.value) {
-      this.err3 = 'Enter Question Title';
+      this.err3 = 'This field cannot be empty';
       return;
-    }
+    }this.err3='';
+
     if (!this.quesDesc.value) {
-      this.err4 = 'Enter Question Desc';
+      this.err4 = 'This field cannot be empty';
       return;
-    }
-    this.snackBar.open('Adding, box will close automatically after question is added', '', {
-      duration: 3000,
+    }this.err4='';
+
+    this.snackBar.open('Adding. Add Question box will close automatically.', '', {
+      duration: 5000,
     });
     console.log(quesObject);
     this.questionService.postQuestion(quesObject).subscribe(() => {

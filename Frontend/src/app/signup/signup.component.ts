@@ -73,24 +73,39 @@ export class SignupComponent implements OnInit {
 
   loggedIn() {
     if (!this.username) {
-      this.err1 = 'Username cant be empty';
+      this.err1 = 'Username cannot be empty';
       return;
+    }
+    else{
+      this.err1='';
     }
     if (!this.password) {
-      this.err2 = 'Password cant be empty';
+      this.err2 = 'Password cannot be empty';
       return;
+    }
+    else{
+      this.err2='';
     }
     if (this.password !== this.passwordAgain) {
-      this.err3 = 'Password does not match';
+      this.err3 = 'Passwords do not match';
       return;
+    }
+    else{
+      this.err3='';
     }
     if (!EmailValidator.validate(this.email)) {
-      this.err4 = 'Enter Valid Email';
+      this.err4 = 'Enter a valid email id';
       return;
     }
+    else{
+      this.err4='';
+    }
     if (!this.topic.value) {
-      this.err5 = 'Topic cant be empty';
+      this.err5 = 'Topic cannot be empty';
       return;
+    }
+    else{
+      this.err5='';
     }
     const user = {
       username: this.username,

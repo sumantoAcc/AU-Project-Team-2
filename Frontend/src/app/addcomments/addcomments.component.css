@@ -10,7 +10,7 @@
     background:var(--ligt);
     box-sizing: border-box;
     border-radius: 20px;
-    font-family: nevis,sans-serif;
+    font-family: sans-serif;
     font-size: larger;
   }
   
@@ -81,10 +81,13 @@
     background-color: var(--dark);
     font-size: 17px;
     color: var(--ligt);
-    font-family: nevis,sans-serif;
+    font-family: sans-serif;
   }
 
   .err{
     color: red;
-    font-size: xx-small;
+    font-size: small;
+    position: fixed;
+    margin-left: -56%;
+    margin-top: 55%;
   }
