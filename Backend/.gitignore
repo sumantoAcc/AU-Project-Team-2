@@ -4,7 +4,7 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 /*.log
-log/DiscussionForum.log
+/log/DiscussionForum.log
 
 
 ### STS ###

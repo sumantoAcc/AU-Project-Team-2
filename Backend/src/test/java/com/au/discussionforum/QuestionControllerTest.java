@@ -89,70 +89,67 @@ class QuestionControllerTest {
 		assertEquals(actualJsonResponse,expectedJsonResponse);
 	}
 
-//	@Test
-//	void getQuestionsByKeywordTest() throws JsonProcessingException, Exception {
-//		List<String> list_keywords= new ArrayList<>();
-//		list_keywords.add("national");
-//		list_keywords.add("color");
-//		System.out.println(list_keywords);
-//	
-//		
-//		String national = new String("national");
-//		String color = new String("color");
-//		String quesKeywords= national + color;
-//		
-//		User user1= new User();
-//		user1.setUserId(1);
-//		user1.setEmail("abc@gmail.com");
-//		user1.setPassword("1234");
-//		user1.setUsername("Rupali");
-//		user1.setPhoto("img.jpg");
-//		
-//		Topic topic1= new Topic();
-//		topic1.setTopicId(1);
-//		topic1.setTopicName("birds");
-//		
-//		Question ques1= new Question();
-//		ques1.setQuesId(1);
-//		ques1.setUser(user1);
-//		ques1.setTopic(topic1);
-//		ques1.setTitle("fly");
-//		ques1.setBody("Which is the fastest bird?");
-//		ques1.setMarked(false);
-//		
-//		User user2= new User(2,"abc@gmail.com","1234","Sakshi","img.jpg");
-//		Topic topic2= new Topic(2,"art");
-//		Question ques2= new Question(2,user2,topic2,"color","Which is the color of peace?",false);
-//		
-//		List<Question> q_list= new ArrayList<>();
-//		q_list.add(ques1);
-//		q_list.add(ques1);
-//		q_list.add(ques1);
-//		q_list.add(ques2);
-//		q_list.add(ques2);
-//		
-//		List<Question> qs_list= new ArrayList<>();
-//		qs_list.add(ques1);
-//		qs_list.add(ques2);
-//		
-//		when(quesKeywordsService.getQuestionByKeyword(list_keywords)).thenReturn(q_list);
-//		when(questionService.getSortedQuestionList(q_list)).thenReturn(qs_list);
-//		
-//		String url="/api/question/keywords";
-//		MvcResult mvcResult =
-//				mockMvc.perform(
-//										post(url)
-//										.contentType("application/json")
-//										.content(objectMapper.writeValueAsString(quesKeywords))
-//										).andExpect(status().isOk()).andReturn();
-//		
-//		String actualJsonResponse = mvcResult.getResponse().getContentAsString();
-//		String expectedJsonResponse = objectMapper.writeValueAsString(qs_list);
-//		System.out.println(actualJsonResponse);
-//		System.out.println(expectedJsonResponse);
-//		assertEquals(actualJsonResponse,expectedJsonResponse);
-//		
-//	}
+	@Test
+	void getQuestionsByKeywordTest() throws JsonProcessingException, Exception {
+		List<String> list_keywords= new ArrayList<>();
+		list_keywords.add("national");
+		list_keywords.add("color");
+		System.out.println(list_keywords);
+	
+		String quesKeywords= "national,color";
+		
+		User user1= new User();
+		user1.setUserId(1);
+		user1.setEmail("abc@gmail.com");
+		user1.setPassword("1234");
+		user1.setUsername("Rupali");
+		user1.setPhoto("img.jpg");
+		
+		Topic topic1= new Topic();
+		topic1.setTopicId(1);
+		topic1.setTopicName("birds");
+		
+		Question ques1= new Question();
+		ques1.setQuesId(1);
+		ques1.setUser(user1);
+		ques1.setTopic(topic1);
+		ques1.setTitle("fly");
+		ques1.setBody("Which is the fastest bird?");
+		ques1.setMarked(false);
+		
+		User user2= new User(2,"abc@gmail.com","1234","Sakshi","img.jpg");
+		Topic topic2= new Topic(2,"art");
+		Question ques2= new Question(2,user2,topic2,"color","Which is the color of peace?",false);
+		
+		List<Question> q_list= new ArrayList<>();
+		q_list.add(ques1);
+		q_list.add(ques1);
+		q_list.add(ques1);
+		q_list.add(ques2);
+		q_list.add(ques2);
+		
+		List<Question> qs_list= new ArrayList<>();
+		qs_list.add(ques1);
+		qs_list.add(ques2);
+		
+		when(quesKeywordsService.getQuestionByKeyword(list_keywords)).thenReturn(q_list);
+		when(questionService.getSortedQuestionList(q_list)).thenReturn(qs_list);
+		
+		String url="/api/question/keywords";
+		MvcResult mvcResult =
+				mockMvc.perform(
+										post(url)
+										.contentType("application/json")
+										.content(quesKeywords)
+										).andExpect(status().isOk()).andReturn();
+		
+		String actualJsonResponse = mvcResult.getResponse().getContentAsString();
+		String expectedJsonResponse = objectMapper.writeValueAsString(qs_list);
+		System.out.println(actualJsonResponse);
+		System.out.println(expectedJsonResponse);
+		assertEquals(actualJsonResponse,expectedJsonResponse);
+		
+	}
 	
 	@Test
 	void getQuestionsByTopicTest() throws JsonProcessingException, Exception {
