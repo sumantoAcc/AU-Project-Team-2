@@ -6,9 +6,8 @@
 /* eslint-disable no-empty-function */
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { from } from 'rxjs';
-import { QuestionlistComponent } from '../questionlist/questionlist.component';
 import { QuestionService } from '../question.service';
+
 @Component({
   selector: 'app-search-query-page',
   templateUrl: './search-query-page.component.html',
@@ -23,11 +22,17 @@ export class SearchQueryPageComponent implements OnInit {
 
   ftest: boolean;
 
+  duname: String;
+
+  foto: String;
+
   keywordpass = { keyword: String };
 
   constructor(private router: Router, private questionService : QuestionService) {
     this.Qkeywords = '';
     this.qlen1 = 0;
+    this.duname=JSON.parse(localStorage.getItem('userrr'));
+    this.foto=JSON.parse(localStorage.getItem('userrrphoto'));
   }
 
   answerTab() {
@@ -36,6 +41,8 @@ export class SearchQueryPageComponent implements OnInit {
 
   logout() {
     localStorage.removeItem('token');
+    localStorage.removeItem('userrr');
+    localStorage.removeItem('userrrphoto');
     this.router.navigate(['']);
   }
 

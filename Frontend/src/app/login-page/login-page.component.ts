@@ -45,6 +45,8 @@ export class LoginPageComponent implements OnInit {
       } else {
         this.id = response.userId;
         localStorage.setItem('token', JSON.stringify(this.id));
+        localStorage.setItem('userrr', JSON.stringify(response.username));
+        localStorage.setItem('userrrphoto', JSON.stringify(response.photo));
         this.questionService.uid = this.id;
         this.router.navigate(['/search']);
       }

@@ -2,6 +2,26 @@
     margin-left: 65%;
     margin-top: -3%;
 }
+.uname{
+  margin-left: auto;
+  margin-right: auto;
+  width: 176.8%;
+  text-align: center;
+  color: var(--ligt);
+  position: absolute;
+  margin-top: -5%;
+}
+
+.img{
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50%;
+  width: 176.8%;
+  margin-top: -13%;
+  text-align: center;
+}
+
 .b {
     position: relative;
     display: inline-block;

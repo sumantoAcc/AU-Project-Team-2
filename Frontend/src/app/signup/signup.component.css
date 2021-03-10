@@ -5,11 +5,14 @@
   
     .login-box {
     position: absolute;
-    top: 60%;
+    top: 63%;
     left: 50%;
     width: 30%;
     height: 80%;
-    padding: 3%;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 2%;
+    padding-top: 1%;
     text-align: center;
     transform: translate(-50%, -50%);
     background:var(--ligt);
