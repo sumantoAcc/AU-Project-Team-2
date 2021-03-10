@@ -30,4 +30,8 @@ public class UserTopicServiceImpl implements UserTopicService{
 		return userTopicRepository.findByUserUserId(userId);
 	}
 
+	public UserTopic addUserTopic(UserTopic userTopic) {
+		return userTopicRepository.save(userTopic);
+	}
+
 }
