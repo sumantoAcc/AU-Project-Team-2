@@ -54,7 +54,7 @@ public class UserController {
 		
 		user = userService.addUser(user);
 		
-		List<String> topics = Arrays.asList(userSignupDTO.getTopic().split(","));
+		List<String> topics = userSignupDTO.getTopic();
 		
 		for(String topic : topics) {
 			UserTopic userTopic = new UserTopic();

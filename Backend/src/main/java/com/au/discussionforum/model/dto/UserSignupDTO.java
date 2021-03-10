@@ -1,11 +1,13 @@
 package com.au.discussionforum.model.dto;
 
+import java.util.List;
+
 public class UserSignupDTO {
 	private String email;
 	private String password;
 	private String username;
 	private String photo;
-	private String topic;
+	private List<String> topic;
 	
 	public String getEmail() {
 		return email;
@@ -31,12 +33,11 @@ public class UserSignupDTO {
 	public void setPhoto(String photo) {
 		this.photo = photo;
 	}
-	public String getTopic() {
+	public List<String> getTopic() {
 		return topic;
 	}
-	public void setTopic(String topic) {
+	public void setTopic(List<String> topic) {
 		this.topic = topic;
 	}
-	
 	
 }
