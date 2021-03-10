@@ -15,7 +15,7 @@ public class UserServiceImpl implements UserService {
 	@Autowired
     UserRepository userRepository;
 	
-	public User getUserbyUsername(String username){
+	public User getUserByUsername(String username){
 		return userRepository.findByUsername(username);
 	}
 	
@@ -29,6 +29,10 @@ public class UserServiceImpl implements UserService {
 
 	public User addUser(User user) {
 		return userRepository.save(user);
+	}
+
+	public User getUserByEmail(String email) {
+		return userRepository.findByEmail(email);
 	}
 	
 }

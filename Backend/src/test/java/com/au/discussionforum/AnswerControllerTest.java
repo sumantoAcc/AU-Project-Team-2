@@ -111,7 +111,7 @@ class AnswerControllerTest {
 		String url = "/api/answer/markcorrect";
 		mockMvc.perform(post(url)
 								.contentType("application/json")
-								.content(objectMapper.writeValueAsString(ans))
+								.content(objectMapper.writeValueAsString(ans_id))
 						).andExpect(status().isOk());
 		
 		//String actualJsonResponse = mvcResult.getResponse().getContentAsString();

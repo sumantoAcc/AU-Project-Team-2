@@ -32,7 +32,7 @@ public class UserController {
 	@PostMapping(path = "/api/login")
     public User checkUser(@RequestBody UserDTO userDTO) {
 			
-    	User user = userService.getUserbyUsername(userDTO.getUsername());
+    	User user = userService.getUserByUsername(userDTO.getUsername());
     	if(user==null) {
     		return null;
     	}else {
@@ -45,12 +45,20 @@ public class UserController {
     }
 	
 	@PostMapping(path = "/api/signup")
-	public void addUser(@RequestBody UserSignupDTO userSignupDTO) {
+	public int addUser(@RequestBody UserSignupDTO userSignupDTO) {
 		User user = new User();
 		user.setEmail(userSignupDTO.getEmail());
 		user.setPassword(userSignupDTO.getPassword());
 		user.setPhoto(userSignupDTO.getPhoto());
 		user.setUsername(userSignupDTO.getUsername());
+		
+		if(userService.getUserByUsername(userSignupDTO.getUsername()) != null) {
+			return 1;
+		}
+		
+		if(userService.getUserByEmail(userSignupDTO.getEmail()) != null) {
+			return 2;
+		}
 		
 		user = userService.addUser(user);
 		
@@ -62,6 +70,8 @@ public class UserController {
 			userTopic.setTopic(topicService.getTopicByName(topic));
 			userTopicService.addUserTopic(userTopic);
 		}
+		
+		return 0;
 
 	}
 }
